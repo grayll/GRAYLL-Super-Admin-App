@@ -1,0 +1,119 @@
+<router-outlet name="popup"></router-outlet>
+
+<app-navbar [adminPanel]="true"></app-navbar>
+
+<div class="main-wrapper">
+  <div class="page-wrapper">
+    <div class="container-fluid pt-0">
+
+      <div class="row d-flex justify-content-center align-items-center d-md-none" style="margin-top: calc(50px + 1rem)">
+        <div class="col mx-auto" id="mob">
+          <ngb-tabset [activeId]="activeLink" (tabChange)="tabChanged($event['nextId'])">
+
+            <ngb-tab [id]="navigationAdminPages[0].name">
+              <ng-template ngbTabTitle>
+                <span>1</span>
+              </ng-template>
+            </ngb-tab>
+
+            <ngb-tab [id]="navigationAdminPages[1].name">
+              <ng-template ngbTabTitle>
+                <span>2</span>
+              </ng-template>
+            </ngb-tab>
+
+            <ngb-tab [id]="navigationAdminPages[2].name">
+              <ng-template ngbTabTitle>
+                <span>3</span>
+              </ng-template>
+            </ngb-tab>
+
+            <ngb-tab [id]="navigationAdminPages[3].name">
+              <ng-template ngbTabTitle>
+                <span>4</span>
+              </ng-template>
+            </ngb-tab>
+
+          </ngb-tabset>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 pr-0">
+          <h4 class="text-light pt-3 pb-1">
+            {{activeLink}}
+          </h4>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-10 col-lg-7 align-self-center text-right pl-0" *ngIf="activeLink === 'Algo System Management'">
+          <div class="row align-items-center" style="justify-content: flex-end">
+            <div class="col-6 col-lg-3 col-xl-2 mb-lg ml-xl">
+              <button (click)="toggleFunction('GRY | 1')"
+                type="button" class="btn btn-block btn-purple font-14" [class.disabled]="adminService.gry1FunctionActivated">
+                {{adminService.gry1FunctionActivated ? 'Pause' : 'Activate' }} GRY | 1
+              </button>
+            </div>
+            <div class="col-6 col-lg-3 col-xl-2 mb-lg ml-xl">
+              <button (click)="toggleFunction('GRY | 2')"
+                type="button" class="btn btn-block btn-purple font-14" [class.disabled]="adminService.gry2FunctionActivated">
+                {{adminService.gry2FunctionActivated ? 'Pause' : 'Activate' }} GRY | 2
+              </button>
+            </div>
+            <div class="col-6 col-lg-3 col-xl-2 mb-lg ml-xl">
+              <button (click)="toggleFunction('GRY | 3')"
+                type="button" class="btn btn-block btn-purple font-14" [class.disabled]="adminService.gry3FunctionActivated">
+                {{adminService.gry3FunctionActivated ? 'Pause' : 'Activate' }} GRY | 3
+              </button>
+            </div>
+            <div class="col-6 col-lg-3 col-xl-2 mb-lg ml-xl">
+              <button (click)="toggleFunction('GRZ')"
+                type="button" class="btn btn-block btn-purple font-14" [class.disabled]="adminService.grzFunctionActivated">
+                {{adminService.grzFunctionActivated ? 'Pause' : 'Activate' }} GRZ
+              </button>
+            </div>
+            <div class="col-12 col-xl-3 mb-lg ml-xl">
+              <button (click)="toggleFunction('Algo System')"
+                type="button" class="btn btn-block btn-purple font-14" [class.disabled]="adminService.algoSystemActivated">
+                {{adminService.algoSystemActivated ? 'Pause' : 'Activate' }} Algo System
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12 col-md-10">
+          <app-user-management *ngIf="activeLink === 'User Activity Reports'"></app-user-management>
+          <app-algo-system-data *ngIf="activeLink === 'Algo System Data'"></app-algo-system-data>
+          <app-algo-system-management *ngIf="activeLink === 'Algo System Management'"></app-algo-system-management>
+          <app-admin-user-management *ngIf="activeLink === 'User Management'"></app-admin-user-management>
+        </div>
+
+        <div class="col-md-2 bg-pink settings-menu text-center d-none d-md-block">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item bg-transparent list-group-item-action text-purple"
+                (click)="activeLink = 'User Activity Reports'"
+                [ngClass]="activeLink === 'User Activity Reports' ? 'active' : ''">
+              {{navigationAdminPages[0].name}}
+            </li>
+            <li class="list-group-item bg-transparent list-group-item-action text-purple"
+                (click)="activeLink = 'Algo System Data'"
+                [ngClass]="activeLink === 'Algo System Data' ? 'active' : ''">
+              {{navigationAdminPages[1].name}}
+            </li>
+            <li class="list-group-item bg-transparent list-group-item-action text-purple"
+                (click)="activeLink = 'Algo System Management'"
+                [ngClass]="activeLink === 'Algo System Management' ? 'active' : ''">
+              {{navigationAdminPages[2].name}}
+            </li>
+            <li class="list-group-item bg-transparent list-group-item-action text-purple"
+                (click)="activeLink = 'User Management'"
+                [ngClass]="activeLink === 'User Management' ? 'active' : ''">
+              {{navigationAdminPages[3].name}}
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

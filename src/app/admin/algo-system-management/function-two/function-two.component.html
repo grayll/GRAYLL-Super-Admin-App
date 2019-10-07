@@ -1,0 +1,84 @@
+<div class="row mt-3">
+  <div class="col-sm-12 col-md-6 input-form" style="height: 270px; overflow: hidden">
+    <div class="card font-12 h-100">
+      <div class="card-header card-header-pink border-bottom-0">
+        <div class="row">
+          <div class="col">
+            <span class="header-title">Input</span>
+          </div>
+        </div>
+      </div>
+      <div class="card-body data-box">
+        <div class="form-group row">
+          <label for="minco" class="col-sm-4 col-form-label">Min<sub>cs</sub></label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control font-10 transparent-field" id="minco" placeholder="10.00">
+            <small>Minimum Available Circulating Supply</small>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="rbi" class="col-sm-4 col-form-label">R<sub>bi</sub></label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control font-10 transparent-field" id="rbi" placeholder="5.00">
+            <small>Start Rate of Value Increase (bi)</small>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="c" class="col-sm-4 col-form-label">C</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control font-10 transparent-field" id="c" placeholder="-2">
+            <small>Adjusting Factor (Convex + /Concave -)</small>
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col-6 col-md-4 offset-md-4 text-center">
+            <button class="btn btn-purple" (click)="submit()">Submit</button>
+          </div>
+          <div class="col-6 col-md-4 align-self-center" *ngIf="error">
+            <fa-icon [icon]="faTimes" [size]="'2x'" class="text-danger"></fa-icon>
+          </div>
+          <div class="col-6 col-md-4 align-self-center" *ngIf="success">
+            <fa-icon [icon]="faCheck" [size]="'2x'" class="text-success"></fa-icon>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-12 col-md-6">
+    <div class="card h-100">
+      <div class="card-header card-header-pink border-bottom-0 font-12">
+        <div class="row">
+          <div class="col">
+            <span class="header-title">Output</span>
+            <div class="data-tip">
+              <span>Download Output</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-body data-box" style="height: 700px; overflow: hidden">
+        <table class="table table-borderless table-no-padding header-fixed">
+          <thead class="text-white font-weight-bolder">
+          <tr>
+            <th>Step</th>
+            <th>Price Change</th>
+            <th>Supply</th>
+          </thead>
+          <tbody class="text-white">
+          <tr *ngFor="let item of tableRows; let i = index">
+            <td>{{i + 1}}</td>
+            <td>{{item.priceChange}}%</td>
+            <td>{{item.supply}}%</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row mt-3">
+  <div class="col-12">
+    <app-price-change-supply></app-price-change-supply>
+  </div>
+</div>

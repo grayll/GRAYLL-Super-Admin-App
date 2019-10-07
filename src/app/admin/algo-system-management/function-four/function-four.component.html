@@ -1,0 +1,98 @@
+<div class="row mt-3">
+  <div class="col-sm-12 col-md-6 input-form" style="height: 400px; overflow: hidden">
+    <div class="card font-12 h-100">
+      <div class="card-header card-header-pink border-bottom-0">
+        <div class="row">
+          <div class="col">
+            <span class="header-title">Input</span>
+          </div>
+        </div>
+      </div>
+      <div class="card-body data-box">
+        <div class="form-group row">
+          <label for="maxas" class="col-sm-4 col-form-label">Max<sub>as</sub></label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control font-10 transparent-field" id="maxas" placeholder="100.00">
+            <small>Maximum Available Circulating Supply</small>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="minas" class="col-sm-4 col-form-label">Min<sub>as</sub></label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control font-10 transparent-field" id="minas" placeholder="2.00">
+            <small>Minimum Available Circulating Supply</small>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="rmints" class="col-sm-4 col-form-label">R<sub>min_ts</sub></label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control font-10 transparent-field" id="rmints" placeholder="0.00">
+            <small>Minimum Rate of Increase of Total Circulating Supply</small>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="rmaxts" class="col-sm-4 col-form-label">R<sub>max_ts</sub></label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control font-10 transparent-field" id="rmaxts" placeholder="5.00">
+            <small>Maximum Rate of Increase of Total Circulating Supply</small>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="c" class="col-sm-4 col-form-label">C</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control font-10 transparent-field" id="c" placeholder="3">
+            <small>Adjusting Factor (Convex + /Concave -)</small>
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col-6 col-md-4 offset-md-4 text-center">
+            <button class="btn btn-purple" (click)="submit()">Submit</button>
+          </div>
+          <div class="col-6 col-md-4 align-self-center" *ngIf="error">
+            <fa-icon [icon]="faTimes" [size]="'2x'" class="text-danger"></fa-icon>
+          </div>
+          <div class="col-6 col-md-4 align-self-center" *ngIf="success">
+            <fa-icon [icon]="faCheck" [size]="'2x'" class="text-success"></fa-icon>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-12 col-md-6">
+    <div class="card h-100">
+      <div class="card-header card-header-pink border-bottom-0 font-12">
+        <div class="row">
+          <div class="col">
+            <span class="header-title">Output</span>
+            <div class="data-tip">
+              <span>Download Output</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-body data-box" style="height: 700px; overflow: hidden">
+        <table class="table table-borderless table-no-padding header-fixed">
+          <thead class="text-white font-weight-bolder">
+          <tr>
+            <th>Step</th>
+            <th>Available Supply</th>
+            <th>Rate of increase in total circulating supply</th>
+          </thead>
+          <tbody class="text-white">
+          <tr *ngFor="let item of tableRows; let i = index">
+            <td>{{i + 1}}</td>
+            <td>{{item.availableSupply}}%</td>
+            <td>{{item.increaseRate}}%</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row mt-3">
+  <div class="col-12">
+    <app-increase-total-decrease-available-supply></app-increase-total-decrease-available-supply>
+  </div>
+</div>

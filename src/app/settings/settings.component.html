@@ -1,0 +1,80 @@
+<router-outlet name="popup"></router-outlet>
+<app-navbar></app-navbar>
+
+<div class="main-wrapper">
+  <div class="page-wrapper">
+    <div class="container-fluid pt-0">
+
+      <div *ngIf="!sharedService.getIsLoanPaid(); else loanPaid">
+        <!-- Display on mobile -->
+        <div class="alert justify-content-between alert-warning d-lg-none loan-unpaid-mobile" role="alert">
+          <div style="display: inline;">
+            <fa-icon [icon]="faWarning" class="text-purple-important" [fixedWidth]="true"></fa-icon>
+            Please click the button "Pay Off Loan" to return the 1.50 XLM loan to GRAYLL.
+          </div>
+          <button class="btn btn-purple" [routerLink]="[{outlets: {popup: 'xlm-loan'}}]">Pay Off Loan</button>
+        </div>
+
+        <h4 class="text-light pb-1 page-title">
+          {{activeTabId}}
+        </h4>
+
+        <!-- Display on larger devices -->
+        <div class="alert alert-warning loan-unpaid justify-content-between d-none d-lg-flex" role="alert">
+          <div style="display: inline;">
+            <fa-icon [icon]="faWarning" class="text-purple-important" [fixedWidth]="true"></fa-icon>
+            Please click the button "Pay Off Loan" to return the 1.50 XLM loan to GRAYLL.
+          </div>
+          <button class="btn btn-purple" [routerLink]="[{outlets: {popup: 'xlm-loan'}}]">Pay Off Loan</button>
+        </div>
+      </div>
+
+      <ng-template #loanPaid>
+        <h4 class="text-light pt-3 pb-1">
+          {{activeTabId}}
+        </h4>
+      </ng-template>
+
+      <div style="clear:both"></div>
+
+      <div class="row d-flex justify-content-center align-items-center d-md-none mb-3">
+        <div class="col mx-auto">
+          <ngb-tabset [activeId]="activeTabId" (tabChange)="tabChanged($event['nextId'])">
+
+            <ngb-tab *ngFor="let page of navigationSettingPages" [id]="page.name">
+              <ng-template ngbTabTitle>
+                <fa-icon [icon]="page.icon"></fa-icon>
+              </ng-template>
+            </ngb-tab>
+
+          </ngb-tabset>
+        </div>
+      </div>
+
+      <div class="row">
+
+        <div class="col-md-10">
+          <ng-container [ngSwitch]="activeTabId">
+            <app-profile-settings *ngSwitchCase="'Profile'"></app-profile-settings>
+            <app-notifications-settings *ngSwitchCase="'Notifications'"></app-notifications-settings>
+            <app-data-settings *ngSwitchCase="'Data'"></app-data-settings>
+            <app-wallet-settings *ngSwitchCase="'Wallet'"></app-wallet-settings>
+            <app-security *ngSwitchDefault></app-security>
+          </ng-container>
+        </div>
+
+        <div class="col-md-2 bg-pink settings-menu text-center d-none d-md-block">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item bg-transparent font-16 list-group-item-action"
+                (click)="tabChanged(page.name)"
+                [ngClass]="page.name === activeTabId ? 'active' : ''"
+                *ngFor="let page of navigationSettingPages">
+              {{page.name}}
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

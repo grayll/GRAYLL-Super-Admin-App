@@ -1,0 +1,211 @@
+<div class="row mt-3">
+  <div class="col-sm-12 col-lg-6 input-form">
+    <div class="card font-12 h-100">
+      <div class="card-header card-header-pink border-bottom-0">
+        <div class="row">
+          <div class="col">
+            <span class="header-title">Input</span>
+          </div>
+        </div>
+      </div>
+      <div class="card-body data-box">
+        <div class="form-group row">
+          <label for="totalSupply" class="col-sm-4 col-form-label">Total Supply</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control font-10 transparent-field" id="totalSupply" placeholder="100.00">
+            <small>Total Supply</small>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="availableSupply" class="col-sm-4 col-form-label">Available Supply</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control font-10 transparent-field" id="availableSupply" placeholder="80.00">
+            <small>Available Supply</small>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="reserveSupply" class="col-sm-4 col-form-label">Reserve Supply</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control font-10 transparent-field" id="reserveSupply" placeholder="20.00">
+            <small>Reserve Supply</small>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="maxas" class="col-sm-4 col-form-label">Max_as</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control font-10 transparent-field" id="maxas" placeholder="100.00">
+            <small>Maximum available circulating supply</small>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="minas" class="col-sm-4 col-form-label">Min_as</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control font-10 transparent-field" id="minas" placeholder="2.00">
+            <small>Minimum available circulating supply</small>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="rmints" class="col-sm-4 col-form-label">R_min_ts</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control font-10 transparent-field" id="rmints" placeholder="0.00">
+            <small>Minimum rate of increase in total circulating supply</small>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="rmaxts" class="col-sm-4 col-form-label">R_max_ts</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control font-10 transparent-field" id="rmaxts" placeholder="5.00">
+            <small>Maximum rate of increase in total circulating supply</small>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="c4" class="col-sm-4 col-form-label">C (IV)</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control font-10 transparent-field" id="c4" placeholder="2">
+            <small>Adjusting factor for rate of increase in Total Supply</small>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="c2" class="col-sm-4 col-form-label">C (II)</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control font-10 transparent-field" id="c2" placeholder="-2">
+            <small>Adjusting factor for diminishing rate of increase of asset price</small>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="limit" class="col-sm-4 col-form-label">Select Unit</label>
+          <div class="col-sm-8">
+            <select [selectedIndex]="2" class="form-control font-10 transparent-field" id="limit">
+              <option *ngFor="let item of selectUnits">{{item.value}}</option>
+            </select>
+            <small>Select Time Unit</small>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="initial" class="col-sm-4 col-form-label">P<sub>0</sub> </label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control font-10 transparent-field" id="initial" placeholder="0.01">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="rbi" class="col-sm-4 col-form-label">R<sub>bi</sub></label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control font-10 transparent-field" id="rbi" placeholder="1.30">
+            <small>Beginning rate of increase (bi)</small>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="rmaxi" class="col-sm-4 col-form-label">R<sub>max_i</sub></label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control font-10 transparent-field" id="rmaxi" placeholder="1.80">
+            <small>Max rate of increase (mi)</small>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="rbd" class="col-sm-4 col-form-label">R<sub>bd</sub></label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control font-10 transparent-field" id="rbd" placeholder="1.20">
+            <small>Beginning rate of increase (bi)</small>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="tmaxi" class="col-sm-4 col-form-label">T<sub>max_i</sub></label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control font-10 transparent-field" id="tmaxi" placeholder="14">
+            <small>Time to max rate of increase in (seconds/minutes) (Tm)</small>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="tmax0" class="col-sm-4 col-form-label">T<sub>maxi_0</sub></label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control font-10 transparent-field" id="tmax0" placeholder="14">
+            <small>Time from max rate of increase to zero of decrease in (seconds/minutes) (Tz)</small>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="rmaxd" class="col-sm-4 col-form-label">R<sub>max_d</sub></label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control font-10 transparent-field" id="rmaxd" placeholder="9">
+            <small>Max rate of decrease (md)</small>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="t0maxd" class="col-sm-4 col-form-label">T<sub>0_maxd</sub></label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control font-10 transparent-field" id="t0maxd" placeholder="28">
+            <small>Time from beginning rate of decrease to max rate of decrease (Tn)</small>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="c" class="col-sm-4 col-form-label">C (I)</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control font-10 transparent-field" id="c" placeholder="-3">
+            <small>Adjusting Factor</small>
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col-6 col-md-4 offset-md-4 text-center">
+            <button class="btn btn-purple" (click)="submit()">Submit</button>
+          </div>
+          <div class="col-6 col-md-4 align-self-center" *ngIf="error">
+            <fa-icon [icon]="faTimes" [size]="'2x'" class="text-danger"></fa-icon>
+          </div>
+          <div class="col-6 col-md-4 align-self-center" *ngIf="success">
+            <fa-icon [icon]="faCheck" [size]="'2x'" class="text-success"></fa-icon>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-12 col-lg-6">
+    <div class="card h-100">
+      <div class="card-header card-header-pink border-bottom-0 font-12">
+        <div class="row">
+          <div class="col">
+            <span class="header-title">Output</span>
+            <div class="data-tip">
+              <span>Download Output</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row font-10 text-center p-2 text-light">
+        <div class="col-12">
+          Func 2nd Result: <span class="font-weight-bolder">1.883954</span>
+        </div>
+      </div>
+      <div class="card-body data-box" style="height: 700px; overflow: hidden">
+        <table class="table table-borderless table-no-padding header-fixed">
+          <thead class="text-white font-weight-bolder">
+          <tr>
+            <th>Step</th>
+            <th>Value</th>
+            <th>Growth</th>
+            <th>Value * Func 2nd Result</th>
+          </tr>
+          </thead>
+          <tbody class="text-white">
+          <tr *ngFor="let item of tableRows">
+            <td>1234567890</td>
+            <td>{{item.value}}</td>
+            <td>{{item.growth}}%</td>
+            <td>{{item.result}}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row mt-3">
+  <div class="col-12">
+    <app-change-time-rate></app-change-time-rate>
+  </div>
+</div>
+
+<div class="row mt-3">
+  <div class="col-12">
+    <app-asset-value-time></app-asset-value-time>
+  </div>
+</div>

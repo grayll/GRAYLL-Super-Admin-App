@@ -1,0 +1,104 @@
+<ng-template #content let-modal ngI>
+  <app-popup-header [popupHeaderTitle]="'Change '+ asset + ' Status'"></app-popup-header>
+  <div class="modal-body">
+
+    <ng-container *ngIf="errorMessage">
+      <div class="swal2-icon swal2-error swal2-animate-error-icon" style="display: flex;">
+      <span class="swal2-x-mark">
+        <span class="swal2-x-mark-line-left"></span>
+        <span class="swal2-x-mark-line-right"></span>
+      </span>
+      </div>
+      <div class="row text-center">
+        <div class="col text-purple font-16">
+          <p>{{errorMessage}}</p>
+        </div>
+      </div>
+    </ng-container>
+
+    <ng-container *ngIf="success">
+      <div class="success-checkmark">
+        <div class="check-icon">
+          <span class="icon-line line-tip"></span>
+          <span class="icon-line line-long"></span>
+          <div class="icon-circle"></div>
+          <div class="icon-fix"></div>
+        </div>
+      </div>
+      <div class="row text-center">
+        <div class="col text-purple font-16">
+          <p>The status has been saved successfully.</p>
+        </div>
+      </div>
+    </ng-container>
+
+    <ng-container *ngIf="!errorMessage && !success">
+      <div class="row text-center" *ngIf="asset">
+        <div class="col">
+          <p class="text-purple font-16">
+            <span *ngIf="asset !== 'Algo System'">{{asset}} </span>Algorithmic System
+          </p>
+        </div>
+      </div>
+
+      <div class="row text-center mb-3">
+        <div class="col">
+          <div style="height: 32px!important;">
+            <label class="switch mb-0" *ngIf="didLoadContent">
+              <input name="activated" type="checkbox" [(ngModel)]="activated">
+              <span class="slider round"></span>
+              <span class="absolute-no">Paused</span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="row text-center" *ngIf="asset">
+        <div class="col">
+          <p class="text-purple font-16">
+            <span *ngIf="asset === 'Algo System'">Algorithmic System</span>
+            <span *ngIf="asset !== 'Algo System'">{{asset}}</span> New User Positions
+          </p>
+        </div>
+      </div>
+
+      <div class="row text-center mb-3">
+        <div class="col">
+          <div style="height: 32px!important;">
+            <label class="switch mb-0" *ngIf="didLoadContent">
+              <input name="newUserPosiitonsActivated" type="checkbox" [(ngModel)]="newUserPositionsActivated">
+              <span class="slider round"></span>
+              <span class="absolute-no">Paused</span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mb-1 text-center">
+        <div class="col-12 text-center">
+          <p class="text-purple font-16">
+            Enter your password:
+          </p>
+          <input type="text" class="form-control mx-auto w-75 text-purple" [(ngModel)]="password"
+                 [placeholder]="'Password'">
+        </div>
+      </div>
+    </ng-container>
+
+  </div>
+  <div class="modal-footer justify-content-center">
+    <div class="row text-center">
+      <div class="col">
+        <button class="btn btn-purple" (click)="save()" *ngIf="!errorMessage && !success">
+          Confirm Status
+        </button>
+        <button class="btn btn-purple" (click)="popupService.close()" *ngIf="success">
+          Close
+        </button>
+        <button class="btn btn-purple" (click)="errorMessage = null" *ngIf="errorMessage">
+          Retry
+        </button>
+      </div>
+    </div>
+  </div>
+</ng-template>
