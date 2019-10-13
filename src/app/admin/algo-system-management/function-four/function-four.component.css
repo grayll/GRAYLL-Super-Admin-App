@@ -29,3 +29,13 @@
   width: 20%;
   float: left;
 }
+
+@media (min-width: 992px) {
+    .last-card {
+        margin-bottom: 0!important;
+    }
+
+    .last-card-body {
+        padding-bottom: 0!important;
+    }
+}
