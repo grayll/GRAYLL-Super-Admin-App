@@ -20,6 +20,17 @@ export class FunctionAlgorithmComponent implements OnInit {
   error: boolean;
   success: boolean;
 
+	selectLog = [
+		{
+			id: 0,
+			value: 'log(e)'
+		},
+		{
+			id: 1,
+			value: 'log(10)'
+		}
+	];
+
   selectUnits = [
     {
       id: 1,
@@ -47,6 +58,8 @@ export class FunctionAlgorithmComponent implements OnInit {
     }
   ];
 
+	selectedlog: {id: number, value: string} = this.selectLog[0];
+	selectedUnit: {id: number, value: string} = this.selectUnits[2];
   tableRows = Array(100).fill(this.tableRowMockup);
 
   constructor() { }
@@ -55,7 +68,7 @@ export class FunctionAlgorithmComponent implements OnInit {
   }
 
   submit() {
-    this.error = true;
+    // this.error = true;
   }
 
 }

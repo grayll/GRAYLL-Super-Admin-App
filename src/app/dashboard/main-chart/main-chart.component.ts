@@ -9,25 +9,33 @@ import {Router} from '@angular/router';
 })
 export class MainChartComponent implements AfterViewInit {
   timespanFilter = [
-    {
-      id: 1,
-      name: 'Daily'
-    },
-    {
-      id: 2,
-      name: 'Weekly'
-    },
-    {
-      id: 3,
-      name: 'Monthly'
-    },
-    {
-      id: 4,
-      name: 'Yearly'
-    }
+	  {
+		  id: 1,
+		  name: 'Milliseconds'
+	  },
+	  {
+		  id: 2,
+		  name: 'Seconds'
+	  },
+	  {
+		  id: 3,
+		  name: 'Minutes'
+	  },
+	  {
+		  id: 4,
+		  name: 'Hours'
+	  },
+	  {
+		  id: 5,
+		  name: 'Days'
+	  },
+	  {
+		  id: 6,
+		  name: 'Weeks'
+	  }
   ];
 
-  selectedTimespan: {id: number, name: string} = this.timespanFilter[0];
+  selectedTimespan: {id: number, name: string} = this.timespanFilter[2];
 
   constructor(
     private router: Router
