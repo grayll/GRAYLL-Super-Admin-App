@@ -4,6 +4,21 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class AdminService {
+	get isNewUserSignUpPaused(): boolean {
+		return this._isNewUserSignUpPaused;
+	}
+	
+	set isNewUserSignUpPaused(value: boolean) {
+		this._isNewUserSignUpPaused = value;
+	}
+	
+	get isNewUserSignInPaused(): boolean {
+		return this._isNewUserSignInPaused;
+	}
+	
+	set isNewUserSignInPaused(value: boolean) {
+		this._isNewUserSignInPaused = value;
+	}
 
   private _gry1FunctionActivated: boolean;
   private _gry2FunctionActivated: boolean;
@@ -15,8 +30,28 @@ export class AdminService {
   private _gry3NewUserActivated: boolean;
   private _grzNewUserActivated: boolean;
   private _algoSystemNewUserActivated: boolean;
-
-  get gry1FunctionActivated(): boolean {
+  private _isUserSignUpPaused: boolean;
+  private _isNewUserSignUpPaused: boolean;
+  private _isUserSignInPaused: boolean;
+	private _isNewUserSignInPaused: boolean;
+	
+	get isUserSignUpPaused(): boolean {
+		return this._isUserSignUpPaused;
+	}
+	
+	set isUserSignUpPaused(value: boolean) {
+		this._isUserSignUpPaused = value;
+	}
+	
+	get isUserSignInPaused(): boolean {
+		return this._isUserSignInPaused;
+	}
+	
+	set isUserSignInPaused(value: boolean) {
+		this._isUserSignInPaused = value;
+	}
+	
+	get gry1FunctionActivated(): boolean {
     return this._gry1FunctionActivated;
   }
 

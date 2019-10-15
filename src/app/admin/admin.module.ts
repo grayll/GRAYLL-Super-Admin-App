@@ -26,6 +26,8 @@ import {PopupModule} from '../shared/popup/popup.module';
 import { AlgoSystemDataComponent } from './algo-system-data/algo-system-data.component';
 import { AdminUserManagementComponent } from './admin-user-management/admin-user-management.component';
 import { AdminUserManagementTableComponent } from './admin-user-management/admin-user-management-table/admin-user-management-table.component';
+import { UserAccountsAndRegistrationComponent } from './admin-user-management/admin-user-management-table/user-accounts-and-registration/user-accounts-and-registration.component';
+import { ConfirmStatusComponent } from './admin-user-management/admin-user-management-table/user-accounts-and-registration/confirm-status/confirm-status.component';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true,
@@ -52,7 +54,9 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     ActivatePauseSystemComponent,
     AlgoSystemDataComponent,
     AdminUserManagementComponent,
-    AdminUserManagementTableComponent
+    AdminUserManagementTableComponent,
+    UserAccountsAndRegistrationComponent,
+    ConfirmStatusComponent
   ],
   imports: [
     CommonModule,

@@ -1,0 +1,79 @@
+<ng-template #content let-modal>
+  <app-popup-header [popupHeaderTitle]="'User ' + activity + ' Status'"></app-popup-header>
+  <div class="modal-body">
+
+    <ng-container>
+
+      <div class="row text-center" *ngIf="errorMessage">
+        <div class="alert alert-danger w-100" role="alert">
+          <p class="mb-0">{{errorMessage}}</p>
+        </div>
+      </div>
+
+      <div class="row text-center">
+        <div class="col">
+          <p class="text-purple font-16">
+            Please review and confirm this action to pause all
+            <br>
+            <span *ngIf="activity === 'App Sign In'">user App sign ins </span>
+            <span *ngIf="activity === 'Sign Up'">new user sign ups </span>
+            for review and/or maintenance.
+          </p>
+        </div>
+      </div>
+
+      <div class="row text-center">
+        <div class="col">
+          <p class="text-purple font-16">
+            <span *ngIf="activity === 'App Sign In'">User App Sign In</span>
+            <span *ngIf="activity === 'Sign Up'">New User Sign Up</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="row text-center mb-3" *ngIf="activity === 'App Sign In'">
+        <div class="col">
+          <div style="height: 32px!important;">
+            <label class="switch mb-0" *ngIf="didLoadContent">
+              <input name="activated" type="checkbox" [(ngModel)]="activated">
+              <span class="slider round"></span>
+              <span class="absolute-no">Paused</span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="row text-center mb-3" *ngIf="activity === 'Sign Up'">
+        <div class="col">
+          <div style="height: 32px!important;">
+            <label class="switch mb-0" *ngIf="didLoadContent">
+              <input name="activated" type="checkbox" [(ngModel)]="activated">
+              <span class="slider round"></span>
+              <span class="absolute-no">Paused</span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mb-1 text-center">
+        <div class="col-12 text-center">
+          <p class="text-purple font-16">
+            Enter your password:
+          </p>
+          <input type="text" class="form-control mx-auto w-75 text-purple" [(ngModel)]="password"
+                 [placeholder]="'Password'">
+        </div>
+      </div>
+    </ng-container>
+
+  </div>
+  <div class="modal-footer justify-content-center">
+    <div class="row text-center">
+      <div class="col">
+        <button class="btn btn-purple" (click)="save()">
+          Confirm Status
+        </button>
+      </div>
+    </div>
+  </div>
+</ng-template>
