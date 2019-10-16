@@ -10,38 +10,38 @@
       </div>
       <div class="card-body data-box">
         <div class="form-group row">
-          <label for="maxrs" class="col-sm-4 col-form-label">Max<sub>rs</sub></label>
+          <label for="maxrs" class="col-sm-4 col-form-label">Max<sub>rs</sub> (%)</label>
           <div class="col-sm-8">
             <input type="text" class="form-control font-10 transparent-field" id="maxrs" placeholder="80.00">
-            <small>Maximum Reserve Supply</small>
+            <small>Maximum Reserve Supply (%)</small>
           </div>
         </div>
         <div class="form-group row">
-          <label for="minrs" class="col-sm-4 col-form-label">Min<sub>rs</sub></label>
+          <label for="minrs" class="col-sm-4 col-form-label">Min<sub>rs</sub> (%)</label>
           <div class="col-sm-8">
             <input type="text" class="form-control font-10 transparent-field" id="minrs" placeholder="2.00">
-            <small>Minimum Reserve Supply</small>
+            <small>Minimum Reserve Supply (%)</small>
           </div>
         </div>
         <div class="form-group row">
           <label for="rmints" class="col-sm-4 col-form-label">R<sub>min_ts</sub></label>
           <div class="col-sm-8">
             <input type="text" class="form-control font-10 transparent-field" id="rmints" placeholder="2.00">
-            <small>Minimum Rate of Increase of Total Circulating Supply</small>
+            <small>Minimum Rate of Increase | Reserve Supply</small>
           </div>
         </div>
         <div class="form-group row">
           <label for="rmaxts" class="col-sm-4 col-form-label">R<sub>max_ts</sub></label>
           <div class="col-sm-8">
             <input type="text" class="form-control font-10 transparent-field" id="rmaxts" placeholder="2.00">
-            <small>Maximum Rate of Increase of Total Circulating Supply</small>
+            <small>Maximum Rate of Increase | Total Supply</small>
           </div>
         </div>
         <div class="form-group row">
           <label for="c" class="col-sm-4 col-form-label">C</label>
           <div class="col-sm-8">
             <input type="text" class="form-control font-10 transparent-field" id="c" placeholder="3">
-            <small>Adjusting Factor Rate of Increase of Total Supply</small>
+            <small>Adjusting Factor | Rate of Increase | Total Supply (Concave + | Convex -)</small>
           </div>
         </div>
         <div class="row mt-3">
@@ -75,8 +75,8 @@
           <thead class="text-white font-weight-bolder">
           <tr>
             <th>Step</th>
-            <th>Reserve Supply</th>
-            <th>Rate of increase in total circulating supply</th>
+            <th>Reserve Supply (%)</th>
+            <th>Rate of Increase | Total Supply</th>
           </thead>
           <tbody class="text-white">
           <tr *ngFor="let item of tableRows; let i = index">

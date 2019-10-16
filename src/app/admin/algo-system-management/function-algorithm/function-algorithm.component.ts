@@ -12,7 +12,8 @@ export class FunctionAlgorithmComponent implements OnInit {
     value: 0.01000001,
     growth: 0.08000001,
     growthUnits: -12.34567890,
-    result: 0.01000001
+    result: 0.01000001,
+	  units: 0.01000001
   };
 
   faCheck = faCheck;

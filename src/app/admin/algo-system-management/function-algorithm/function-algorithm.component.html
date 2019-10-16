@@ -10,57 +10,53 @@
       </div>
       <div class="card-body data-box">
         <div class="form-group row">
-          <label for="las" class="col-sm-4 col-form-label">L<sub>as</sub></label>
+          <label for="las" class="col-sm-4 col-form-label">L<sub>as</sub> (%)</label>
           <div class="col-sm-8">
             <input type="text" class="form-control font-10 transparent-field" id="las" placeholder="80.00">
-            <small>Available Supply</small>
+            <small>Available Supply (%)</small>
           </div>
         </div>
         <div class="form-group row">
           <label for="maxas" class="col-sm-4 col-form-label">Max<sub>as</sub> (%)</label>
           <div class="col-sm-8">
             <input type="text" class="form-control font-10 transparent-field" id="maxas" placeholder="100.00">
-            <small>Maximum Available (Circulating) Supply</small>
+            <small>Maximum Available (Circulating) Supply (%)</small>
           </div>
         </div>
         <div class="form-group row">
           <label for="minas" class="col-sm-4 col-form-label">Min<sub>as</sub> (%)</label>
           <div class="col-sm-8">
             <input type="text" class="form-control font-10 transparent-field" id="minas" placeholder="2.00">
-            <small>Minimum Available (Circulating) Supply</small>
+            <small>Minimum Available (Circulating) Supply (%)</small>
           </div>
         </div>
         <div class="form-group row">
           <label for="rmints" class="col-sm-4 col-form-label">R<sub>min_ts</sub></label>
           <div class="col-sm-8">
             <input type="text" class="form-control font-10 transparent-field" id="rmints" placeholder="0.00">
-            <small>Minimum Rate of Increase of Total Supply</small>
+            <small>Minimum Rate of Increase | Total Supply</small>
           </div>
         </div>
         <div class="form-group row">
           <label for="rmaxts" class="col-sm-4 col-form-label">R<sub>max_ts</sub></label>
           <div class="col-sm-8">
             <input type="text" class="form-control font-10 transparent-field" id="rmaxts" placeholder="5.00">
-            <small>Maximum Rate of Increase of Total Supply</small>
+            <small>Maximum Rate of Increase | Total Supply</small>
           </div>
         </div>
         <div class="form-group row mb-0">
           <label for="c" class="col-sm-4 col-form-label">C</label>
           <div class="col-sm-4">
             <input type="text" class="form-control font-10 transparent-field" id="c" placeholder="3">
-            <small class="d-sm-none">Adjusting Factor Rate of Increase of Total Supply</small>
+            <small class="d-sm-none">Adjusting Factor | Rate of Increase | Total Supply (Concave + | Convex -)</small>
           </div>
-          <div class="col-sm-3 text-center">
+          <div class="col-sm-4 text-right">
             <button class="btn btn-purple btn-sm" (click)="submit()">Run Function 4</button>
-          </div>
-          <div class="col-sm-1 text-center align-self-center">
-            <fa-icon *ngIf="error" [icon]="faTimes" [size]="'2x'" class="text-danger"></fa-icon>
-            <fa-icon *ngIf="success" [icon]="faCheck" [size]="'2x'" class="text-success"></fa-icon>
           </div>
         </div>
         <div class="row d-none d-sm-flex">
           <div class="col-sm-8 offset-sm-4">
-            <small>Adjusting Factor Rate of Increase of Total Supply</small>
+            <small>Adjusting Factor | Rate of Increase | Total Supply (Concave + | Convex -)</small>
           </div>
         </div>
       </div>
@@ -119,7 +115,7 @@
           <label for="uas" class="col-sm-4 col-form-label">Updated Available Supply (%)</label>
           <div class="col-sm-8">
             <input type="text" class="form-control font-10 transparent-field" id="uas" placeholder="100.00">
-            <small>Updated Available Supply (%) of Updated Total Supply</small>
+            <small>Updated Available Supply (%)</small>
           </div>
         </div>
         <div class="form-group row">
@@ -133,7 +129,7 @@
           <label for="pas" class="col-sm-4 col-form-label">Previous Available Supply</label>
           <div class="col-sm-8">
             <input type="text" class="form-control font-10 transparent-field" id="pas" placeholder="2,500,000,000">
-            <small>Value = L<sub>as</sub> (%) Before Execution of Function 4</small>
+            <small>Value = L<sub>as</sub> (%) Before Execution | Function 4</small>
           </div>
         </div>
         <div class="form-group row">
@@ -151,7 +147,7 @@
         </div>
         <div class="row">
           <div class="col-sm-8 offset-sm-4">
-            <small>Total Available Supply After Execution of Function 4</small>
+            <small>Total Available Supply After Execution | Function 4</small>
           </div>
         </div>
       </div>
@@ -171,57 +167,53 @@
       </div>
       <div class="card-body data-box last-card-body">
         <div class="form-group row">
-          <label for="lrs" class="col-sm-4 col-form-label">L<sub>rs</sub></label>
+          <label for="lrs" class="col-sm-4 col-form-label">L<sub>rs</sub> (%)</label>
           <div class="col-sm-8">
             <input type="text" class="form-control font-10 transparent-field" id="lrs" placeholder="80.00">
-            <small>Available Supply</small>
+            <small>Available Supply (%)</small>
           </div>
         </div>
         <div class="form-group row">
           <label for="maxrs" class="col-sm-4 col-form-label">Max<sub>rs</sub> (%)</label>
           <div class="col-sm-8">
             <input type="text" class="form-control font-10 transparent-field" id="maxrs" placeholder="100.00">
-            <small>Maximum Available (Circulating) Supply</small>
+            <small>Maximum Available (Circulating) Supply (%)</small>
           </div>
         </div>
         <div class="form-group row">
           <label for="minrs" class="col-sm-4 col-form-label">Min<sub>rs</sub> (%)</label>
           <div class="col-sm-8">
             <input type="text" class="form-control font-10 transparent-field" id="minrs" placeholder="2.00">
-            <small>Minimum Available (Circulating) Supply</small>
+            <small>Minimum Available (Circulating) Supply (%)</small>
           </div>
         </div>
         <div class="form-group row">
           <label for="rmints" class="col-sm-4 col-form-label">R<sub>min_ts</sub></label>
           <div class="col-sm-8">
             <input type="text" class="form-control font-10 transparent-field" id="rmints" placeholder="0.00">
-            <small>Minimum Rate of Increase of Total Supply</small>
+            <small>Minimum Rate of Increase | Total Supply</small>
           </div>
         </div>
         <div class="form-group row">
           <label for="rmaxts" class="col-sm-4 col-form-label">R<sub>max_ts</sub></label>
           <div class="col-sm-8">
             <input type="text" class="form-control font-10 transparent-field" id="rmaxts" placeholder="5.00">
-            <small>Maximum Rate of Increase of Total Supply</small>
+            <small>Maximum Rate of Increase | Total Supply</small>
           </div>
         </div>
         <div class="form-group row mb-0">
           <label for="c" class="col-sm-4 col-form-label">C</label>
           <div class="col-sm-4">
             <input type="text" class="form-control font-10 transparent-field" id="c" placeholder="3">
-            <small class="d-sm-none">Adjusting Factor Rate of Increase of Total Supply</small>
+            <small class="d-sm-none">Adjusting Factor | Rate of Increase | Total Supply (Concave + | Convex -)</small>
           </div>
-          <div class="col-sm-3 text-center">
+          <div class="col-sm-4 text-right">
             <button class="btn btn-purple btn-sm" (click)="submit()">Run Function 3</button>
-          </div>
-          <div class="col-sm-1 text-center align-self-center">
-            <fa-icon *ngIf="error" [icon]="faTimes" [size]="'2x'" class="text-danger"></fa-icon>
-            <fa-icon *ngIf="success" [icon]="faCheck" [size]="'2x'" class="text-success"></fa-icon>
           </div>
         </div>
         <div class="row d-none d-sm-flex">
           <div class="col-sm-8 offset-sm-4">
-            <small>Adjusting Factor Rate of Increase of Total Supply</small>
+            <small>Adjusting Factor | Rate of Increase | Total Supply (Concave + | Convex -)</small>
           </div>
         </div>
       </div>
@@ -251,7 +243,7 @@
           <label for="uas" class="col-sm-4 col-form-label">Updated Available Supply (%)</label>
           <div class="col-sm-8">
             <input type="text" class="form-control font-10 transparent-field" id="uas" placeholder="100.00">
-            <small>Updated Available Supply (%) of Updated Total Supply</small>
+            <small>Updated Available Supply (%)</small>
           </div>
         </div>
         <div class="form-group row">
@@ -265,7 +257,7 @@
           <label for="pas" class="col-sm-4 col-form-label">Previous Available Supply</label>
           <div class="col-sm-8">
             <input type="text" class="form-control font-10 transparent-field" id="pas" placeholder="2,500,000,000">
-            <small>Value = L<sub>as</sub> (%) Before Execution of Function 3</small>
+            <small>Value = L<sub>as</sub> (%) Before Execution | Function 3</small>
           </div>
         </div>
         <div class="form-group row">
@@ -283,7 +275,7 @@
         </div>
         <div class="row">
           <div class="col-sm-8 offset-sm-4">
-            <small>Total Available Supply After Execution of Function 3</small>
+            <small>Total Available Supply After Execution | Function 3</small>
           </div>
         </div>
       </div>
@@ -303,43 +295,39 @@
       </div>
       <div class="card-body data-box last-card-body">
         <div class="form-group row">
-          <label for="las" class="col-sm-4 col-form-label">L<sub>as</sub></label>
+          <label for="las" class="col-sm-4 col-form-label">L<sub>as</sub> (%)</label>
           <div class="col-sm-8">
             <input type="text" class="form-control font-10 transparent-field" id="las" placeholder="80.00">
-            <small>Available Supply</small>
+            <small>Available Supply (%)</small>
           </div>
         </div>
         <div class="form-group row">
           <label for="minas" class="col-sm-4 col-form-label">Min<sub>as</sub> (%)</label>
           <div class="col-sm-8">
             <input type="text" class="form-control font-10 transparent-field" id="minas" placeholder="100.00">
-            <small>Minimum Available (Circulating) Supply</small>
+            <small>Minimum Available (Circulating) Supply (%)</small>
           </div>
         </div>
         <div class="form-group row">
           <label for="rbi" class="col-sm-4 col-form-label">R<sub>bi</sub></label>
           <div class="col-sm-8">
             <input type="text" class="form-control font-10 transparent-field" id="rbi" placeholder="0.00">
-            <small>Starting Rate of Value Increase</small>
+            <small>Start Rate of Value Increase</small>
           </div>
         </div>
         <div class="form-group row mb-0">
           <label for="c" class="col-sm-4 col-form-label">C</label>
           <div class="col-sm-4">
             <input type="text" class="form-control font-10 transparent-field" id="c" placeholder="3">
-            <small class="d-sm-none">Adjusting Factor Rate of Increase of Total Supply</small>
+            <small class="d-sm-none">Adjusting Factor | Rate of Increase | Total Supply</small>
           </div>
-          <div class="col-sm-3 text-center">
+          <div class="col-sm-4 text-right">
             <button class="btn btn-purple btn-sm" (click)="submit()">Run Function 2</button>
-          </div>
-          <div class="col-sm-1 text-center align-self-center">
-            <fa-icon *ngIf="error" [icon]="faTimes" [size]="'2x'" class="text-danger"></fa-icon>
-            <fa-icon *ngIf="success" [icon]="faCheck" [size]="'2x'" class="text-success"></fa-icon>
           </div>
         </div>
         <div class="row d-none d-sm-flex">
           <div class="col-sm-8 offset-sm-4">
-            <small>Adjusting Factor Rate of Increase of Total Supply</small>
+            <small>Adjusting Factor | Rate of Increase | Total Supply</small>
           </div>
         </div>
       </div>
@@ -466,19 +454,15 @@
           <label for="c" class="col-sm-4 col-form-label">C</label>
           <div class="col-sm-4">
             <input type="text" class="form-control font-10 transparent-field" id="c" placeholder="2">
-            <small class="d-sm-none">Adjusting Factor Rate of Increase of Total Supply</small>
+            <small class="d-sm-none">Adjusting Factor | Rate of Increase/Decrease | Value of Asset/Position</small>
           </div>
-          <div class="col-sm-3 text-center">
+          <div class="col-sm-4 text-right">
             <button class="btn btn-purple btn-sm" (click)="submit()">Run Function 1</button>
-          </div>
-          <div class="col-sm-1 text-center align-self-center">
-            <fa-icon *ngIf="error" [icon]="faTimes" [size]="'2x'" class="text-danger"></fa-icon>
-            <fa-icon *ngIf="success" [icon]="faCheck" [size]="'2x'" class="text-success"></fa-icon>
           </div>
         </div>
         <div class="row d-none d-sm-flex">
           <div class="col-sm-8 offset-sm-4">
-            <small>Adjusting Factor Rate of Increase of Total Supply</small>
+            <small>Adjusting Factor | Rate of Increase/Decrease | Value of Asset/Position</small>
           </div>
         </div>
       </div>
@@ -503,8 +487,8 @@
             <th>Step</th>
             <th>Value</th>
             <th>Growth</th>
-            <th>Units</th>
-            <th>Growth in Units</th>
+            <th>Value*(1+"Output Function 2"/100)</th>
+            <th>Final Growth Output</th>
           </tr>
           </thead>
           <tbody class="text-white mt-2">
