@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {faBell, faChartBar, faChartLine, faCommentAlt, faPowerOff, faUser, faWallet} from '@fortawesome/free-solid-svg-icons';
+import {faBell, faCog, faChartBar, faChartLine, faCommentAlt, faPowerOff, faUser, faWallet} from '@fortawesome/free-solid-svg-icons';
 import {NotificationsService} from '../../../notifications/notifications.service';
 
 @Component({
@@ -19,6 +19,7 @@ export class NavbarComponent {
   faChartBar = faChartBar;
   faWallet = faWallet;
   faChartLine = faChartLine;
+  faCog = faCog;
 
   constructor(
     public notificationsService: NotificationsService

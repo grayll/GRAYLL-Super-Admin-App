@@ -2,7 +2,7 @@
 <div class="bg-gradient text-light" id="systemActivityTable">
   <div class="row align-items-center justify-content-center p-2">
     <div class="col-12 col-sm-3 align-self-center" style="max-width: 240px;">
-      <h6 class="mb-0 text-center py-2">User Accounts & Registrations</h6>
+      <h6 class="mb-0 text-center py-2">User Accounts Financials</h6>
     </div>
     <div class="col-12 col-sm-7 justify-content-center align-items-center" *ngIf="selectedTab">
       <ngb-tabset type="pills" class="custom-pills" (tabChange)="onTabChange($event.nextId)" [activeId]="selectedTab.id">
@@ -31,7 +31,7 @@
 <div class="bg-gradient text-light">
   <div class="row justify-content-center align-items-center mb-1 p-2">
     <div class="col-12 col-sm-3 text-center py-2">
-      <span class="align-middle font-weight-bolder font-14">{{selectedTab.name}} (9,000,000)</span>
+      <span class="align-middle font-weight-bolder font-14">User Accounts (9,000,000)</span>
     </div>
     <div class="col-6 col-sm-3 text-center font-12" style="outline: none;"
          [routerLink]="['/admin/overview', {outlets: {popup: ['confirm-status', 'Sign Up']}}]">
@@ -73,27 +73,66 @@
       <th>First Name</th>
       <th>Last Name</th>
       <th>Email Address</th>
-      <th>Phone Number</th>
-      <th *ngIf="selectedTab.id === 'completedAccounts'">Account</th>
-      <th *ngIf="selectedTab.id !== 'unVerifiedRegistrations'">GRAYLL ID</th>
-      <th *ngIf="selectedTab.id === 'completedAccounts'" (click)="sortByAccountValue()" class="cancel">
-        Account Value (USD)
-        <fa-icon [icon]="faSortByAccountValue" style="color: #40278C;"></fa-icon>
-        <br>
-        <small>Current Account Total</small>
-      </th>
-      <th *ngIf="selectedTab.id === 'completedAccounts'" (click)="sortByPositionValue()" class="cancel">
-        Algo Positions Value (USD)
-        <fa-icon [icon]="faSortByPositionsValue" style="color: #40278C;"></fa-icon>
-        <br>
-        <small>Current Account Total</small>
-      </th>
-      <th *ngIf="selectedTab.id === 'completedAccounts'" (click)="sortByCommissions()" class="cancel">
-        Algo Commissions (USD)
-        <fa-icon [icon]="faSortByCommissions" style="color: #40278C;"></fa-icon>
-        <br>
-        <small>Historical Account Total</small>
-      </th>
+      <th>Account</th>
+      <th>GRAYLL ID</th>
+      <ng-container *ngIf="selectedTab.id === 'uab'">
+        <th (click)="sortByAccountValue()" class="cancel">
+          Account Value (USD)
+          <fa-icon [icon]="faSortByAccountValue" style="color: #40278C;"></fa-icon>
+          <br>
+          <small>Current Account Total</small>
+        </th>
+        <th (click)="sortByBalanceXLM()" class="cancel">
+          Account Balance (XLM)
+          <fa-icon [icon]="faSortByBalanceXLM" style="color: #40278C;"></fa-icon>
+          <br>
+          <small>Current Account Total</small>
+        </th>
+        <th (click)="sortByBalanceGRX()" class="cancel">
+          Account Balance (GRX)
+          <fa-icon [icon]="faSortByBalanceGRX" style="color: #40278C;"></fa-icon>
+          <br>
+          <small>Current Account Total</small>
+        </th>
+        <th (click)="sortByOpenOrdersXLM()" class="cancel">
+          Open Orders XLM (USD)
+          <fa-icon [icon]="faSortByOpenOrdersXLM" style="color: #40278C;"></fa-icon>
+          <br>
+          <small>Current Account Total</small>
+        </th>
+        <th (click)="sortByOpenOrdersGRX()" class="cancel">
+          Open Orders GRX (USD)
+          <fa-icon [icon]="faSortByOpenOrdersGRX" style="color: #40278C;"></fa-icon>
+          <br>
+          <small>Current Account Total</small>
+        </th>
+      </ng-container>
+      <ng-container *ngIf="selectedTab.id === 'uat'">
+        <th>
+          Federation Address
+          <br>
+          <small>*grayll.io</small>
+        </th>
+        <th>Phone number</th>
+        <th (click)="sortByTotalTransfersUSD()" class="cancel">
+          Total Transfers (USD)
+          <fa-icon [icon]="faSortByTotalTransfersUSD" style="color: #40278C;"></fa-icon>
+          <br>
+          <small>Historical Account Total</small>
+        </th>
+        <th (click)="sortByTotalTransfersXLM()" class="cancel">
+          Total Transfers (XLM)
+          <fa-icon [icon]="faSortByTotalTransfersXLM" style="color: #40278C;"></fa-icon>
+          <br>
+          <small>Historical Account Total</small>
+        </th>
+        <th (click)="sortByTotalTransfersGRX()" class="cancel">
+          Total Transfers (GRX)
+          <fa-icon [icon]="faSortByTotalTransfersGRX" style="color: #40278C;"></fa-icon>
+          <br>
+          <small>Historical Account Total</small>
+        </th>
+      </ng-container>
     </tr>
     </thead>
 
@@ -103,22 +142,30 @@
       <td>{{'GeronimhoxxxyyyzzzTHISWONTBEDISPLAYED' | slice:0:18}}</td>
       <td>{{'de Chastaine Montaigne' | slice:0:32}}</td>
       <td>{{'swissalpbunny888@protonmail.ch' | slice:0:32}}</td>
+      <td>GAQQ44...H3399</td>
       <td>
-        <a href="javascript:void(0)" class="purple-link">
-          +999 15678888111
-        </a>
-      </td>
-      <td *ngIf="selectedTab.id === 'completedAccounts'">
-        GAQQ44...H3399
-      </td>
-      <td *ngIf="selectedTab.id !== 'unVerifiedRegistrations'">
         <a href="javascript:void(0)" class="purple-link">
           111222333444555666
         </a>
       </td>
-      <td *ngIf="selectedTab.id === 'completedAccounts'">1,000,000,000,0000.00</td>
-      <td *ngIf="selectedTab.id === 'completedAccounts'">1,000,000,000,0000.00</td>
-      <td *ngIf="selectedTab.id === 'completedAccounts'">100,00.00</td>
+      <ng-container *ngIf="selectedTab.id === 'uab'">
+        <td>1,000,000,000,000.00</td>
+        <td>1,000,000,000,000.00</td>
+        <td>1,000,000,000,000.00</td>
+        <td>1,000,000,000,000.00</td>
+        <td>1,000,000,000,000.00</td>
+      </ng-container>
+      <ng-container *ngIf="selectedTab.id === 'uat'">
+        <td>swissalpbunny888</td>
+        <td>
+          <a href="javascript:void(0)" class="purple-link">
+            +999 15678888111
+          </a>
+        </td>
+        <td>1,000,000,000,000.00</td>
+        <td>1,000,000,000,000.00</td>
+        <td>1,000,000,000,000.00</td>
+      </ng-container>
     </tr>
     </tbody>
   </table>

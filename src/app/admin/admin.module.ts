@@ -28,6 +28,7 @@ import { AdminUserManagementComponent } from './admin-user-management/admin-user
 import { AdminUserManagementTableComponent } from './admin-user-management/admin-user-management-table/admin-user-management-table.component';
 import { UserAccountsAndRegistrationComponent } from './admin-user-management/admin-user-management-table/user-accounts-and-registration/user-accounts-and-registration.component';
 import { ConfirmStatusComponent } from './admin-user-management/admin-user-management-table/user-accounts-and-registration/confirm-status/confirm-status.component';
+import { UserAccountFinancialsComponent } from './admin-user-management/admin-user-management-table/user-account-financials/user-account-financials.component';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true,
@@ -56,7 +57,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     AdminUserManagementComponent,
     AdminUserManagementTableComponent,
     UserAccountsAndRegistrationComponent,
-    ConfirmStatusComponent
+    ConfirmStatusComponent,
+    UserAccountFinancialsComponent
   ],
   imports: [
     CommonModule,
