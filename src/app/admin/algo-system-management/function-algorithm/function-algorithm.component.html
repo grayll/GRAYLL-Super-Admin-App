@@ -51,7 +51,7 @@
             <small class="d-sm-none">Adjusting Factor | Rate of Increase | Total Supply (Concave + | Convex -)</small>
           </div>
           <div class="col-sm-4 text-right">
-            <button class="btn btn-purple btn-sm" (click)="submit()">Run Function 4</button>
+            <button class="btn btn-purple btn-sm" (click)="submit(4)">Run Function 4</button>
           </div>
         </div>
         <div class="row d-none d-sm-flex">
@@ -85,7 +85,13 @@
             <small>Historical High Total Supply</small>
           </div>
           <div class="col text-right">
-            <small class="text-orange">Increased 2,847,375 GRX After Execution of Function 4</small>
+            <small class="text-orange" *ngIf="adminService.didRunFunction4">
+              Increased 2,847,375 GRX After Execution of Function 4
+            </small>
+            <br>
+            <small class="text-orange" *ngIf="adminService.didRunFunction3">
+              Increased 2,847,375 GRX After Execution of Function 3
+            </small>
           </div>
         </div>
       </div>
@@ -170,21 +176,21 @@
           <label for="lrs" class="col-sm-4 col-form-label">L<sub>rs</sub> (%)</label>
           <div class="col-sm-8">
             <input type="text" class="form-control font-10 transparent-field" id="lrs" placeholder="80.00">
-            <small>Available Supply (%)</small>
+            <small>Reserve Supply (%)</small>
           </div>
         </div>
         <div class="form-group row">
           <label for="maxrs" class="col-sm-4 col-form-label">Max<sub>rs</sub> (%)</label>
           <div class="col-sm-8">
             <input type="text" class="form-control font-10 transparent-field" id="maxrs" placeholder="100.00">
-            <small>Maximum Available (Circulating) Supply (%)</small>
+            <small>Maximum Reserve Supply (%)</small>
           </div>
         </div>
         <div class="form-group row">
           <label for="minrs" class="col-sm-4 col-form-label">Min<sub>rs</sub> (%)</label>
           <div class="col-sm-8">
             <input type="text" class="form-control font-10 transparent-field" id="minrs" placeholder="2.00">
-            <small>Minimum Available (Circulating) Supply (%)</small>
+            <small>Minimum Reserve Supply (%)</small>
           </div>
         </div>
         <div class="form-group row">
@@ -208,7 +214,7 @@
             <small class="d-sm-none">Adjusting Factor | Rate of Increase | Total Supply (Concave + | Convex -)</small>
           </div>
           <div class="col-sm-4 text-right">
-            <button class="btn btn-purple btn-sm" (click)="submit()">Run Function 3</button>
+            <button class="btn btn-purple btn-sm" (click)="submit(3)">Run Function 3</button>
           </div>
         </div>
         <div class="row d-none d-sm-flex">
@@ -240,37 +246,37 @@
           </div>
         </div>
         <div class="form-group row">
-          <label for="uas" class="col-sm-4 col-form-label">Updated Available Supply (%)</label>
+          <label for="urs" class="col-sm-4 col-form-label">Updated Reserve Supply (%)</label>
           <div class="col-sm-8">
-            <input type="text" class="form-control font-10 transparent-field" id="uas" placeholder="100.00">
-            <small>Updated Available Supply (%)</small>
+            <input type="text" class="form-control font-10 transparent-field" id="urs" placeholder="100.00">
+            <small>Updated Reserve Supply (%)</small>
           </div>
         </div>
         <div class="form-group row">
-          <label for="has" class="col-sm-4 col-form-label">Historical Available Supply</label>
+          <label for="hrs" class="col-sm-4 col-form-label">Historical Reserve Supply</label>
           <div class="col-sm-8">
-            <input type="text" class="form-control font-10 transparent-field" id="has" placeholder="2,500,000,000">
-            <small>Available Supply | Last Historical High</small>
+            <input type="text" class="form-control font-10 transparent-field" id="hrs" placeholder="2,500,000,000">
+            <small>Reserve Supply | Last Historical High</small>
           </div>
         </div>
         <div class="form-group row">
-          <label for="pas" class="col-sm-4 col-form-label">Previous Available Supply</label>
+          <label for="prs" class="col-sm-4 col-form-label">Previous Reserve Supply</label>
           <div class="col-sm-8">
-            <input type="text" class="form-control font-10 transparent-field" id="pas" placeholder="2,500,000,000">
-            <small>Value = L<sub>as</sub> (%) Before Execution | Function 3</small>
+            <input type="text" class="form-control font-10 transparent-field" id="prs" placeholder="2,500,000,000">
+            <small>Value = L<sub>rs</sub> (%) Before Execution | Function 3</small>
           </div>
         </div>
         <div class="form-group row">
-          <label for="ias" class="col-sm-4 col-form-label">Increased Available Supply</label>
+          <label for="irs" class="col-sm-4 col-form-label">Increased Reserve Supply</label>
           <div class="col-sm-8">
-            <input type="text" class="form-control font-10 transparent-field" id="ias" placeholder="2,500,000,000">
-            <small>Increase in Available & Total Supply</small>
+            <input type="text" class="form-control font-10 transparent-field" id="irs" placeholder="2,500,000,000">
+            <small>Increase in Reserve & Total Supply</small>
           </div>
         </div>
         <div class="form-group row mb-0">
-          <label for="cas" class="col-sm-4 col-form-label">Current Available Supply</label>
+          <label for="crs" class="col-sm-4 col-form-label">Current Reserve Supply</label>
           <div class="col-sm-8">
-            <input type="text" class="form-control font-10 transparent-field" id="cas" placeholder="2,500,000,000">
+            <input type="text" class="form-control font-10 transparent-field" id="crs" placeholder="2,500,000,000">
           </div>
         </div>
         <div class="row">
@@ -298,7 +304,16 @@
           <label for="las" class="col-sm-4 col-form-label">L<sub>as</sub> (%)</label>
           <div class="col-sm-8">
             <input type="text" class="form-control font-10 transparent-field" id="las" placeholder="80.00">
-            <small>Available Supply (%)</small>
+            <div class="row">
+              <div class="col-5">
+                <small>Available Supply (%)</small>
+              </div>
+              <div class="col-7 text-right" *ngIf="adminService.didRunFunction4">
+                <small class="text-orange">
+                  (Updated After Running Function 4)
+                </small>
+              </div>
+            </div>
           </div>
         </div>
         <div class="form-group row">
@@ -322,7 +337,7 @@
             <small class="d-sm-none">Adjusting Factor | Rate of Increase | Total Supply</small>
           </div>
           <div class="col-sm-4 text-right">
-            <button class="btn btn-purple btn-sm" (click)="submit()">Run Function 2</button>
+            <button class="btn btn-purple btn-sm" (click)="submit(2)">Run Function 2</button>
           </div>
         </div>
         <div class="row d-none d-sm-flex">
@@ -350,7 +365,16 @@
           <label for="las" class="col-sm-4 col-form-label">Result (%)</label>
           <div class="col-sm-8">
             <input type="text" class="form-control font-10 transparent-field" id="result" placeholder="80.00">
-            <small>Increase Total Supply (%)</small>
+            <div class="row">
+              <div class="col-5">
+                <small>Increase Total Supply (%)</small>
+              </div>
+              <div class="col-7 text-right" *ngIf="adminService.didRunFunction4">
+                <small class="text-orange">
+                  (Updated After Running Function 4)
+                </small>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -457,7 +481,7 @@
             <small class="d-sm-none">Adjusting Factor | Rate of Increase/Decrease | Value of Asset/Position</small>
           </div>
           <div class="col-sm-4 text-right">
-            <button class="btn btn-purple btn-sm" (click)="submit()">Run Function 1</button>
+            <button class="btn btn-purple btn-sm" (click)="submit(1)">Run Function 1</button>
           </div>
         </div>
         <div class="row d-none d-sm-flex">
@@ -473,7 +497,12 @@
       <div class="card-header card-header-pink border-bottom-0 font-12">
         <div class="row">
           <div class="col">
-            <span class="header-title">Output Function 1</span>
+            <span class="header-title">
+              Output Function 1
+              <span class="text-orange" *ngIf="adminService.didRunFunction2">
+                (Updated after execution Function 2)
+              </span>
+            </span>
             <div class="data-tip">
               <span>Download Output</span>
             </div>

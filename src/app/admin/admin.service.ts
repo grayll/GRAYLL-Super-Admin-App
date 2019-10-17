@@ -34,6 +34,33 @@ export class AdminService {
   private _isNewUserSignUpPaused: boolean;
   private _isUserSignInPaused: boolean;
 	private _isNewUserSignInPaused: boolean;
+	private _didRunFunction4: boolean;
+	private _didRunFunction3: boolean;
+	private _didRunFunction2: boolean;
+	
+	get didRunFunction4(): boolean {
+		return this._didRunFunction4;
+	}
+	
+	set didRunFunction4(value: boolean) {
+		this._didRunFunction4 = value;
+	}
+	
+	get didRunFunction3(): boolean {
+		return this._didRunFunction3;
+	}
+	
+	set didRunFunction3(value: boolean) {
+		this._didRunFunction3 = value;
+	}
+	
+	get didRunFunction2(): boolean {
+		return this._didRunFunction2;
+	}
+	
+	set didRunFunction2(value: boolean) {
+		this._didRunFunction2 = value;
+	}
 	
 	get isUserSignUpPaused(): boolean {
 		return this._isUserSignUpPaused;

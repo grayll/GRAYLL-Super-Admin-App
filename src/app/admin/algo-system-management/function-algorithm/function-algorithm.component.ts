@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {faCheck, faTimes} from '@fortawesome/free-solid-svg-icons';
+import {AdminService} from '../../admin.service';
 
 @Component({
   selector: 'app-function-algorithm',
@@ -63,13 +64,27 @@ export class FunctionAlgorithmComponent implements OnInit {
 	selectedUnit: {id: number, value: string} = this.selectUnits[2];
   tableRows = Array(100).fill(this.tableRowMockup);
 
-  constructor() { }
+  constructor(
+    public adminService: AdminService
+  ) { }
 
   ngOnInit() {
   }
 
-  submit() {
-    // this.error = true;
+  submit(functionNumber: number) {
+    switch (functionNumber) {
+	    case 1:
+	    	break;
+	    case 2:
+	    	this.adminService.didRunFunction2 = true;
+	    	break;
+	    case 3:
+		    this.adminService.didRunFunction3 = true;
+		    break;
+	    default:
+		    this.adminService.didRunFunction4 = true;
+		    break;
+    }
   }
 
 }
