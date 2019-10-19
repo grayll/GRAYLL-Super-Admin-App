@@ -72,6 +72,7 @@ export class FunctionAlgorithmComponent implements OnInit {
   }
 
   submit(functionNumber: number) {
+  	this.adminService.setDidRunAllFunctionsTo(false);
     switch (functionNumber) {
 	    case 1:
 	    	break;

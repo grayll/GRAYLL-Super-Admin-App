@@ -4,22 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class AdminService {
-	get isNewUserSignUpPaused(): boolean {
-		return this._isNewUserSignUpPaused;
-	}
 	
-	set isNewUserSignUpPaused(value: boolean) {
-		this._isNewUserSignUpPaused = value;
-	}
-	
-	get isNewUserSignInPaused(): boolean {
-		return this._isNewUserSignInPaused;
-	}
-	
-	set isNewUserSignInPaused(value: boolean) {
-		this._isNewUserSignInPaused = value;
-	}
-
   private _gry1FunctionActivated: boolean;
   private _gry2FunctionActivated: boolean;
   private _gry3FunctionActivated: boolean;
@@ -37,6 +22,22 @@ export class AdminService {
 	private _didRunFunction4: boolean;
 	private _didRunFunction3: boolean;
 	private _didRunFunction2: boolean;
+	
+	get isNewUserSignUpPaused(): boolean {
+		return this._isNewUserSignUpPaused;
+	}
+	
+	set isNewUserSignUpPaused(value: boolean) {
+		this._isNewUserSignUpPaused = value;
+	}
+	
+	get isNewUserSignInPaused(): boolean {
+		return this._isNewUserSignInPaused;
+	}
+	
+	set isNewUserSignInPaused(value: boolean) {
+		this._isNewUserSignInPaused = value;
+	}
 	
 	get didRunFunction4(): boolean {
 		return this._didRunFunction4;
@@ -156,6 +157,12 @@ export class AdminService {
 
   set algoSystemNewUserActivated(value: boolean) {
     this._algoSystemNewUserActivated = value;
+  }
+  
+  setDidRunAllFunctionsTo(didRun: boolean) {
+		this._didRunFunction2 = didRun;
+		this.didRunFunction3 = didRun;
+		this.didRunFunction4 = didRun;
   }
 
   constructor() { }

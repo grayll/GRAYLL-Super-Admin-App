@@ -88,7 +88,6 @@
             <small class="text-orange" *ngIf="adminService.didRunFunction4">
               Increased 2,847,375 GRX After Execution of Function 4
             </small>
-            <br>
             <small class="text-orange" *ngIf="adminService.didRunFunction3">
               Increased 2,847,375 GRX After Execution of Function 3
             </small>
@@ -495,17 +494,38 @@
   <div class="col-sm-12 col-lg-6">
     <div class="card h-100">
       <div class="card-header card-header-pink border-bottom-0 font-12">
-        <div class="row">
-          <div class="col">
+        <div class="row d-none d-sm-flex">
+          <div class="col-sm-4">
             <span class="header-title">
               Output Function 1
-              <span class="text-orange" *ngIf="adminService.didRunFunction2">
-                (Updated after execution Function 2)
-              </span>
             </span>
+          </div>
+          <div class="col-sm-4 text-center font-10">
+            <span style="text-transform: none; font-weight: normal;" class="text-orange" *ngIf="adminService.didRunFunction2">
+              (Updated after execution Function 2)
+            </span>
+          </div>
+          <div class="col-sm-4">
             <div class="data-tip">
               <span>Download Output</span>
             </div>
+          </div>
+        </div>
+        <div class="row d-sm-none">
+          <div class="col-6">
+            <span class="header-title">
+              Output Function 1
+            </span>
+          </div>
+          <div class="col-6">
+            <div class="data-tip">
+              <span>Download Output</span>
+            </div>
+          </div>
+          <div *ngIf="adminService.didRunFunction2" class="col-12 text-center font-12 mt-2">
+            <span style="text-transform: none; font-weight: normal;" class="text-orange">
+              (Updated after execution Function 2)
+            </span>
           </div>
         </div>
       </div>
