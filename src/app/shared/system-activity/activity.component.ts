@@ -10,6 +10,7 @@ import {
 import {ClipboardService} from 'ngx-clipboard';
 import {SnotifyService} from 'ng-snotify';
 import {CountdownConfig} from 'ngx-countdown/src/countdown.config';
+import {AlgoPositionModel} from '../../data/models/algoPositionModel';
 
 @Component({
 	selector: 'app-activity',
@@ -20,6 +21,8 @@ export class ActivityComponent implements OnInit, OnChanges {
 	
 	@Input() activeTabId: string;
 	@Input() showCompletedOrdersLink: boolean;
+	
+	openAlgoPositions: AlgoPositionModel[] = [];
 	
 	selectedTab: {id: string, name: string};
 	isSortedUpByPositionValue: boolean;
@@ -39,12 +42,6 @@ export class ActivityComponent implements OnInit, OnChanges {
 			name: 'All Algo Positions'
 		}
 	];
-	countdownConfig: CountdownConfig = {
-		leftTime: 86400 * 13,
-		demand: false,
-		template: '$!h!:$!m! | $!d!',
-		effect: null
-	};
 	
 	// Font Awesome Icons
 	faDownload = faArrowAltCircleDown;
@@ -59,7 +56,9 @@ export class ActivityComponent implements OnInit, OnChanges {
 	constructor(
 	private clipboardService: ClipboardService,
 	private snotifyService: SnotifyService
-	) {}
+	) {
+		this.populateOpenAlgoPositionsArray();
+	}
 	
 	ngOnInit() {
 		this.setActiveTab();
@@ -72,7 +71,7 @@ export class ActivityComponent implements OnInit, OnChanges {
 	}
 	
 	private setActiveTab() {
-		if (this.activeTabId) {
+		if (this.activeTabId && this.activeTabId !== 'allOrders' && this.activeTabId !== 'transfers' && this.activeTabId !== 'networkHistory') {
 			this.selectedTab = this.activityTabs.find((t) => t.id === this.activeTabId);
 		} else {
 			this.selectedTab = this.activityTabs[0];
@@ -117,6 +116,47 @@ export class ActivityComponent implements OnInit, OnChanges {
 		if (this.clipboardService.copyFromContent(account)) {
 			this.snotifyService.simple('Copied to clipboard.');
 		}
+	}
+	
+	// Infinite Scroll
+	onScroll() {
+		alert('scrolled');
+	}
+	
+	getCountdownConfigFor(duration: number): CountdownConfig {
+		return {
+			leftTime: duration * 13,
+			demand: false,
+			template: '$!h!:$!m! | $!d!',
+			effect: null
+		};
+	}
+	
+	private populateOpenAlgoPositionsArray() {
+		const mockup = new AlgoPositionModel(
+		1,
+		'18/08/2019 04:14',
+		'OPEN',
+		86400,
+		'GRY 1',
+		0.14500,
+		0.14500,
+		2110000000.55555,
+		1000000000.55555,
+		110.22,
+		'0108181408618385411',
+		'0108181408618385411'
+		);
+		this.openAlgoPositions.push(mockup);
+		this.openAlgoPositions.push(mockup);
+		this.openAlgoPositions.push(mockup);
+		this.openAlgoPositions.push(mockup);
+		this.openAlgoPositions.push(mockup);
+		this.openAlgoPositions.push(mockup);
+		this.openAlgoPositions.push(mockup);
+		this.openAlgoPositions.push(mockup);
+		this.openAlgoPositions.push(mockup);
+		this.openAlgoPositions.push(mockup);
 	}
 	
 }
