@@ -90,14 +90,18 @@
             <small>Base Adjusting Factor</small>
           </div>
         </div>
-        <div class="form-group row">
+        <div class="form-group row mb-0">
           <label for="c" class="col-sm-4 col-form-label">C</label>
           <div class="col-sm-8">
             <input type="text" class="form-control font-10 transparent-field" id="c" placeholder="-3">
-            <small>Adjusting Factor | Rate of Increase | Total Supply (Concave + | Convex -)</small>
+            <small>
+              Adjusting Factor | Rate of Increase/Decrease | Value of Asset Position
+              <br>
+              (Concave + | Convex -)
+            </small>
           </div>
         </div>
-        <div class="row mt-3">
+        <div class="row mt-1">
           <div class="col-6 col-md-4 offset-md-4 text-center">
             <button class="btn btn-purple" (click)="submit()">Submit</button>
           </div>

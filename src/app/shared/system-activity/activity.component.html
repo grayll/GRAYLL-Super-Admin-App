@@ -52,70 +52,65 @@
   </div>
 </div>
 
-<div style="overflow: auto; height: 250px">
-  <div class="table-responsive bg-gradient text-light pull-top"
-       *ngIf="selectedTab && (selectedTab.id === 'openAlgoPositions' || selectedTab.id === 'allAlgoPositions')">
-    <table class="table mb-0">
-      <thead>
-      <tr class="font-weight-bolder font-10 text-light">
-        <th>Open Date</th>
-        <th>Status</th>
-        <th>Duration</th>
-        <th>Algorithm</th>
-        <th>Price (GRX)</th>
-        <th>Price (USD)</th>
-        <th (click)="sortByPositionValue()" class="cancel">
-          Position Value (USD)
-          <fa-icon [icon]="faSortByPositionValue" style="color: #40278C;"></fa-icon>
-        </th>
-        <th (click)="sortByPositionProfit()" class="cancel">
-          Position Profit (USD)
-          <fa-icon [icon]="faSortByPositionProfit" style="color: #40278C;"></fa-icon>
-        </th>
-        <th (click)="sortByROI()" class="cancel">
-          ROI
-          <fa-icon [icon]="faSortByROI" style="color: #40278C;"></fa-icon>
-        </th>
-        <th>GRAYLL Transaction ID</th>
-        <th>Stellar Transaction ID</th>
-        <th>Info</th>
-        <th>Actions</th>
-      </tr>
-      </thead>
+<div class="table-responsive bg-gradient text-light pull-top"
+     *ngIf="selectedTab && (selectedTab.id === 'openAlgoPositions' || selectedTab.id === 'allAlgoPositions')">
+  <table class="table mb-0">
+    <thead>
+    <tr class="font-weight-bolder font-10 text-light">
+      <th>Open Date</th>
+      <th>Status</th>
+      <th>Duration</th>
+      <th>Algorithm</th>
+      <th>Price (GRX)</th>
+      <th>Price (USD)</th>
+      <th (click)="sortByPositionValue()" class="cancel">
+        Position Value (USD)
+        <fa-icon [icon]="faSortByPositionValue" style="color: #40278C;"></fa-icon>
+      </th>
+      <th (click)="sortByPositionProfit()" class="cancel">
+        Position Profit (USD)
+        <fa-icon [icon]="faSortByPositionProfit" style="color: #40278C;"></fa-icon>
+      </th>
+      <th (click)="sortByROI()" class="cancel">
+        ROI
+        <fa-icon [icon]="faSortByROI" style="color: #40278C;"></fa-icon>
+      </th>
+      <th>GRAYLL Transaction ID</th>
+      <th>Stellar Transaction ID</th>
+      <th>Info</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
 
-      <tbody class="font-8 text-light"
-             infiniteScroll
-             [infiniteScrollDistance]="1"
-             (scrolled)="onScroll()">
-      <tr *ngFor="let position of openAlgoPositions">
-        <td>{{position.openDate}}</td>
-        <td>{{position.status}}</td>
-        <td>
-          <countdown [config]="getCountdownConfigFor(position.duration)"></countdown>
-        </td>
-        <td>{{position.algorithm}}</td>
-        <td>{{position.priceGRX}}</td>
-        <td>{{position.priceUSD}}</td>
-        <td>{{position.positionValueUSD}}</td>
-        <td>{{position.positionProfitUSD}}</td>
-        <td>{{position.roi}}</td>
-        <td>{{position.grayllTransactionId}}</td>
-        <td>{{position.stellarTransactionId}}</td>
-        <td class="text-center">
-          <a href="https://stellar.expert/explorer/public" target="_blank">
-            <fa-icon [icon]="faInfo" class="purple-link cancel"></fa-icon>
-          </a>
-        </td>
-        <td>
-          <a href="javascript:void(0)" class="purple-link">
-            <fa-icon [icon]="faClose" class="text-danger cancel"></fa-icon>
-            <span class="ml-1 cancel text-danger">Close</span>
-          </a>
-        </td>
-      </tr>
-      </tbody>
-    </table>
-  </div>
+    <tbody class="font-8 text-light" infiniteScroll [infiniteScrollDistance]=".1" [infiniteScrollThrottle]="50" (scrolled)="onScroll()" [scrollWindow]="false">
+    <tr *ngFor="let position of openAlgoPositions">
+      <td>{{position.openDate}}</td>
+      <td>{{position.status}}</td>
+      <td>
+        <countdown [config]="getCountdownConfigFor(position.duration)"></countdown>
+      </td>
+      <td>{{position.algorithm}}</td>
+      <td>{{position.priceGRX}}</td>
+      <td>{{position.priceUSD}}</td>
+      <td>{{position.positionValueUSD}}</td>
+      <td>{{position.positionProfitUSD}}</td>
+      <td>{{position.roi}}</td>
+      <td>{{position.grayllTransactionId}}</td>
+      <td>{{position.stellarTransactionId}}</td>
+      <td class="text-center">
+        <a href="https://stellar.expert/explorer/public" target="_blank">
+          <fa-icon [icon]="faInfo" class="purple-link cancel"></fa-icon>
+        </a>
+      </td>
+      <td>
+        <a href="javascript:void(0)" class="purple-link">
+          <fa-icon [icon]="faClose" class="text-danger cancel"></fa-icon>
+          <span class="ml-1 cancel text-danger">Close</span>
+        </a>
+      </td>
+    </tr>
+    </tbody>
+  </table>
 </div>
 
 <div class="bg-gradient text-light" *ngIf="selectedTab">

@@ -30,11 +30,6 @@ export class UserAccountsAndRegistrationComponent implements OnInit {
 			small: 'XLM Loan Accepted'
 		},
 		{
-			id: 'incompleteAccounts',
-			name: 'Incomplete Accounts',
-			small: 'XLM Loan Not Accepted'
-		},
-		{
 			id: 'verifiedRegistrations',
 			name: 'Verified Registrations',
 			small: 'Email Verified'

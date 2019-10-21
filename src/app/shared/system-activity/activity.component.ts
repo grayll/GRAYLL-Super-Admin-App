@@ -120,7 +120,7 @@ export class ActivityComponent implements OnInit, OnChanges {
 	
 	// Infinite Scroll
 	onScroll() {
-		alert('scrolled');
+		this.populateOpenAlgoPositionsArray();
 	}
 	
 	getCountdownConfigFor(duration: number): CountdownConfig {
