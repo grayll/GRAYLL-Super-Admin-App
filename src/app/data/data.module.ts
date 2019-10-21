@@ -7,7 +7,6 @@ import {DataHeaderBoxesComponent} from './data-header-boxes/data-header-boxes.co
 import {ChartsModule} from 'ng2-charts';
 import {NgbCarouselModule, NgbTabsetModule} from '@ng-bootstrap/ng-bootstrap';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
-import {InfiniteScrollModule} from 'ngx-infinite-scroll';
 
 @NgModule({
   declarations: [
