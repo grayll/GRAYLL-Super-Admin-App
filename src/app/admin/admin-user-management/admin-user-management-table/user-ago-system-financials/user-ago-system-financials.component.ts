@@ -9,6 +9,8 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import {ClipboardService} from 'ngx-clipboard';
 import {SnotifyService} from 'ng-snotify';
+import {UserAlgoSystemFinancialsModel} from './models/user-algo-system-financials.model';
+import {UserAccountFinancialsModel} from '../user-account-financials/models/user-account-financials.model';
 
 @Component({
   selector: 'app-user-ago-system-financials',
@@ -29,6 +31,7 @@ export class UserAgoSystemFinancialsComponent implements OnInit {
 	isSortedUpByGRY2OpenPositions: boolean;
 	isSortedUpByGRY3OpenPositions: boolean;
 	isSortedUpByGRZOpenPositions: boolean;
+	userAccounts: UserAlgoSystemFinancialsModel[] = [];
 	userAccountTabs = [
 		{
 			id: 'uapg',
@@ -62,6 +65,7 @@ export class UserAgoSystemFinancialsComponent implements OnInit {
 	private clipboardService: ClipboardService,
 	private snotifyService: SnotifyService
 	) {
+		this.populateUserAccountsArray();
 		this.setActiveTab();
 	}
 	
@@ -75,6 +79,38 @@ export class UserAgoSystemFinancialsComponent implements OnInit {
 	
 	private setActiveTab() {
 		this.selectedTab = this.userAccountTabs[0];
+	}
+	
+	private populateUserAccountsArray() {
+		const mockup = new UserAlgoSystemFinancialsModel(
+		1,
+		"18/08/2019 04:14",
+		"Geronimhoxxxyyyzzz",
+		"de Chastaine Montaigne",
+		"swissalpbunny888@protonmail.ch",
+		"GAQQ44...H3399",
+		"111222333444555666",
+		10000000000000,
+		10000000000000,
+		10000000000000,
+		10000000000000,
+		10000000000000,
+		10000000000000,
+		10000000000000,
+		10000000000000,
+		10000000000000,
+		10000000000000
+		);
+		this.userAccounts.push(mockup);
+		this.userAccounts.push(mockup);
+		this.userAccounts.push(mockup);
+		this.userAccounts.push(mockup);
+		this.userAccounts.push(mockup);
+		this.userAccounts.push(mockup);
+		this.userAccounts.push(mockup);
+		this.userAccounts.push(mockup);
+		this.userAccounts.push(mockup);
+		this.userAccounts.push(mockup);
 	}
 	
 	sortBySignUpDate() {
@@ -188,6 +224,8 @@ export class UserAgoSystemFinancialsComponent implements OnInit {
 	}
 	
 	onTabChange(id: string) {
+		this.userAccounts = [];
+		this.populateUserAccountsArray();
 		this.selectedTab = this.userAccountTabs.find((t) => t.id === id);
 	}
 	
@@ -195,6 +233,10 @@ export class UserAgoSystemFinancialsComponent implements OnInit {
 		if (this.clipboardService.copyFromContent(account)) {
 			this.snotifyService.simple('Copied to clipboard.');
 		}
+	}
+	
+	onScroll() {
+		this.populateUserAccountsArray();
 	}
 
 }

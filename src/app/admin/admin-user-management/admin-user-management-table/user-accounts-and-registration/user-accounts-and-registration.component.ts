@@ -10,6 +10,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import {ClipboardService} from 'ngx-clipboard';
 import {SnotifyService} from 'ng-snotify';
+import {UserAccountModel} from './models/user-account.model';
 
 @Component({
   selector: 'app-user-accounts-and-registration',
@@ -23,6 +24,7 @@ export class UserAccountsAndRegistrationComponent implements OnInit {
 	isSortedUpByAccountValue: boolean;
 	isSortedUpByPositionsValue: boolean;
 	isSortedUpByCommissions: boolean;
+	userAccounts: UserAccountModel[] = [];
 	userAccountTabs = [
 		{
 			id: 'completedAccounts',
@@ -57,6 +59,7 @@ export class UserAccountsAndRegistrationComponent implements OnInit {
 	private snotifyService: SnotifyService
 	) {
 		this.setActiveTab();
+		this.populateUserAccountsArray();
 	}
 	
 	ngOnInit() {}
@@ -69,6 +72,32 @@ export class UserAccountsAndRegistrationComponent implements OnInit {
 	
 	private setActiveTab() {
 		this.selectedTab = this.userAccountTabs[0];
+	}
+	
+	private populateUserAccountsArray() {
+		const mockup = new UserAccountModel(
+		1,
+		"18/08/2019 04:14",
+		"Geronimhoxxxyyyzzz",
+		"de Chastaine Montaigne",
+		"swissalpbunny888@protonmail.ch",
+		"+999 15678888111",
+		"111222333444555666",
+		"GAQQ44...H3399",
+		10000000000000,
+		10000000000000,
+		10000
+		);
+		this.userAccounts.push(mockup);
+		this.userAccounts.push(mockup);
+		this.userAccounts.push(mockup);
+		this.userAccounts.push(mockup);
+		this.userAccounts.push(mockup);
+		this.userAccounts.push(mockup);
+		this.userAccounts.push(mockup);
+		this.userAccounts.push(mockup);
+		this.userAccounts.push(mockup);
+		this.userAccounts.push(mockup);
 	}
 	
 	sortBySignUpDate() {
@@ -112,6 +141,8 @@ export class UserAccountsAndRegistrationComponent implements OnInit {
 	}
 	
 	onTabChange(id: string) {
+		this.userAccounts = [];
+		this.populateUserAccountsArray();
 		this.selectedTab = this.userAccountTabs.find((t) => t.id === id);
 	}
 	
@@ -119,6 +150,11 @@ export class UserAccountsAndRegistrationComponent implements OnInit {
 		if (this.clipboardService.copyFromContent(account)) {
 			this.snotifyService.simple('Copied to clipboard.');
 		}
+	}
+	
+	// Infinite Scroll
+	onScroll() {
+		this.populateUserAccountsArray();
 	}
 
 }

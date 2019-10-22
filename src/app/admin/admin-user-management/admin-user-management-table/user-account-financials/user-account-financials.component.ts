@@ -1,7 +1,8 @@
 import {Component, OnInit, SimpleChanges} from '@angular/core';
 import {
 	faArrowAltCircleDown,
-	faCaretDown, faCaretUp,
+	faCaretDown,
+	faCaretUp,
 	faCopy,
 	faInfoCircle,
 	faSearch,
@@ -9,6 +10,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import {ClipboardService} from 'ngx-clipboard';
 import {SnotifyService} from 'ng-snotify';
+import {UserAccountFinancialsModel} from './models/user-account-financials.model';
 
 @Component({
   selector: 'app-user-account-financials',
@@ -27,6 +29,7 @@ export class UserAccountFinancialsComponent implements OnInit {
 	isSortedUpByTransfersUSD: boolean;
 	isSortedUpByTransfersGRX: boolean;
 	isSortedUpByTransfersXLM: boolean;
+	userAccounts: UserAccountFinancialsModel[] = [];
 	userAccountTabs = [
 		{
 			id: 'uab',
@@ -60,6 +63,7 @@ export class UserAccountFinancialsComponent implements OnInit {
 	private clipboardService: ClipboardService,
 	private snotifyService: SnotifyService
 	) {
+		this.populateUserAccountsArray();
 		this.setActiveTab();
 	}
 	
@@ -73,6 +77,38 @@ export class UserAccountFinancialsComponent implements OnInit {
 	
 	private setActiveTab() {
 		this.selectedTab = this.userAccountTabs[0];
+	}
+	
+	private populateUserAccountsArray() {
+		const mockup = new UserAccountFinancialsModel(
+		1,
+		"18/08/2019 04:14",
+		"Geronimhoxxxyyyzzz",
+		"de Chastaine Montaigne",
+		"swissalpbunny888@protonmail.ch",
+		"+999 15678888111",
+		"111222333444555666",
+		"GAQQ44...H3399",
+		10000000000000,
+		'swissalpbunny888',
+		10000000000000,
+		10000000000000,
+		10000000000000,
+		10000000000000,
+		10000000000000,
+		10000000000000,
+		10000000000000
+		);
+		this.userAccounts.push(mockup);
+		this.userAccounts.push(mockup);
+		this.userAccounts.push(mockup);
+		this.userAccounts.push(mockup);
+		this.userAccounts.push(mockup);
+		this.userAccounts.push(mockup);
+		this.userAccounts.push(mockup);
+		this.userAccounts.push(mockup);
+		this.userAccounts.push(mockup);
+		this.userAccounts.push(mockup);
 	}
 	
 	sortBySignUpDate() {
@@ -166,6 +202,8 @@ export class UserAccountFinancialsComponent implements OnInit {
 	}
 	
 	onTabChange(id: string) {
+		this.userAccounts = [];
+		this.populateUserAccountsArray();
 		this.selectedTab = this.userAccountTabs.find((t) => t.id === id);
 	}
 	
@@ -173,6 +211,11 @@ export class UserAccountFinancialsComponent implements OnInit {
 		if (this.clipboardService.copyFromContent(account)) {
 			this.snotifyService.simple('Copied to clipboard.');
 		}
+	}
+	
+	// Infinite Scroll
+	onScroll() {
+		this.populateUserAccountsArray();
 	}
 
 }
