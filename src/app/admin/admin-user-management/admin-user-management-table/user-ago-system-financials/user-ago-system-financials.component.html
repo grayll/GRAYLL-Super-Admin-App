@@ -1,3 +1,177 @@
-<p>
-  user-ago-system-financials works!
-</p>
+<router-outlet name="popup"></router-outlet>
+<div class="bg-gradient text-light" id="systemActivityTable">
+  <div class="row align-items-center justify-content-center p-2">
+    <div class="col-12 col-sm-3 align-self-center" style="max-width: 240px;" *ngIf="selectedTab">
+      <h6 class="mb-0 text-center py-2">{{selectedTab.name}}</h6>
+    </div>
+    <div class="col-12 col-sm-7 justify-content-center align-items-center" *ngIf="selectedTab">
+      <ngb-tabset type="pills" class="custom-pills" (tabChange)="onTabChange($event.nextId)" [activeId]="selectedTab.id">
+        <ng-container *ngFor="let tab of userAccountTabs">
+          <ngb-tab [id]="tab.id">
+            <ng-template ngbTabTitle>
+              {{tab.name}} <br>
+            </ng-template>
+          </ngb-tab>
+        </ng-container>
+      </ngb-tabset>
+    </div>
+    <div class="col-12 col-sm-2 text-center">
+      <hr class="mt-0 d-sm-none">
+      <a class="purple-link font-10" href="javascript:void(0)">
+        <fa-icon [icon]="faDownload" [fixedWidth]="true"></fa-icon>
+        Download {{selectedTab.name}}
+      </a>
+    </div>
+  </div>
+
+  <hr class="mt-0 mb-0">
+</div>
+
+<div class="bg-gradient text-light">
+  <div class="row justify-content-center align-items-center mb-1 p-2">
+    <div class="col-12 col-sm-3 text-center py-2">
+      <span class="align-middle font-weight-bolder font-14">User Accounts (9,000,000)</span>
+    </div>
+    <div class="col-6 col-sm-3 text-center font-12" style="outline: none;"
+         [routerLink]="['/admin/overview', {outlets: {popup: ['confirm-status', 'Sign Up']}}]">
+      <fa-icon [icon]="faClose" class="text-danger cancel"></fa-icon>
+      <span class="ml-1 cancel text-danger">Pause New User Sign Up</span>
+    </div>
+    <div class="col-6 col-sm-3 text-center font-12" style="outline: none;"
+         [routerLink]="['/admin/overview', {outlets: {popup: ['confirm-status', 'App Sign In']}}]">
+      <fa-icon [icon]="faClose" class="text-danger cancel"></fa-icon>
+      <span class="ml-1 cancel text-danger">Pause User App Sign In</span>
+    </div>
+    <div class="col-6 col-sm-3 text-center mt-2 mt-sm-0">
+      <div class="row">
+        <div class="col search">
+          <div class="input-group">
+            <input class="form-control form-control-no-border bg-transparent py-2 border border-right-0 text-light"
+                   type="search" style="border-color: #40278C!important">
+            <span class="input-group-append">
+              <div class="input-group-text bg-transparent">
+                <fa-icon style="color: #40278C" [icon]="faSearch"></fa-icon>
+              </div>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col d-none d-md-block"></div>
+  </div>
+</div>
+
+<div class="table-responsive bg-gradient text-light pull-top">
+  <table class="table mb-0">
+    <thead>
+    <tr class="font-weight-bolder font-10 text-light">
+      <th (click)="sortBySignUpDate()" class="cancel">
+        Sign Up Date
+        <fa-icon [icon]="faSortBySignUpDate" style="color: #40278C;"></fa-icon>
+      </th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email Address</th>
+      <th>Account</th>
+      <th>GRAYLL ID</th>
+      <ng-container *ngIf="selectedTab.id === 'uapg'">
+        <th (click)="sortByCurrentAlgoPositionUSD()" class="cancel">
+          Algo Positions (USD)
+          <fa-icon [icon]="faSortByCurrentAlgoPositionsUSD" style="color: #40278C;"></fa-icon>
+          <br>
+          <small>Current Account Total</small>
+        </th>
+        <th (click)="sortByHistoricalAlgoPositionUSD()" class="cancel">
+          Algo Positions (USD)
+          <fa-icon [icon]="faSortByHistoricalAlgoPositionsUSD" style="color: #40278C;"></fa-icon>
+          <br>
+          <small>Historical Account Total</small>
+        </th>
+        <th (click)="sortByAlgoCommissionsUSD()" class="cancel">
+          Algo Commissions (USD)
+          <fa-icon [icon]="faSortByAlgoCommissionsUSD" style="color: #40278C;"></fa-icon>
+          <br>
+          <small>Historical Total</small>
+        </th>
+        <th (click)="sortByOpenAlgoPositions()" class="cancel">
+          Open Algo Positions (#)
+          <fa-icon [icon]="faSortByOpenAlgoPositions" style="color: #40278C;"></fa-icon>
+          <br>
+          <small>Current Account Total</small>
+        </th>
+        <th (click)="sortByClosedAlgoPositions()" class="cancel">
+          Closed Algo Positions (#)
+          <fa-icon [icon]="faSortByClosedAlgoPositions" style="color: #40278C;"></fa-icon>
+          <br>
+          <small>Historical Account Total</small>
+        </th>
+      </ng-container>
+      <ng-container *ngIf="selectedTab.id === 'uapd'">
+        <th (click)="sortByGRYOpenPositions()" class="cancel">
+          GRY Open Positions (USD)
+          <fa-icon [icon]="faSortByGRYOpenPositions" style="color: #40278C;"></fa-icon>
+          <br>
+          <small>Current Account Total</small>
+        </th>
+        <th (click)="sortByGRY1OpenPositions()" class="cancel">
+          GRY 1 Open Positions (USD)
+          <fa-icon [icon]="faSortByGRY1OpenPositions" style="color: #40278C;"></fa-icon>
+          <br>
+          <small>Current Account Total</small>
+        </th>
+        <th (click)="sortByGRY2OpenPositions()" class="cancel">
+          GRY 2 Open Positions (USD)
+          <fa-icon [icon]="faSortByGRY2OpenPositions" style="color: #40278C;"></fa-icon>
+          <br>
+          <small>Current Account Total</small>
+        </th>
+        <th (click)="sortByGRY3OpenPositions()" class="cancel">
+          GRY 3 Open Positions (USD)
+          <fa-icon [icon]="faSortByGRY3OpenPositions" style="color: #40278C;"></fa-icon>
+          <br>
+          <small>Current Account Total</small>
+        </th>
+        <th (click)="sortByGRZOpenPositions()" class="cancel">
+          GRZ Open Positions (USD)
+          <fa-icon [icon]="faSortByGRZOpenPositions" style="color: #40278C;"></fa-icon>
+          <br>
+          <small>Historical Total</small>
+        </th>
+      </ng-container>
+    </tr>
+    </thead>
+
+    <tbody class="font-8 text-light">
+    <tr *ngFor="let i of [].constructor(20)">
+      <td>18/08/2019 04:14</td>
+      <td>{{'GeronimhoxxxyyyzzzTHISWONTBEDISPLAYED' | slice:0:18}}</td>
+      <td>{{'de Chastaine Montaigne' | slice:0:32}}</td>
+      <td>{{'swissalpbunny888@protonmail.ch' | slice:0:32}}</td>
+      <td>
+        <a href="https://stellar.expert/explorer" class="purple-link" target="_blank">
+          GAQQ44...H3399
+        </a>
+      </td>
+      <td>
+        <a href="javascript:void(0)" class="purple-link">
+          111222333444555666
+        </a>
+      </td>
+      <ng-container *ngIf="selectedTab.id === 'uapg'">
+        <td>1,000,000,000,000.00</td>
+        <td>1,000,000,000,000.00</td>
+        <td>1,000,000,000,000.00</td>
+        <td>1,000,000,000,000.00</td>
+        <td>1,000,000,000,000.00</td>
+      </ng-container>
+      <ng-container *ngIf="selectedTab.id === 'uapd'">
+        <td>1,000,000,000,000.00</td>
+        <td>1,000,000,000,000.00</td>
+        <td>1,000,000,000,000.00</td>
+        <td>1,000,000,000,000.00</td>
+        <td>1,000,000,000,000.00</td>
+      </ng-container>
+    </tr>
+    </tbody>
+  </table>
+</div>
