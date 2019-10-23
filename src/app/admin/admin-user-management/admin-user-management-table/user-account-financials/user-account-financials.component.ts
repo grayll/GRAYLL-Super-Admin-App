@@ -5,12 +5,12 @@ import {
 	faCaretUp,
 	faCopy,
 	faInfoCircle,
-	faSearch,
-	faTimesCircle
+	faSearch
 } from '@fortawesome/free-solid-svg-icons';
 import {ClipboardService} from 'ngx-clipboard';
 import {SnotifyService} from 'ng-snotify';
 import {UserAccountFinancialsModel} from './models/user-account-financials.model';
+import {AdminService} from '../../../admin.service';
 
 @Component({
   selector: 'app-user-account-financials',
@@ -45,7 +45,6 @@ export class UserAccountFinancialsComponent implements OnInit {
 	
 	// Font Awesome Icons
 	faDownload = faArrowAltCircleDown;
-	faClose = faTimesCircle;
 	faInfo = faInfoCircle;
 	faCopy = faCopy;
 	faSearch = faSearch;
@@ -60,8 +59,9 @@ export class UserAccountFinancialsComponent implements OnInit {
 	faSortByTotalTransfersUSD = faCaretDown;
 	
 	constructor(
-	private clipboardService: ClipboardService,
-	private snotifyService: SnotifyService
+		private clipboardService: ClipboardService,
+		private snotifyService: SnotifyService,
+		public adminService: AdminService
 	) {
 		this.populateUserAccountsArray();
 		this.setActiveTab();

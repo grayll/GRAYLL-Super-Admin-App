@@ -31,6 +31,7 @@ import { ConfirmStatusComponent } from './admin-user-management/admin-user-manag
 import { UserAccountFinancialsComponent } from './admin-user-management/admin-user-management-table/user-account-financials/user-account-financials.component';
 import { UserAgoSystemFinancialsComponent } from './admin-user-management/admin-user-management-table/user-ago-system-financials/user-ago-system-financials.component';
 import {InfiniteScrollModule} from 'ngx-infinite-scroll';
+import { UserSettingsComponent } from './admin-user-management/admin-user-management-table/user-settings/user-settings.component';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true,
@@ -61,7 +62,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     UserAccountsAndRegistrationComponent,
     ConfirmStatusComponent,
     UserAccountFinancialsComponent,
-    UserAgoSystemFinancialsComponent
+    UserAgoSystemFinancialsComponent,
+    UserSettingsComponent
   ],
   imports: [
     CommonModule,

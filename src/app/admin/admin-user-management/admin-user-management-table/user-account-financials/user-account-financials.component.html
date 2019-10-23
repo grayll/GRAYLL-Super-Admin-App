@@ -1,4 +1,3 @@
-<router-outlet name="popup"></router-outlet>
 <div class="bg-gradient text-light" id="systemActivityTable">
   <div class="row align-items-center justify-content-center p-2">
     <div class="col-12 col-sm-3 align-self-center" style="max-width: 240px;">
@@ -33,15 +32,17 @@
     <div class="col-12 col-sm-3 text-center py-2">
       <span class="align-middle font-weight-bolder font-14">User Accounts (9,000,000)</span>
     </div>
-    <div class="col-6 col-sm-3 text-center font-12" style="outline: none;"
-         [routerLink]="['/admin/overview', {outlets: {popup: ['confirm-status', 'Sign Up']}}]">
-      <fa-icon [icon]="faClose" class="text-danger cancel"></fa-icon>
-      <span class="ml-1 cancel text-danger">Pause New User Sign Up</span>
+    <div class="col-6 col-sm-3 text-center">
+      <button class="btn btn-purple" style="outline: none!important"
+              [routerLink]="['/admin/overview', {outlets: {popup: ['confirm-status', 'App Sign In']}}]">
+        {{adminService.isUserSignInPaused ? 'Activate' : 'Pause' }} User App Sign In
+      </button>
     </div>
-    <div class="col-6 col-sm-3 text-center font-12" style="outline: none;"
-         [routerLink]="['/admin/overview', {outlets: {popup: ['confirm-status', 'App Sign In']}}]">
-      <fa-icon [icon]="faClose" class="text-danger cancel"></fa-icon>
-      <span class="ml-1 cancel text-danger">Pause User App Sign In</span>
+    <div class="col-6 col-sm-3 text-center">
+      <button class="btn btn-purple" style="outline: none!important"
+              [routerLink]="['/admin/overview', {outlets: {popup: ['confirm-status', 'Sign Up']}}]">
+        {{adminService.isUserSignUpPaused ? 'Activate' : 'Pause' }} New User Sign Up
+      </button>
     </div>
     <div class="col-6 col-sm-3 text-center mt-2 mt-sm-0">
       <div class="row">
@@ -77,31 +78,31 @@
       <th>GRAYLL ID</th>
       <ng-container *ngIf="selectedTab.id === 'uab'">
         <th (click)="sortByAccountValue()" class="cancel">
-          Account Value (USD)
+          Account Value <br> (USD)
           <fa-icon [icon]="faSortByAccountValue" style="color: #40278C;"></fa-icon>
           <br>
           <small>Current Account Total</small>
         </th>
         <th (click)="sortByBalanceXLM()" class="cancel">
-          Account Balance (XLM)
+          Account Balance <br> (XLM)
           <fa-icon [icon]="faSortByBalanceXLM" style="color: #40278C;"></fa-icon>
           <br>
           <small>Current Account Total</small>
         </th>
         <th (click)="sortByBalanceGRX()" class="cancel">
-          Account Balance (GRX)
+          Account Balance <br> (GRX)
           <fa-icon [icon]="faSortByBalanceGRX" style="color: #40278C;"></fa-icon>
           <br>
           <small>Current Account Total</small>
         </th>
         <th (click)="sortByOpenOrdersXLM()" class="cancel">
-          Open Orders XLM (USD)
+          Open Orders <br> XLM (USD)
           <fa-icon [icon]="faSortByOpenOrdersXLM" style="color: #40278C;"></fa-icon>
           <br>
           <small>Current Account Total</small>
         </th>
         <th (click)="sortByOpenOrdersGRX()" class="cancel">
-          Open Orders GRX (USD)
+          Open Orders <br> GRX (USD)
           <fa-icon [icon]="faSortByOpenOrdersGRX" style="color: #40278C;"></fa-icon>
           <br>
           <small>Current Account Total</small>
@@ -115,19 +116,19 @@
         </th>
         <th>Phone number</th>
         <th (click)="sortByTotalTransfersUSD()" class="cancel">
-          Total Transfers (USD)
+          Total Transfers <br> (USD)
           <fa-icon [icon]="faSortByTotalTransfersUSD" style="color: #40278C;"></fa-icon>
           <br>
           <small>Historical Account Total</small>
         </th>
         <th (click)="sortByTotalTransfersXLM()" class="cancel">
-          Total Transfers (XLM)
+          Total Transfers <br> (XLM)
           <fa-icon [icon]="faSortByTotalTransfersXLM" style="color: #40278C;"></fa-icon>
           <br>
           <small>Historical Account Total</small>
         </th>
         <th (click)="sortByTotalTransfersGRX()" class="cancel">
-          Total Transfers (GRX)
+          Total Transfers <br> (GRX)
           <fa-icon [icon]="faSortByTotalTransfersGRX" style="color: #40278C;"></fa-icon>
           <br>
           <small>Historical Account Total</small>
@@ -141,7 +142,7 @@
       <td>{{user.signUpDate}}</td>
       <td>{{user.firstName | slice:0:18}}</td>
       <td>{{user.lastName | slice:0:32}}</td>
-      <td>{{user.emailAddress | slice:0:32}}</td>
+      <td style="word-break: break-all">{{user.emailAddress | slice:0:32}}</td>
       <td>
         <a href="https://stellar.expert/explorer" class="purple-link" target="_blank">
           {{user.account}}

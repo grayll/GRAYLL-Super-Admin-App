@@ -1,0 +1,231 @@
+<div class="bg-gradient text-light" id="user-security-settings">
+  <div class="row align-items-center justify-content-center p-2">
+    <div class="col-12 col-sm-3 align-self-center" style="max-width: 240px;">
+      <h6 class="mb-0 text-center py-2">{{selectedTab.name}}</h6>
+    </div>
+    <div class="col-12 col-sm-7 justify-content-center align-items-center" *ngIf="selectedTab">
+      <ngb-tabset type="pills" class="custom-pills" (tabChange)="onTabChange($event.nextId)" [activeId]="selectedTab.id">
+        <ng-container *ngFor="let tab of userAccountTabs">
+          <ngb-tab [id]="tab.id">
+            <ng-template ngbTabTitle>
+              {{tab.name}}
+            </ng-template>
+          </ngb-tab>
+        </ng-container>
+      </ngb-tabset>
+    </div>
+    <div class="col-12 col-sm-2 text-center">
+      <hr class="mt-0 d-sm-none">
+      <a class="purple-link font-10" href="javascript:void(0)">
+        <fa-icon [icon]="faDownload" [fixedWidth]="true"></fa-icon>
+        Download {{selectedTab.name}}
+      </a>
+    </div>
+  </div>
+
+  <hr class="mt-0 mb-0">
+</div>
+
+<div class="bg-gradient text-light">
+  <div class="row justify-content-center align-items-center mb-1 p-2">
+    <div class="col-12 col-sm-3 text-center py-2">
+      <span class="align-middle font-weight-bolder font-14">User Accounts (9,000,000)</span>
+    </div>
+    <div class="col-6 col-sm-3 text-center">
+      <button class="btn btn-purple" style="outline: none!important"
+              [routerLink]="['/admin/overview', {outlets: {popup: ['confirm-status', 'App Sign In']}}]">
+        {{adminService.isUserSignInPaused ? 'Activate' : 'Pause' }} User App Sign In
+      </button>
+    </div>
+    <div class="col-6 col-sm-3 text-center">
+      <button class="btn btn-purple" style="outline: none!important"
+              [routerLink]="['/admin/overview', {outlets: {popup: ['confirm-status', 'Sign Up']}}]">
+        {{adminService.isUserSignUpPaused ? 'Activate' : 'Pause' }} New User Sign Up
+      </button>
+    </div>
+    <div class="col-6 col-sm-3 text-center mt-2 mt-sm-0">
+      <div class="row">
+        <div class="col search">
+          <div class="input-group">
+            <input class="form-control form-control-no-border bg-transparent py-2 border border-right-0 text-light"
+                   type="search" style="border-color: #40278C!important">
+            <span class="input-group-append">
+              <div class="input-group-text bg-transparent">
+                <fa-icon style="color: #40278C" [icon]="faSearch"></fa-icon>
+              </div>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col d-none d-md-block"></div>
+  </div>
+</div>
+
+<div class="table-responsive bg-gradient text-light pull-top" style="overflow-x: hidden">
+  <table class="table mb-0">
+    <thead>
+    <tr class="font-weight-bolder font-10 text-light">
+      <th (click)="sortBySignUpDate()" class="cancel">
+        Sign Up Date
+        <fa-icon [icon]="faSortBySignUpDate" style="color: #40278C;"></fa-icon>
+      </th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email Address</th>
+      <th>Account</th>
+      <th>GRAYLL ID</th>
+      <ng-container *ngIf="selectedTab.id === 'uss'">
+        <th (click)="sortByBalanceUSD()" class="cancel">
+          Account Balance <br> (USD)
+          <fa-icon [icon]="faSortByBalanceUSD" style="color: #40278C;"></fa-icon>
+          <br>
+          <small>Current Account Total</small>
+        </th>
+        <th (click)="sortByAlgoPositions()" class="cancel">
+          Algo Positions <br> (USD)
+          <fa-icon [icon]="faSortByAlgoPositions" style="color: #40278C;"></fa-icon>
+          <br>
+          <small>Current Account Total</small>
+        </th>
+        <th (click)="sortBy2FA()" class="cancel">
+          2FA
+          <fa-icon [icon]="faSortBy2FA" style="color: #40278C;"></fa-icon>
+          <br>
+          <small>Enabled/Disabled</small>
+        </th>
+        <th (click)="sortByIPAddressConfirmation()" class="cancel">
+          IP Address <br> Confirmation
+          <fa-icon [icon]="faSortByIPAddressConfirmation" style="color: #40278C;"></fa-icon>
+          <br>
+          <small>Enabled/Disabled</small>
+        </th>
+        <th (click)="sortByMultisigTransactions()" class="cancel">
+          Multisig <br> Transactions
+          <fa-icon [icon]="faSortByMultisigTransactions" style="color: #40278C;"></fa-icon>
+          <br>
+          <small>Enabled/Disabled</small>
+        </th>
+      </ng-container>
+      <ng-container *ngIf="selectedTab.id === 'uds'">
+        <th (click)="sortByBalanceUSD()" class="cancel">
+          Account Balance <br> (USD)
+          <fa-icon [icon]="faSortByBalanceUSD" style="color: #40278C;"></fa-icon>
+          <br>
+          <small>Current Account Total</small>
+        </th>
+        <th (click)="sortByRFPeriod()" class="cancel">
+          Report <br> Frequency
+          <fa-icon [icon]="faSortByRFPeriod" style="color: #40278C;"></fa-icon>
+          <br>
+          <small>Daily/Weekly/Monthly</small>
+        </th>
+        <th (click)="sortByRFWalletBalance()" class="cancel">
+          Report <br> Frequency
+          <fa-icon [icon]="faSortByRFWalletBalance" style="color: #40278C;"></fa-icon>
+          <br>
+          <small>Wallet Balance</small>
+        </th>
+        <th (click)="sortByAccountValue()" class="cancel">
+          Report <br> Frequency
+          <fa-icon [icon]="faSortByAccountValue" style="color: #40278C;"></fa-icon>
+          <br>
+          <small>Account Value</small>
+        </th>
+        <th (click)="sortByAccountProfit()" class="cancel">
+          Report <br> Frequency
+          <fa-icon [icon]="faSortByAccountProfit" style="color: #40278C;"></fa-icon>
+          <br>
+          <small>Account Profit</small>
+        </th>
+        <th (click)="sortByOpenPosition()" class="cancel">
+          Report <br> Frequency
+          <fa-icon [icon]="faSortByOpenPosition" style="color: #40278C;"></fa-icon>
+          <br>
+          <small>Open Position</small>
+        </th>
+      </ng-container>
+      <ng-container *ngIf="selectedTab.id === 'uns'">
+        <th (click)="sortByGNEmail()" class="cancel">
+          General <br> Notifications
+          <fa-icon [icon]="faSortByGNEmail" style="color: #40278C;"></fa-icon>
+          <br>
+          <small>Email</small>
+        </th>
+        <th (click)="sortByGNApp()" class="cancel">
+          General <br> Notifications
+          <fa-icon [icon]="faSortByGNApp" style="color: #40278C;"></fa-icon>
+          <br>
+          <small>App</small>
+        </th>
+        <th (click)="sortByWNEmail()" class="cancel">
+          Wallet <br> Notifications
+          <fa-icon [icon]="faSortByWNEmail" style="color: #40278C;"></fa-icon>
+          <br>
+          <small>Email</small>
+        </th>
+        <th (click)="sortByWNApp()" class="cancel">
+          Wallet <br> Notifications
+          <fa-icon [icon]="faSortByWNApp" style="color: #40278C;"></fa-icon>
+          <br>
+          <small>App</small>
+        </th>
+        <th (click)="sortByANEmail()" class="cancel">
+          Algo <br> Notifications
+          <fa-icon [icon]="faSortByANEmail" style="color: #40278C;"></fa-icon>
+          <br>
+          <small>Email</small>
+        </th>
+        <th (click)="sortByANApp()" class="cancel">
+          Algo <br> Notifications
+          <fa-icon [icon]="faSortByANApp" style="color: #40278C;"></fa-icon>
+          <br>
+          <small>App</small>
+        </th>
+      </ng-container>
+    </tr>
+    </thead>
+
+    <tbody class="font-8 text-light" infiniteScroll [infiniteScrollDistance]=".1" [infiniteScrollThrottle]="50" (scrolled)="onScroll()" [scrollWindow]="false">
+    <tr *ngFor="let user of userAccounts">
+      <td>{{user.signUpDate}}</td>
+      <td>{{user.firstName | slice:0:18}}</td>
+      <td>{{user.lastName | slice:0:32}}</td>
+      <td style="word-break: break-all">{{user.emailAddress | slice:0:32}}</td>
+      <td>
+        <a href="https://stellar.expert/explorer" class="purple-link" target="_blank">
+          {{user.account}}
+        </a>
+      </td>
+      <td>
+        <a href="javascript:void(0)" class="purple-link">
+          {{user.grayllId}}
+        </a>
+      </td>
+      <ng-container *ngIf="selectedTab.id === 'uss'">
+        <td>{{user.accountValueUSD}}</td>
+        <td>{{user.algoPositionsUSD}}</td>
+        <td>{{user.is2FAEnabled ? 'Enabled' : 'Disabled' }}</td>
+        <td>{{user.isIPAddressConfirmationEnabled ? 'Enabled' : 'Disabled' }}</td>
+        <td>{{user.isMultisignatureTransactionsEnabled ? 'Enabled' : 'Disabled' }}</td>
+      </ng-container>
+      <ng-container *ngIf="selectedTab.id === 'uds'">
+        <td>{{user.accountValueUSD}}</td>
+        <td>{{user.reportFrequencyPeriod}}</td>
+        <td>{{user.reportFrequencyWalletBalance ? 'Enabled' : 'Disabled'}}</td>
+        <td>{{user.reportFrequencyAccountValue ? 'Enabled' : 'Disabled'}}</td>
+        <td>{{user.reportFrequencyAccountProfit ? 'Enabled' : 'Disabled'}}</td>
+        <td>{{user.reportFrequencyOpenPosition ? 'Enabled' : 'Disabled'}}</td>
+      </ng-container>
+      <ng-container *ngIf="selectedTab.id === 'uns'">
+        <td>{{user.isGeneralNotificationsEmailEnabled ? 'Enabled' : 'Disabled'}}</td>
+        <td>{{user.isGeneralNotificationsAppEnabled ? 'Enabled' : 'Disabled'}}</td>
+        <td>{{user.isWalletNotificationsEmailEnabled ? 'Enabled' : 'Disabled'}}</td>
+        <td>{{user.isWalletNotificationsAppEnabled ? 'Enabled' : 'Disabled'}}</td>
+        <td>{{user.isAlgoNotificationsEmailEnabled ? 'Enabled' : 'Disabled'}}</td>
+        <td>{{user.isAlgoNotificationsAppEnabled ? 'Enabled' : 'Disabled'}}</td>
+      </ng-container>
+    </tr>
+    </tbody>
+  </table>
+</div>

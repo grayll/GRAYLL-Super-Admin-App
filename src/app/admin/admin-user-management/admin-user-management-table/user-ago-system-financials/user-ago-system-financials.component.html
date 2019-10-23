@@ -1,4 +1,3 @@
-<router-outlet name="popup"></router-outlet>
 <div class="bg-gradient text-light" id="systemActivityTable">
   <div class="row align-items-center justify-content-center p-2">
     <div class="col-12 col-sm-3 align-self-center" style="max-width: 240px;" *ngIf="selectedTab">
@@ -32,15 +31,17 @@
     <div class="col-12 col-sm-3 text-center py-2">
       <span class="align-middle font-weight-bolder font-14">User Accounts (9,000,000)</span>
     </div>
-    <div class="col-6 col-sm-3 text-center font-12" style="outline: none;"
-         [routerLink]="['/admin/overview', {outlets: {popup: ['confirm-status', 'Sign Up']}}]">
-      <fa-icon [icon]="faClose" class="text-danger cancel"></fa-icon>
-      <span class="ml-1 cancel text-danger">Pause New User Sign Up</span>
+    <div class="col-6 col-sm-3 text-center">
+      <button class="btn btn-purple" style="outline: none!important"
+              [routerLink]="['/admin/overview', {outlets: {popup: ['confirm-status', 'App Sign In']}}]">
+        {{adminService.isUserSignInPaused ? 'Activate' : 'Pause' }} User App Sign In
+      </button>
     </div>
-    <div class="col-6 col-sm-3 text-center font-12" style="outline: none;"
-         [routerLink]="['/admin/overview', {outlets: {popup: ['confirm-status', 'App Sign In']}}]">
-      <fa-icon [icon]="faClose" class="text-danger cancel"></fa-icon>
-      <span class="ml-1 cancel text-danger">Pause User App Sign In</span>
+    <div class="col-6 col-sm-3 text-center">
+      <button class="btn btn-purple" style="outline: none!important"
+              [routerLink]="['/admin/overview', {outlets: {popup: ['confirm-status', 'Sign Up']}}]">
+        {{adminService.isUserSignUpPaused ? 'Activate' : 'Pause' }} New User Sign Up
+      </button>
     </div>
     <div class="col-6 col-sm-3 text-center mt-2 mt-sm-0">
       <div class="row">
@@ -76,31 +77,31 @@
       <th>GRAYLL ID</th>
       <ng-container *ngIf="selectedTab.id === 'uapg'">
         <th (click)="sortByCurrentAlgoPositionUSD()" class="cancel">
-          Algo Positions (USD)
+          Algo Positions <br> (USD)
           <fa-icon [icon]="faSortByCurrentAlgoPositionsUSD" style="color: #40278C;"></fa-icon>
           <br>
           <small>Current Account Total</small>
         </th>
         <th (click)="sortByHistoricalAlgoPositionUSD()" class="cancel">
-          Algo Positions (USD)
+          Algo Positions <br> (USD)
           <fa-icon [icon]="faSortByHistoricalAlgoPositionsUSD" style="color: #40278C;"></fa-icon>
           <br>
           <small>Historical Account Total</small>
         </th>
         <th (click)="sortByAlgoCommissionsUSD()" class="cancel">
-          Algo Commissions (USD)
+          Algo Commissions <br> (USD)
           <fa-icon [icon]="faSortByAlgoCommissionsUSD" style="color: #40278C;"></fa-icon>
           <br>
           <small>Historical Total</small>
         </th>
         <th (click)="sortByOpenAlgoPositions()" class="cancel">
-          Open Algo Positions (#)
+          Open Algo <br> Positions (#)
           <fa-icon [icon]="faSortByOpenAlgoPositions" style="color: #40278C;"></fa-icon>
           <br>
           <small>Current Account Total</small>
         </th>
         <th (click)="sortByClosedAlgoPositions()" class="cancel">
-          Closed Algo Positions (#)
+          Closed Algo <br> Positions (#)
           <fa-icon [icon]="faSortByClosedAlgoPositions" style="color: #40278C;"></fa-icon>
           <br>
           <small>Historical Account Total</small>
@@ -108,31 +109,31 @@
       </ng-container>
       <ng-container *ngIf="selectedTab.id === 'uapd'">
         <th (click)="sortByGRYOpenPositions()" class="cancel">
-          GRY Open Positions (USD)
+          GRY Open <br> Positions (USD)
           <fa-icon [icon]="faSortByGRYOpenPositions" style="color: #40278C;"></fa-icon>
           <br>
           <small>Current Account Total</small>
         </th>
         <th (click)="sortByGRY1OpenPositions()" class="cancel">
-          GRY 1 Open Positions (USD)
+          GRY 1 Open <br> Positions (USD)
           <fa-icon [icon]="faSortByGRY1OpenPositions" style="color: #40278C;"></fa-icon>
           <br>
           <small>Current Account Total</small>
         </th>
         <th (click)="sortByGRY2OpenPositions()" class="cancel">
-          GRY 2 Open Positions (USD)
+          GRY 2 Open <br> Positions (USD)
           <fa-icon [icon]="faSortByGRY2OpenPositions" style="color: #40278C;"></fa-icon>
           <br>
           <small>Current Account Total</small>
         </th>
         <th (click)="sortByGRY3OpenPositions()" class="cancel">
-          GRY 3 Open Positions (USD)
+          GRY 3 Open <br> Positions (USD)
           <fa-icon [icon]="faSortByGRY3OpenPositions" style="color: #40278C;"></fa-icon>
           <br>
           <small>Current Account Total</small>
         </th>
         <th (click)="sortByGRZOpenPositions()" class="cancel">
-          GRZ Open Positions (USD)
+          GRZ Open <br> Positions (USD)
           <fa-icon [icon]="faSortByGRZOpenPositions" style="color: #40278C;"></fa-icon>
           <br>
           <small>Historical Total</small>
@@ -146,7 +147,7 @@
       <td>{{user.signUpDate}}</td>
       <td>{{user.firstName | slice:0:18}}</td>
       <td>{{user.lastName | slice:0:32}}</td>
-      <td>{{user.emailAddress | slice:0:32}}</td>
+      <td style="word-break: break-all">{{user.emailAddress | slice:0:32}}</td>
       <td>
         <a href="https://stellar.expert/explorer" class="purple-link" target="_blank">
           {{user.account}}

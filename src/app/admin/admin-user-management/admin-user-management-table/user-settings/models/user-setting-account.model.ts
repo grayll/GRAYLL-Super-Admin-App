@@ -1,0 +1,27 @@
+export class UserSettingAccountModel {
+	constructor(
+		public id?: number,
+		public signUpDate?: any,
+		public firstName?: string,
+		public lastName?: string,
+		public emailAddress?: string,
+		public grayllId?: string,
+		public account?: string,
+		public accountValueUSD?: number,
+		public algoPositionsUSD?: number,
+		public is2FAEnabled?: boolean,
+		public isIPAddressConfirmationEnabled?: boolean,
+		public isMultisignatureTransactionsEnabled?: boolean,
+		public reportFrequencyPeriod?: string,
+		public reportFrequencyWalletBalance?: boolean,
+		public reportFrequencyAccountValue?: boolean,
+		public reportFrequencyAccountProfit?: boolean,
+		public reportFrequencyOpenPosition?: boolean,
+		public isGeneralNotificationsEmailEnabled?: boolean,
+		public isGeneralNotificationsAppEnabled?: boolean,
+		public isWalletNotificationsEmailEnabled?: boolean,
+		public isWalletNotificationsAppEnabled?: boolean,
+		public isAlgoNotificationsEmailEnabled?: boolean,
+		public isAlgoNotificationsAppEnabled?: boolean,
+	) {}
+}

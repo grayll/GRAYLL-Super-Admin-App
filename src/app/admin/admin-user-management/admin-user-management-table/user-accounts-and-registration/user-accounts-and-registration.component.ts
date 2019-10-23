@@ -5,12 +5,12 @@ import {
 	faCaretUp,
 	faCopy,
 	faInfoCircle,
-	faSearch,
-	faTimesCircle
+	faSearch
 } from '@fortawesome/free-solid-svg-icons';
 import {ClipboardService} from 'ngx-clipboard';
 import {SnotifyService} from 'ng-snotify';
 import {UserAccountModel} from './models/user-account.model';
+import {AdminService} from '../../../admin.service';
 
 @Component({
   selector: 'app-user-accounts-and-registration',
@@ -45,7 +45,6 @@ export class UserAccountsAndRegistrationComponent implements OnInit {
 	
 	// Font Awesome Icons
 	faDownload = faArrowAltCircleDown;
-	faClose = faTimesCircle;
 	faInfo = faInfoCircle;
 	faCopy = faCopy;
 	faSearch = faSearch;
@@ -55,8 +54,9 @@ export class UserAccountsAndRegistrationComponent implements OnInit {
 	faSortByCommissions = faCaretDown;
 	
 	constructor(
-	private clipboardService: ClipboardService,
-	private snotifyService: SnotifyService
+		private clipboardService: ClipboardService,
+		private snotifyService: SnotifyService,
+		public adminService: AdminService
 	) {
 		this.setActiveTab();
 		this.populateUserAccountsArray();
