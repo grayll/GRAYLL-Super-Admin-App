@@ -158,5 +158,4 @@ export class ActivityComponent implements OnInit, OnChanges {
 		this.openAlgoPositions.push(mockup);
 		this.openAlgoPositions.push(mockup);
 	}
-	
 }
