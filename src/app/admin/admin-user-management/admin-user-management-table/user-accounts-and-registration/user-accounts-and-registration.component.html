@@ -67,30 +67,30 @@
   <table class="table mb-0">
     <thead>
     <tr class="font-weight-bolder font-10 text-light">
-      <th (click)="sortBySignUpDate()" class="cancel">
+      <th (click)="sortBySignUpDate()" class="cancel width-91px">
         Sign Up Date
         <fa-icon [icon]="faSortBySignUpDate" style="color: #40278C;"></fa-icon>
       </th>
-      <th>First Name</th>
-      <th>Last Name</th>
-      <th>Email Address</th>
-      <th>Phone Number</th>
-      <th *ngIf="selectedTab.id === 'completedAccounts'">Account</th>
-      <th *ngIf="selectedTab.id !== 'unVerifiedRegistrations'">GRAYLL ID</th>
-      <th *ngIf="selectedTab.id === 'completedAccounts'" (click)="sortByAccountValue()" class="cancel">
-        Account Value (USD)
+      <th class="width-91px">First Name</th>
+      <th class="width-101px">Last Name</th>
+      <th class="width-101px">Email Address</th>
+      <th class="width-91px">Phone Number</th>
+      <th class="width-91px" *ngIf="selectedTab.id === 'completedAccounts'">Account</th>
+      <th class="width-91px" *ngIf="selectedTab.id !== 'unVerifiedRegistrations'">GRAYLL ID</th>
+      <th *ngIf="selectedTab.id === 'completedAccounts'" (click)="sortByAccountValue()" class="cancel width-91px">
+        Account Value <br> (USD)
         <fa-icon [icon]="faSortByAccountValue" style="color: #40278C;"></fa-icon>
         <br>
         <small>Current Account Total</small>
       </th>
-      <th *ngIf="selectedTab.id === 'completedAccounts'" (click)="sortByPositionValue()" class="cancel">
-        Algo Positions Value (USD)
+      <th *ngIf="selectedTab.id === 'completedAccounts'" (click)="sortByPositionValue()" class="cancel width-91px">
+        Algo Positions <br> Value (USD)
         <fa-icon [icon]="faSortByPositionsValue" style="color: #40278C;"></fa-icon>
         <br>
         <small>Current Account Total</small>
       </th>
-      <th *ngIf="selectedTab.id === 'completedAccounts'" (click)="sortByCommissions()" class="cancel">
-        Algo Commissions (USD)
+      <th *ngIf="selectedTab.id === 'completedAccounts'" (click)="sortByCommissions()" class="cancel width-91px">
+        Algo Commissions <br> (USD)
         <fa-icon [icon]="faSortByCommissions" style="color: #40278C;"></fa-icon>
         <br>
         <small>Historical Account Total</small>
@@ -100,28 +100,28 @@
 
     <tbody class="font-8 text-light" infiniteScroll [infiniteScrollDistance]=".1" [infiniteScrollThrottle]="50" (scrolled)="onScroll()" [scrollWindow]="false">
     <tr *ngFor="let user of userAccounts">
-      <td>{{user.signUpDate}}</td>
-      <td>{{user.firstName | slice:0:18}}</td>
-      <td>{{user.lastName | slice:0:32}}</td>
-      <td style="word-break: break-all">{{user.emailAddress | slice:0:32}}</td>
-      <td>
+      <td class="width-91px">{{user.signUpDate}}</td>
+      <td class="width-91px">{{user.firstName | slice:0:18}}</td>
+      <td class="width-101px">{{user.lastName | slice:0:32}}</td>
+      <td class="width-101px" style="word-break: break-all">{{user.emailAddress | slice:0:32}}</td>
+      <td class="width-91px">
         <a href="javascript:void(0)" class="purple-link">
           {{user.phoneNumber}}
         </a>
       </td>
-      <td *ngIf="selectedTab.id === 'completedAccounts'">
+      <td class="width-91px" *ngIf="selectedTab.id === 'completedAccounts'">
         <a href="https://stellar.expert/explorer" class="purple-link" target="_blank">
           {{user.account}}
         </a>
       </td>
-      <td *ngIf="selectedTab.id !== 'unVerifiedRegistrations'">
+      <td class="width-91px" *ngIf="selectedTab.id !== 'unVerifiedRegistrations'">
         <a href="javascript:void(0)" class="purple-link">
           {{user.grayllId}}
         </a>
       </td>
-      <td *ngIf="selectedTab.id === 'completedAccounts'">{{user.accountValueUSD}}</td>
-      <td *ngIf="selectedTab.id === 'completedAccounts'">{{user.algoPositionsValueUSD}}</td>
-      <td *ngIf="selectedTab.id === 'completedAccounts'">{{user.algoCommissionsUSD}}</td>
+      <td class="width-91px" *ngIf="selectedTab.id === 'completedAccounts'">{{user.accountValueUSD}}</td>
+      <td class="width-91px" *ngIf="selectedTab.id === 'completedAccounts'">{{user.algoPositionsValueUSD}}</td>
+      <td class="width-91px" *ngIf="selectedTab.id === 'completedAccounts'">{{user.algoCommissionsUSD}}</td>
     </tr>
     </tbody>
   </table>

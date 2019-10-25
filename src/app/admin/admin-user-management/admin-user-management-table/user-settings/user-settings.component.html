@@ -66,41 +66,41 @@
   <table class="table mb-0">
     <thead>
     <tr class="font-weight-bolder font-10 text-light">
-      <th (click)="sortBySignUpDate()" class="cancel">
+      <th (click)="sortBySignUpDate()" class="cancel width-91px">
         Sign Up Date
         <fa-icon [icon]="faSortBySignUpDate" style="color: #40278C;"></fa-icon>
       </th>
-      <th>First Name</th>
-      <th>Last Name</th>
-      <th>Email Address</th>
-      <th>Account</th>
-      <th>GRAYLL ID</th>
+      <th class="width-91px">First Name</th>
+      <th class="width-101px">Last Name</th>
+      <th class="width-101px">Email Address</th>
+      <th class="width-91px">Account</th>
+      <th class="width-91px">GRAYLL ID</th>
       <ng-container *ngIf="selectedTab.id === 'uss'">
-        <th (click)="sortByBalanceUSD()" class="cancel">
+        <th (click)="sortByBalanceUSD()" class="cancel width-91px">
           Account Balance <br> (USD)
           <fa-icon [icon]="faSortByBalanceUSD" style="color: #40278C;"></fa-icon>
           <br>
           <small>Current Account Total</small>
         </th>
-        <th (click)="sortByAlgoPositions()" class="cancel">
+        <th (click)="sortByAlgoPositions()" class="cancel width-91px">
           Algo Positions <br> (USD)
           <fa-icon [icon]="faSortByAlgoPositions" style="color: #40278C;"></fa-icon>
           <br>
           <small>Current Account Total</small>
         </th>
-        <th (click)="sortBy2FA()" class="cancel">
+        <th (click)="sortBy2FA()" class="cancel width-91px">
           2FA
           <fa-icon [icon]="faSortBy2FA" style="color: #40278C;"></fa-icon>
           <br>
           <small>Enabled/Disabled</small>
         </th>
-        <th (click)="sortByIPAddressConfirmation()" class="cancel">
+        <th (click)="sortByIPAddressConfirmation()" class="cancel width-91px">
           IP Address <br> Confirmation
           <fa-icon [icon]="faSortByIPAddressConfirmation" style="color: #40278C;"></fa-icon>
           <br>
           <small>Enabled/Disabled</small>
         </th>
-        <th (click)="sortByMultisigTransactions()" class="cancel">
+        <th (click)="sortByMultisigTransactions()" class="cancel width-91px">
           Multisig <br> Transactions
           <fa-icon [icon]="faSortByMultisigTransactions" style="color: #40278C;"></fa-icon>
           <br>
@@ -108,37 +108,37 @@
         </th>
       </ng-container>
       <ng-container *ngIf="selectedTab.id === 'uds'">
-        <th (click)="sortByBalanceUSD()" class="cancel">
+        <th (click)="sortByBalanceUSD()" class="cancel width-91px">
           Account Balance <br> (USD)
           <fa-icon [icon]="faSortByBalanceUSD" style="color: #40278C;"></fa-icon>
           <br>
           <small>Current Account Total</small>
         </th>
-        <th (click)="sortByRFPeriod()" class="cancel">
+        <th (click)="sortByRFPeriod()" class="cancel width-91px">
           Report <br> Frequency
           <fa-icon [icon]="faSortByRFPeriod" style="color: #40278C;"></fa-icon>
           <br>
           <small>Daily/Weekly/Monthly</small>
         </th>
-        <th (click)="sortByRFWalletBalance()" class="cancel">
+        <th (click)="sortByRFWalletBalance()" class="cancel width-91px">
           Report <br> Frequency
           <fa-icon [icon]="faSortByRFWalletBalance" style="color: #40278C;"></fa-icon>
           <br>
           <small>Wallet Balance</small>
         </th>
-        <th (click)="sortByAccountValue()" class="cancel">
+        <th (click)="sortByAccountValue()" class="cancel width-91px">
           Report <br> Frequency
           <fa-icon [icon]="faSortByAccountValue" style="color: #40278C;"></fa-icon>
           <br>
           <small>Account Value</small>
         </th>
-        <th (click)="sortByAccountProfit()" class="cancel">
+        <th (click)="sortByAccountProfit()" class="cancel width-91px">
           Report <br> Frequency
           <fa-icon [icon]="faSortByAccountProfit" style="color: #40278C;"></fa-icon>
           <br>
           <small>Account Profit</small>
         </th>
-        <th (click)="sortByOpenPosition()" class="cancel">
+        <th (click)="sortByOpenPosition()" class="cancel width-91px">
           Report <br> Frequency
           <fa-icon [icon]="faSortByOpenPosition" style="color: #40278C;"></fa-icon>
           <br>
@@ -146,37 +146,37 @@
         </th>
       </ng-container>
       <ng-container *ngIf="selectedTab.id === 'uns'">
-        <th (click)="sortByGNEmail()" class="cancel">
+        <th (click)="sortByGNEmail()" class="cancel width-91px">
           General <br> Notifications
           <fa-icon [icon]="faSortByGNEmail" style="color: #40278C;"></fa-icon>
           <br>
           <small>Email</small>
         </th>
-        <th (click)="sortByGNApp()" class="cancel">
+        <th (click)="sortByGNApp()" class="cancel width-91px">
           General <br> Notifications
           <fa-icon [icon]="faSortByGNApp" style="color: #40278C;"></fa-icon>
           <br>
           <small>App</small>
         </th>
-        <th (click)="sortByWNEmail()" class="cancel">
+        <th (click)="sortByWNEmail()" class="cancel width-91px">
           Wallet <br> Notifications
           <fa-icon [icon]="faSortByWNEmail" style="color: #40278C;"></fa-icon>
           <br>
           <small>Email</small>
         </th>
-        <th (click)="sortByWNApp()" class="cancel">
+        <th (click)="sortByWNApp()" class="cancel width-91px">
           Wallet <br> Notifications
           <fa-icon [icon]="faSortByWNApp" style="color: #40278C;"></fa-icon>
           <br>
           <small>App</small>
         </th>
-        <th (click)="sortByANEmail()" class="cancel">
+        <th (click)="sortByANEmail()" class="cancel width-91px">
           Algo <br> Notifications
           <fa-icon [icon]="faSortByANEmail" style="color: #40278C;"></fa-icon>
           <br>
           <small>Email</small>
         </th>
-        <th (click)="sortByANApp()" class="cancel">
+        <th (click)="sortByANApp()" class="cancel width-91px">
           Algo <br> Notifications
           <fa-icon [icon]="faSortByANApp" style="color: #40278C;"></fa-icon>
           <br>
@@ -188,42 +188,42 @@
 
     <tbody class="font-8 text-light" infiniteScroll [infiniteScrollDistance]=".1" [infiniteScrollThrottle]="50" (scrolled)="onScroll()" [scrollWindow]="false">
     <tr *ngFor="let user of userAccounts">
-      <td>{{user.signUpDate}}</td>
-      <td>{{user.firstName | slice:0:18}}</td>
-      <td>{{user.lastName | slice:0:32}}</td>
-      <td style="word-break: break-all">{{user.emailAddress | slice:0:32}}</td>
-      <td>
+      <td class="width-91px">{{user.signUpDate}}</td>
+      <td class="width-91px">{{user.firstName | slice:0:18}}</td>
+      <td class="width-101px">{{user.lastName | slice:0:32}}</td>
+      <td class="width-101px" style="word-break: break-all">{{user.emailAddress | slice:0:32}}</td>
+      <td class="width-91px">
         <a href="https://stellar.expert/explorer" class="purple-link" target="_blank">
           {{user.account}}
         </a>
       </td>
-      <td>
+      <td class="width-91px">
         <a href="javascript:void(0)" class="purple-link">
           {{user.grayllId}}
         </a>
       </td>
       <ng-container *ngIf="selectedTab.id === 'uss'">
-        <td>{{user.accountValueUSD}}</td>
-        <td>{{user.algoPositionsUSD}}</td>
-        <td>{{user.is2FAEnabled ? 'Enabled' : 'Disabled' }}</td>
-        <td>{{user.isIPAddressConfirmationEnabled ? 'Enabled' : 'Disabled' }}</td>
-        <td>{{user.isMultisignatureTransactionsEnabled ? 'Enabled' : 'Disabled' }}</td>
+        <td class="width-91px">{{user.accountValueUSD}}</td>
+        <td class="width-91px">{{user.algoPositionsUSD}}</td>
+        <td class="width-91px">{{user.is2FAEnabled ? 'Enabled' : 'Disabled' }}</td>
+        <td class="width-91px">{{user.isIPAddressConfirmationEnabled ? 'Enabled' : 'Disabled' }}</td>
+        <td class="width-91px">{{user.isMultisignatureTransactionsEnabled ? 'Enabled' : 'Disabled' }}</td>
       </ng-container>
       <ng-container *ngIf="selectedTab.id === 'uds'">
-        <td>{{user.accountValueUSD}}</td>
-        <td>{{user.reportFrequencyPeriod}}</td>
-        <td>{{user.reportFrequencyWalletBalance ? 'Enabled' : 'Disabled'}}</td>
-        <td>{{user.reportFrequencyAccountValue ? 'Enabled' : 'Disabled'}}</td>
-        <td>{{user.reportFrequencyAccountProfit ? 'Enabled' : 'Disabled'}}</td>
-        <td>{{user.reportFrequencyOpenPosition ? 'Enabled' : 'Disabled'}}</td>
+        <td class="width-91px">{{user.accountValueUSD}}</td>
+        <td class="width-91px">{{user.reportFrequencyPeriod}}</td>
+        <td class="width-91px">{{user.reportFrequencyWalletBalance ? 'Enabled' : 'Disabled'}}</td>
+        <td class="width-91px">{{user.reportFrequencyAccountValue ? 'Enabled' : 'Disabled'}}</td>
+        <td class="width-91px">{{user.reportFrequencyAccountProfit ? 'Enabled' : 'Disabled'}}</td>
+        <td class="width-91px">{{user.reportFrequencyOpenPosition ? 'Enabled' : 'Disabled'}}</td>
       </ng-container>
       <ng-container *ngIf="selectedTab.id === 'uns'">
-        <td>{{user.isGeneralNotificationsEmailEnabled ? 'Enabled' : 'Disabled'}}</td>
-        <td>{{user.isGeneralNotificationsAppEnabled ? 'Enabled' : 'Disabled'}}</td>
-        <td>{{user.isWalletNotificationsEmailEnabled ? 'Enabled' : 'Disabled'}}</td>
-        <td>{{user.isWalletNotificationsAppEnabled ? 'Enabled' : 'Disabled'}}</td>
-        <td>{{user.isAlgoNotificationsEmailEnabled ? 'Enabled' : 'Disabled'}}</td>
-        <td>{{user.isAlgoNotificationsAppEnabled ? 'Enabled' : 'Disabled'}}</td>
+        <td class="width-91px">{{user.isGeneralNotificationsEmailEnabled ? 'Enabled' : 'Disabled'}}</td>
+        <td class="width-91px">{{user.isGeneralNotificationsAppEnabled ? 'Enabled' : 'Disabled'}}</td>
+        <td class="width-91px">{{user.isWalletNotificationsEmailEnabled ? 'Enabled' : 'Disabled'}}</td>
+        <td class="width-91px">{{user.isWalletNotificationsAppEnabled ? 'Enabled' : 'Disabled'}}</td>
+        <td class="width-91px">{{user.isAlgoNotificationsEmailEnabled ? 'Enabled' : 'Disabled'}}</td>
+        <td class="width-91px">{{user.isAlgoNotificationsAppEnabled ? 'Enabled' : 'Disabled'}}</td>
       </ng-container>
     </tr>
     </tbody>

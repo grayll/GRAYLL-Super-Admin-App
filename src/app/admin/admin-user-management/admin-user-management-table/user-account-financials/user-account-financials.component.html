@@ -63,45 +63,45 @@
   </div>
 </div>
 
-<div class="table-responsive bg-gradient text-light pull-top" style="overflow-x: hidden">
+<div class="table-responsive bg-gradient text-light pull-top">
   <table class="table mb-0">
     <thead>
     <tr class="font-weight-bolder font-10 text-light">
-      <th (click)="sortBySignUpDate()" class="cancel">
+      <th (click)="sortBySignUpDate()" class="cancel width-91px">
         Sign Up Date
         <fa-icon [icon]="faSortBySignUpDate" style="color: #40278C;"></fa-icon>
       </th>
-      <th>First Name</th>
-      <th>Last Name</th>
-      <th>Email Address</th>
-      <th>Account</th>
-      <th>GRAYLL ID</th>
+      <th class="cancel width-91px">First Name</th>
+      <th class="cancel width-101px">Last Name</th>
+      <th class="cancel width-101px">Email Address</th>
+      <th class="cancel width-91px">Account</th>
+      <th class="cancel width-101px">GRAYLL ID</th>
       <ng-container *ngIf="selectedTab.id === 'uab'">
-        <th (click)="sortByAccountValue()" class="cancel">
+        <th (click)="sortByAccountValue()" class="cancel width-91px">
           Account Value <br> (USD)
           <fa-icon [icon]="faSortByAccountValue" style="color: #40278C;"></fa-icon>
           <br>
           <small>Current Account Total</small>
         </th>
-        <th (click)="sortByBalanceXLM()" class="cancel">
+        <th (click)="sortByBalanceXLM()" class="cancel width-91px">
           Account Balance <br> (XLM)
           <fa-icon [icon]="faSortByBalanceXLM" style="color: #40278C;"></fa-icon>
           <br>
           <small>Current Account Total</small>
         </th>
-        <th (click)="sortByBalanceGRX()" class="cancel">
+        <th (click)="sortByBalanceGRX()" class="cancel width-91px">
           Account Balance <br> (GRX)
           <fa-icon [icon]="faSortByBalanceGRX" style="color: #40278C;"></fa-icon>
           <br>
           <small>Current Account Total</small>
         </th>
-        <th (click)="sortByOpenOrdersXLM()" class="cancel">
+        <th (click)="sortByOpenOrdersXLM()" class="cancel width-91px">
           Open Orders <br> XLM (USD)
           <fa-icon [icon]="faSortByOpenOrdersXLM" style="color: #40278C;"></fa-icon>
           <br>
           <small>Current Account Total</small>
         </th>
-        <th (click)="sortByOpenOrdersGRX()" class="cancel">
+        <th (click)="sortByOpenOrdersGRX()" class="cancel width-91px">
           Open Orders <br> GRX (USD)
           <fa-icon [icon]="faSortByOpenOrdersGRX" style="color: #40278C;"></fa-icon>
           <br>
@@ -109,25 +109,25 @@
         </th>
       </ng-container>
       <ng-container *ngIf="selectedTab.id === 'uat'">
-        <th>
+        <th class="cancel width-101px">
           Federation Address
           <br>
           <small>*grayll.io</small>
         </th>
-        <th>Phone number</th>
-        <th (click)="sortByTotalTransfersUSD()" class="cancel">
+        <th class="cancel width-91px">Phone number</th>
+        <th (click)="sortByTotalTransfersUSD()" class="cancel width-91px">
           Total Transfers <br> (USD)
           <fa-icon [icon]="faSortByTotalTransfersUSD" style="color: #40278C;"></fa-icon>
           <br>
           <small>Historical Account Total</small>
         </th>
-        <th (click)="sortByTotalTransfersXLM()" class="cancel">
+        <th (click)="sortByTotalTransfersXLM()" class="cancel width-91px">
           Total Transfers <br> (XLM)
           <fa-icon [icon]="faSortByTotalTransfersXLM" style="color: #40278C;"></fa-icon>
           <br>
           <small>Historical Account Total</small>
         </th>
-        <th (click)="sortByTotalTransfersGRX()" class="cancel">
+        <th (click)="sortByTotalTransfersGRX()" class="cancel width-91px">
           Total Transfers <br> (GRX)
           <fa-icon [icon]="faSortByTotalTransfersGRX" style="color: #40278C;"></fa-icon>
           <br>
@@ -139,37 +139,37 @@
 
     <tbody class="font-8 text-light" infiniteScroll [infiniteScrollDistance]=".1" [infiniteScrollThrottle]="50" (scrolled)="onScroll()" [scrollWindow]="false">
     <tr *ngFor="let user of userAccounts">
-      <td>{{user.signUpDate}}</td>
-      <td>{{user.firstName | slice:0:18}}</td>
-      <td>{{user.lastName | slice:0:32}}</td>
-      <td style="word-break: break-all">{{user.emailAddress | slice:0:32}}</td>
-      <td>
+      <td class="width-91px">{{user.signUpDate}}</td>
+      <td class="width-91px">{{user.firstName | slice:0:18}}</td>
+      <td class="width-101px">{{user.lastName | slice:0:32}}</td>
+      <td class="width-101px" style="word-break: break-all">{{user.emailAddress | slice:0:32}}</td>
+      <td class="width-91px">
         <a href="https://stellar.expert/explorer" class="purple-link" target="_blank">
           {{user.account}}
         </a>
       </td>
-      <td>
+      <td class="width-101px">
         <a href="javascript:void(0)" class="purple-link">
           {{user.grayllId}}
         </a>
       </td>
       <ng-container *ngIf="selectedTab.id === 'uab'">
-        <td>{{user.accountValueUSD}}</td>
-        <td>{{user.accountBalanceXLM}}</td>
-        <td>{{user.accountBalanceGRX}}</td>
-        <td>{{user.openOrdersXLMUSD}}</td>
-        <td>{{user.openOrdersGRXUSD}}</td>
+        <td class="width-91px">{{user.accountValueUSD}}</td>
+        <td class="width-91px">{{user.accountBalanceXLM}}</td>
+        <td class="width-91px">{{user.accountBalanceGRX}}</td>
+        <td class="width-91px">{{user.openOrdersXLMUSD}}</td>
+        <td class="width-91px">{{user.openOrdersGRXUSD}}</td>
       </ng-container>
       <ng-container *ngIf="selectedTab.id === 'uat'">
-        <td>{{user.federationAddress}}</td>
-        <td>
+        <td class="width-101px">{{user.federationAddress}}</td>
+        <td class="width-91px">
           <a href="javascript:void(0)" class="purple-link">
             {{user.phoneNumber}}
           </a>
         </td>
-        <td>{{user.totalTransfersUSD}}</td>
-        <td>{{user.totalTransfersXLM}}</td>
-        <td>{{user.totalTransfersGRX}}</td>
+        <td class="width-91px">{{user.totalTransfersUSD}}</td>
+        <td class="width-91px">{{user.totalTransfersXLM}}</td>
+        <td class="width-91px">{{user.totalTransfersGRX}}</td>
       </ng-container>
     </tr>
     </tbody>

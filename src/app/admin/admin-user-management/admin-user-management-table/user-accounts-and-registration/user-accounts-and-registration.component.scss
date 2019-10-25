@@ -51,6 +51,10 @@ fa-icon:hover {
   justify-content: center!important;
 }
 
+table, thead, tbody {
+  overflow-x: hidden;
+}
+
 tbody {
   display: block;
   height: 20rem;
@@ -61,6 +65,10 @@ tbody tr {
   display: table;
   width: 100%;
   table-layout: fixed;
+}
+
+td {
+  width: auto;
 }
 
 /* width */

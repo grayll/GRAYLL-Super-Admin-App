@@ -70,6 +70,10 @@ h6 {
     background-image: linear-gradient(to right, #636fa4, #e8cbc0) !important;
 }
 
+.bg-gray {
+    background-color: #40424f!important;
+}
+
 .text-pink {
     color: #e8cbc0 !important;
 }
@@ -201,7 +205,6 @@ h6 {
 .width-101px {
     width: 111px!important;
 }
-
 
 .width-91px {
     width: 91px!important;

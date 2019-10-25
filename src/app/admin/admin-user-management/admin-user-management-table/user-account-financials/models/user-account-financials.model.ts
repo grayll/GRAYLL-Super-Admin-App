@@ -8,14 +8,14 @@ export class UserAccountFinancialsModel {
 	public phoneNumber?: string,
 	public grayllId?: string,
 	public account?: string,
-	public accountValueUSD?: number,
+	public accountValueUSD?: string,
 	public federationAddress?: string,
-	public accountBalanceXLM?: number,
-	public accountBalanceGRX?: number,
-	public openOrdersXLMUSD?: number,
-	public openOrdersGRXUSD?: number,
-	public totalTransfersUSD?: number,
-	public totalTransfersXLM?: number,
-	public totalTransfersGRX?: number
+	public accountBalanceXLM?: string,
+	public accountBalanceGRX?: string,
+	public openOrdersXLMUSD?: string,
+	public openOrdersGRXUSD?: string,
+	public totalTransfersUSD?: string,
+	public totalTransfersXLM?: string,
+	public totalTransfersGRX?: string
 	) {}
 }

@@ -8,8 +8,8 @@ export class UserAccountModel {
 		public phoneNumber?: string,
 		public grayllId?: string,
 		public account?: string,
-		public accountValueUSD?: number,
-		public algoPositionsValueUSD?: number,
-		public algoCommissionsUSD?: number
+		public accountValueUSD?: string,
+		public algoPositionsValueUSD?: string,
+		public algoCommissionsUSD?: string
 	) {}
 }

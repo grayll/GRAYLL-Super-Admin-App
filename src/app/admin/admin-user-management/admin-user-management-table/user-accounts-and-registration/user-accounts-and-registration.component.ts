@@ -84,9 +84,9 @@ export class UserAccountsAndRegistrationComponent implements OnInit {
 		"+999 15678888111",
 		"111222333444555666",
 		"GAQQ44...H3399",
-		10000000000000,
-		10000000000000,
-		10000
+		'100,000,000,000.00',
+		'100,000,000,000.00',
+		'100,000.00'
 		);
 		this.userAccounts.push(mockup);
 		this.userAccounts.push(mockup);
