@@ -67,7 +67,7 @@
   <table class="table mb-0">
     <thead>
     <tr class="font-weight-bolder font-10 text-light">
-      <th (click)="sortBySignUpDate()" class="cancel width-91px">
+      <th style="width: 97px!important;" (click)="sortBySignUpDate()" class="cancel">
         Sign Up Date
         <fa-icon [icon]="faSortBySignUpDate" style="color: #40278C;"></fa-icon>
       </th>
@@ -100,7 +100,7 @@
 
     <tbody class="font-8 text-light" infiniteScroll [infiniteScrollDistance]=".1" [infiniteScrollThrottle]="50" (scrolled)="onScroll()" [scrollWindow]="false">
     <tr *ngFor="let user of userAccounts">
-      <td class="width-91px">{{user.signUpDate}}</td>
+      <td style="width: 97px!important;">{{user.signUpDate}}</td>
       <td class="width-91px">{{user.firstName | slice:0:18}}</td>
       <td class="width-101px">{{user.lastName | slice:0:32}}</td>
       <td class="width-101px" style="word-break: break-all">{{user.emailAddress | slice:0:32}}</td>
