@@ -237,3 +237,13 @@ h6 {
 .width-41px {
     width: 41px!important;
 }
+
+.right-arrow-mobile-scroll-indicator-div {
+    position: absolute;
+    right: 14px;
+    margin-top: -14px;
+}
+
+.right-arrow-mobile-scroll-indicator-img {
+    width: 16px;
+}
