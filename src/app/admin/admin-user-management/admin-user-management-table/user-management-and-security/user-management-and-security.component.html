@@ -1,0 +1,168 @@
+<div class="bg-gradient text-light" id="user-security-settings">
+  <div class="row align-items-center justify-content-center p-2">
+    <div class="col-12 col-sm-3 align-self-center" style="max-width: 240px;">
+      <h6 class="mb-0 text-center py-2">{{selectedTab.name}}</h6>
+    </div>
+    <div class="col-12 col-sm-7 justify-content-center align-items-center" *ngIf="selectedTab">
+      <ngb-tabset type="pills" class="custom-pills" (tabChange)="onTabChange($event.nextId)" [activeId]="selectedTab.id">
+        <ng-container *ngFor="let tab of userAccountTabs">
+          <ngb-tab [id]="tab.id" *ngIf="(tab.id !== 'uad') || (tab.id === 'uad' && selectedUser)">
+            <ng-template ngbTabTitle>
+              {{tab.name}}
+            </ng-template>
+          </ngb-tab>
+        </ng-container>
+      </ngb-tabset>
+    </div>
+    <div class="col-12 col-sm-2 text-center">
+      <hr class="mt-0 d-sm-none">
+      <a class="purple-link font-10" href="javascript:void(0)">
+        <fa-icon [icon]="faDownload" [fixedWidth]="true"></fa-icon>
+        Download {{selectedTab.name}}
+      </a>
+    </div>
+  </div>
+
+  <hr class="mt-0 mb-0">
+</div>
+
+<div class="bg-gradient text-light" *ngIf="selectedTab.id === 'uad' && selectedUser">
+  <div class="row justify-content-center align-items-center mb-1 p-2">
+    <div class="col-12 col-sm-3 text-center py-2">
+      <span class="align-middle font-weight-bolder font-14">User Account {{selectedUser.grayllId}}</span>
+    </div>
+    <div class="col-6 col-sm-3 offset-sm-6 text-center mt-2 mt-sm-0">
+      <div class="row">
+        <div class="col search">
+          <div class="input-group">
+            <input class="form-control form-control-no-border bg-transparent py-2 border border-right-0 text-light"
+                   type="search" style="border-color: #40278C!important">
+            <span class="input-group-append">
+              <div class="input-group-text bg-transparent">
+                <fa-icon style="color: #40278C" [icon]="faSearch"></fa-icon>
+              </div>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col d-none d-md-block"></div>
+  </div>
+</div>
+
+<div class="bg-gradient text-light" *ngIf="selectedTab.id === 'uas'">
+  <div class="row justify-content-center align-items-center mb-1 p-2">
+    <div class="col-12 col-sm-3 text-center py-2">
+      <span class="align-middle font-weight-bolder font-14">User Accounts (9,000,000)</span>
+    </div>
+    <div class="col-6 col-sm-3 text-center">
+      <button class="btn btn-purple" style="outline: none!important"
+              [routerLink]="['/admin/overview', {outlets: {popup: ['confirm-status', 'App Sign In']}}]">
+        {{adminService.isUserSignInPaused ? 'Activate' : 'Pause' }} User App Sign In
+      </button>
+    </div>
+    <div class="col-6 col-sm-3 text-center">
+      <button class="btn btn-purple" style="outline: none!important"
+              [routerLink]="['/admin/overview', {outlets: {popup: ['confirm-status', 'Sign Up']}}]">
+        {{adminService.isUserSignUpPaused ? 'Activate' : 'Pause' }} New User Sign Up
+      </button>
+    </div>
+    <div class="col-6 col-sm-3 text-center mt-2 mt-sm-0">
+      <div class="row">
+        <div class="col search">
+          <div class="input-group">
+            <input class="form-control form-control-no-border bg-transparent py-2 border border-right-0 text-light"
+                   type="search" style="border-color: #40278C!important">
+            <span class="input-group-append">
+              <div class="input-group-text bg-transparent">
+                <fa-icon style="color: #40278C" [icon]="faSearch"></fa-icon>
+              </div>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col d-none d-md-block"></div>
+  </div>
+</div>
+
+<div class="table-responsive bg-gradient text-light pull-top" *ngIf="selectedTab.id === 'uas'">
+  <table class="table mb-0">
+    <thead>
+    <tr class="font-weight-bolder font-10 text-light">
+      <th (click)="sortBySignUpDate()" class="cancel width-91px">
+        Sign Up Date
+        <fa-icon [icon]="faSortBySignUpDate" style="color: #40278C;"></fa-icon>
+      </th>
+      <th class="width-91px">First Name</th>
+      <th class="width-101px">Last Name</th>
+      <th class="width-101px">Email Address</th>
+      <th class="width-91px">Phone Number</th>
+      <th class="width-91px">Account</th>
+      <th class="width-101px">GRAYLL ID</th>
+      <th (click)="sortByGRY1()" class="cancel width-71px">
+        GRY 1 <br> Access
+        <fa-icon [icon]="faSortByGRY1Access" style="color: #40278C;"></fa-icon>
+        <br>
+        <small>Active/Paused</small>
+      </th>
+      <th (click)="sortByGRY2()" class="cancel width-71px">
+        GRY 2 <br> Access
+        <fa-icon [icon]="faSortByGRY2Access" style="color: #40278C;"></fa-icon>
+        <br>
+        <small>Active/Paused</small>
+      </th>
+      <th (click)="sortByGRY3()" class="cancel width-71px">
+        GRY 3 <br> Access
+        <fa-icon [icon]="faSortByGRY3Access" style="color: #40278C;"></fa-icon>
+        <br>
+        <small>Active/Paused</small>
+      </th>
+      <th (click)="sortByGRZ()" class="cancel width-71px">
+        GRZ <br> Access
+        <fa-icon [icon]="faSortByGRZAccess" style="color: #40278C;"></fa-icon>
+        <br>
+        <small>Active/Paused</small>
+      </th>
+      <th (click)="sortByAppSignIn()" class="cancel width-71px">
+        App <br> Sign In
+        <fa-icon [icon]="faSortByAppSignIn" style="color: #40278C;"></fa-icon>
+        <br>
+        <small>Active/Paused</small>
+      </th>
+      <th class="width-81px">User Account Detail</th>
+    </tr>
+    </thead>
+
+    <tbody class="font-8 text-light" infiniteScroll [infiniteScrollDistance]=".1" [infiniteScrollThrottle]="50" (scrolled)="onScroll()" [scrollWindow]="false">
+    <div class="right-arrow-mobile-scroll-indicator-div d-sm-none">
+      <img class="right-arrow-mobile-scroll-indicator-img" src="assets/images/right-chevron.png" alt="Scroll right for more">
+    </div>
+    <tr *ngFor="let user of userAccounts">
+      <td class="width-91px">{{user.signUpDate}}</td>
+      <td class="width-91px">{{user.firstName | slice:0:18}}</td>
+      <td class="width-101px">{{user.lastName | slice:0:32}}</td>
+      <td class="width-101px" style="word-break: break-all">{{user.emailAddress | slice:0:32}}</td>
+      <td class="width-91px">{{user.phoneNumber}}</td>
+      <td class="width-91px">
+        <a href="https://stellar.expert/explorer" class="purple-link" target="_blank">
+          {{user.account}}
+        </a>
+      </td>
+      <td class="width-101px">
+        <a href="javascript:void(0)" class="purple-link">
+          {{user.grayllId}}
+        </a>
+      </td>
+      <td class="width-71px">{{user.gry1accessActive ? 'Active' : 'Paused'}}</td>
+      <td class="width-71px">{{user.gry2accessActive ? 'Active' : 'Paused'}}</td>
+      <td class="width-71px">{{user.gry3accessActive ? 'Active' : 'Paused'}}</td>
+      <td class="width-71px">{{user.grzaccessActive ? 'Active' : 'Paused'}}</td>
+      <td class="width-71px">{{user.appSignInActive ? 'Active' : 'Paused'}}</td>
+      <td class="width-81px purple-link" (click)="goToUserAccountDetails(user)">
+        View User Account Details
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
