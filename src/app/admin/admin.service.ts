@@ -22,6 +22,43 @@ export class AdminService {
 	private _didRunFunction4: boolean;
 	private _didRunFunction3: boolean;
 	private _didRunFunction2: boolean;
+	private _isGRY1UserAccessEnabled: boolean;
+	private _isGRY2UserAccessEnabled: boolean;
+	private _isGRY3UserAccessEnabled: boolean;
+	private _isGRZUserAccessEnabled = true;
+	
+	
+	get isGRY1UserAccessEnabled(): boolean {
+		return this._isGRY1UserAccessEnabled;
+	}
+	
+	set isGRY1UserAccessEnabled(value: boolean) {
+		this._isGRY1UserAccessEnabled = value;
+	}
+	
+	get isGRY2UserAccessEnabled(): boolean {
+		return this._isGRY2UserAccessEnabled;
+	}
+	
+	set isGRY2UserAccessEnabled(value: boolean) {
+		this._isGRY2UserAccessEnabled = value;
+	}
+	
+	get isGRY3UserAccessEnabled(): boolean {
+		return this._isGRY3UserAccessEnabled;
+	}
+	
+	set isGRY3UserAccessEnabled(value: boolean) {
+		this._isGRY3UserAccessEnabled = value;
+	}
+	
+	get isGRZUserAccessEnabled(): boolean {
+		return this._isGRZUserAccessEnabled;
+	}
+	
+	set isGRZUserAccessEnabled(value: boolean) {
+		this._isGRZUserAccessEnabled = value;
+	}
 	
 	get isNewUserSignUpPaused(): boolean {
 		return this._isNewUserSignUpPaused;

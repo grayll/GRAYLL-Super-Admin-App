@@ -12,6 +12,7 @@ export class UserAccessStatusModel {
 		public gry2accessActive?: boolean,
 		public gry3accessActive?: boolean,
 		public grzaccessActive?: boolean,
-		public appSignInActive?: boolean
+		public appSignInActive?: boolean,
+		public accountValueUSD?: string
 	) {}
 }

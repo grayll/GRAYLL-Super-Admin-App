@@ -17,6 +17,7 @@ export class AccountActivityComponent implements OnInit {
 	@Input() activeTabId: string;
 	@Input() showAllCompletedOrders: boolean;
 	@Input() scrollToCompletedOrders: boolean;
+	@Input() userAccount: string;
 	
 	selectedTab: {id: string, name: string};
 	activityTabs = [

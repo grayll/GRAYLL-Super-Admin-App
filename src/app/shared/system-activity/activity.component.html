@@ -3,6 +3,10 @@
   <div class="row align-items-center justify-content-center p-2">
     <div class="col">
       <span class="lead align-middle">Activity</span>
+      <ng-container *ngIf="userAccount">
+        <br>
+        <small class="text-center text-light font-italic">User Account {{userAccount}}</small>
+      </ng-container>
     </div>
     <div class="col-xs-12 col-md-6 justify-content-center align-items-center" *ngIf="selectedTab">
       <ngb-tabset type="pills" class="custom-pills" (tabChange)="onTabChange($event.nextId)" [activeId]="selectedTab.id">
@@ -17,6 +21,10 @@
         <fa-icon [icon]="faDownload" [fixedWidth]="true"></fa-icon>
         Download Activity History
       </a>
+      <ng-container *ngIf="userAccount">
+        <br>
+        <small class="text-center text-light font-italic">User Account {{userAccount}}</small>
+      </ng-container>
     </div>
   </div>
 

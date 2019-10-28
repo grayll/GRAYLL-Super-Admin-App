@@ -138,7 +138,8 @@ export class UserManagementAndSecurityComponent implements OnInit {
 		false,
 		true,
 		false,
-		true
+		true,
+		'1,000,000,000,000.00'
 		);
 		for (let i = 0; i < 10; i++) {
 			this.userAccounts.push(mockup);
