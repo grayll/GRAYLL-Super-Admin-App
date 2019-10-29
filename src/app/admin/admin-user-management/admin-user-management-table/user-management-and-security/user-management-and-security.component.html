@@ -53,107 +53,149 @@
 <div class="table-responsive bg-gradient text-light pull-top" *ngIf="selectedTab.id === 'uad' && selectedUser">
   <div class="row mx-0">
     <div class="col-12 col-xl-9">
-      <p class="font-weight-bolder font-14 mb-0">User Account Details</p>
-      <table class="table table-borderless mb-0">
-        <thead>
-        <tr class="font-weight-bolder font-10 text-light">
-          <th class="width-91px" style="vertical-align: middle">Sign Up Date</th>
-          <th class="width-91px" style="vertical-align: middle">First Name</th>
-          <th class="width-101px" style="vertical-align: middle">Last Name</th>
-          <th class="width-131px" style="vertical-align: middle">Email Address</th>
-          <th class="width-91px" style="vertical-align: middle">Phone Number</th>
-          <th class="width-91px" style="vertical-align: middle">Account</th>
-          <th class="width-101px" style="vertical-align: middle">GRAYLL ID</th>
-          <th class="width-131px" style="vertical-align: middle">
-            Account Value (USD)
-            <small>Current Account Total</small>
-          </th>
-        </tr>
-        </thead>
+      <p class="font-weight-bolder text-purple font-14 mb-0">User Account Details</p>
+      <div class="table-responsive">
+        <table class="table table-borderless mb-0">
+          <thead>
+          <tr class="font-weight-bolder font-10 text-light">
+            <th class="width-91px" style="vertical-align: middle">Sign Up Date</th>
+            <th class="width-91px" style="vertical-align: middle">First Name</th>
+            <th class="width-101px" style="vertical-align: middle">Last Name</th>
+            <th class="width-131px" style="vertical-align: middle">Email Address</th>
+            <th class="width-91px" style="vertical-align: middle">Phone Number</th>
+            <th class="width-91px" style="vertical-align: middle">Account</th>
+            <th class="width-101px" style="vertical-align: middle">GRAYLL ID</th>
+            <th class="width-131px" style="vertical-align: middle">
+              Account Value (USD)
+              <small>Current Account Total</small>
+            </th>
+          </tr>
+          </thead>
 
-        <tbody class="font-8 text-light" style="height: auto; overflow: hidden">
-        <div class="right-arrow-mobile-scroll-indicator-div d-sm-none">
-          <img class="right-arrow-mobile-scroll-indicator-img" src="assets/images/right-chevron.png" alt="Scroll right for more">
-        </div>
-        <tr>
-          <td class="width-91px py-0">{{selectedUser.signUpDate}}</td>
-          <td class="width-91px py-0">{{selectedUser.firstName | slice:0:18}}</td>
-          <td class="width-101px py-0">{{selectedUser.lastName | slice:0:32}}</td>
-          <td class="width-131px py-0" style="word-break: break-all">{{selectedUser.emailAddress | slice:0:32}}</td>
-          <td class="width-91px py-0">{{selectedUser.phoneNumber}}</td>
-          <td class="width-91px py-0">
-            <a href="https://stellar.expert/explorer" class="purple-link" target="_blank">
-              {{selectedUser.account}}
-            </a>
-          </td>
-          <td class="width-101px py-0">
-            <a href="javascript:void(0)" class="purple-link">
-              {{selectedUser.grayllId}}
-            </a>
-          </td>
-          <td class="width-131px py-0">{{selectedUser.accountValueUSD}}</td>
-        </tr>
-        </tbody>
-      </table>
+          <tbody class="font-8 text-light" style="height: auto; overflow: hidden">
+          <tr>
+            <td class="width-91px py-0">{{selectedUser.signUpDate}}</td>
+            <td class="width-91px py-0">{{selectedUser.firstName | slice:0:18}}</td>
+            <td class="width-101px py-0">{{selectedUser.lastName | slice:0:32}}</td>
+            <td class="width-131px py-0" style="word-break: break-all">{{selectedUser.emailAddress | slice:0:32}}</td>
+            <td class="width-91px py-0">{{selectedUser.phoneNumber}}</td>
+            <td class="width-91px py-0">
+              <a href="https://stellar.expert/explorer" class="purple-link" target="_blank">
+                {{selectedUser.account}}
+              </a>
+            </td>
+            <td class="width-101px py-0">
+              <a href="javascript:void(0)" class="purple-link">
+                {{selectedUser.grayllId}}
+              </a>
+            </td>
+            <td class="width-131px py-0">{{selectedUser.accountValueUSD}}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
       <hr style="border-color: #fff;">
-      <p class="font-weight-bolder font-14 mb-0">User Account Financials</p>
-      <table class="table table-borderless mb-0">
-        <thead>
-        <tr class="font-weight-bolder font-10 text-light">
-          <th class="width-123px" style="vertical-align: middle">
-            Account Balance (XLM)
-            <br>
-            <small>Current Account Total</small>
-          </th>
-          <th class="width-123px" style="vertical-align: middle">
-            Account Balance (GRX)
-            <br>
-            <small>Current Account Total</small>
-          </th>
-          <th class="width-91px" style="vertical-align: middle">
-            Open Orders <br> XLM (USD)
-            <br>
-            <small>Current Account Total</small>
-          </th>
-          <th class="width-91px" style="vertical-align: middle">
-            Open Orders <br> GRX (USD)
-            <br>
-            <small>Current Account Total</small>
-          </th>
-          <th class="width-111px" style="vertical-align: middle">
-            Total Transfers (USD)
-            <br>
-            <small>Historical Account Total</small>
-          </th>
-          <th class="width-111px" style="vertical-align: middle">
-            Total Transfers (XLM)
-            <br>
-            <small>Historical Account Total</small>
-          </th>
-          <th class="width-101px p-0" style="vertical-align: middle">
-            Total Transfers (GRX)
-            <br>
-            <small>Historical Account Total</small>
-          </th>
-        </tr>
-        </thead>
+      <p class="font-weight-bolder text-purple font-14 mb-0">User Account Financials</p>
+      <div class="table-responsive">
+        <table class="table table-borderless mb-0">
+          <thead>
+          <tr class="font-weight-bolder font-10 text-light">
+            <th class="width-123px" style="vertical-align: middle">
+              Account Balance (XLM)
+              <br>
+              <small>Current Account Total</small>
+            </th>
+            <th class="width-123px" style="vertical-align: middle">
+              Account Balance (GRX)
+              <br>
+              <small>Current Account Total</small>
+            </th>
+            <th class="width-91px" style="vertical-align: middle">
+              Open Orders <br> XLM (USD)
+              <br>
+              <small>Current Account Total</small>
+            </th>
+            <th class="width-91px" style="vertical-align: middle">
+              Open Orders <br> GRX (USD)
+              <br>
+              <small>Current Account Total</small>
+            </th>
+            <th class="width-111px" style="vertical-align: middle">
+              Total Transfers (USD)
+              <br>
+              <small>Historical Account Total</small>
+            </th>
+            <th class="width-111px" style="vertical-align: middle">
+              Total Transfers (XLM)
+              <br>
+              <small>Historical Account Total</small>
+            </th>
+            <th class="width-101px p-0" style="vertical-align: middle">
+              Total Transfers (GRX)
+              <br>
+              <small>Historical Account Total</small>
+            </th>
+          </tr>
+          </thead>
 
-        <tbody class="font-8 text-light" style="height: auto; overflow: hidden">
-        <div class="right-arrow-mobile-scroll-indicator-div d-sm-none">
-          <img class="right-arrow-mobile-scroll-indicator-img" src="assets/images/right-chevron.png" alt="Scroll right for more">
-        </div>
-        <tr>
-          <td class="width-123px py-0">1,000,000,000,000.00</td>
-          <td class="width-123px py-0">1,000,000,000,000.00</td>
-          <td class="width-91px py-0">1,000,000,000,000.00</td>
-          <td class="width-91px py-0">1,000,000,000,000.00</td>
-          <td class="width-111px py-0">1,000,000,000,000.00</td>
-          <td class="width-111px py-0">1,000,000,000,000.00</td>
-          <td class="width-101px p-0">1,000,000,000,000.00</td>
-        </tr>
-        </tbody>
-      </table>
-      <br>
+          <tbody class="font-8 text-light" style="height: auto; overflow: hidden">
+          <tr>
+            <td class="width-123px py-0">1,000,000,000,000.00</td>
+            <td class="width-123px py-0">1,000,000,000,000.00</td>
+            <td class="width-91px py-0">1,000,000,000,000.00</td>
+            <td class="width-91px py-0">1,000,000,000,000.00</td>
+            <td class="width-111px py-0">1,000,000,000,000.00</td>
+            <td class="width-111px py-0">1,000,000,000,000.00</td>
+            <td class="width-101px p-0">1,000,000,000,000.00</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+      <hr style="border-color: #fff; margin-top: 0.7rem!important;">
+      <p class="font-weight-bolder text-purple font-14 mb-0">User Algo System Financials</p>
+      <div class="table-responsive">
+        <table class="table table-borderless mb-0">
+          <thead>
+          <tr class="font-weight-bolder font-10 text-light">
+            <th class="width-123px" style="vertical-align: middle">
+              Algo Positions (USD)
+              <br>
+              <small>Current Account Total</small>
+            </th>
+            <th class="width-123px" style="vertical-align: middle">
+              Algo Positions (USD)
+              <br>
+              <small>Historical Account Total</small>
+            </th>
+            <th class="width-123px" style="vertical-align: middle">
+              Algo Commissions (USD)
+              <br>
+              <small>Historical Total</small>
+            </th>
+            <th class="width-123px" style="vertical-align: middle">
+              Open Algo Positions (#)
+              <br>
+              <small>Current Account Total</small>
+            </th>
+            <th class="width-123px" style="vertical-align: middle">
+              Closed Algo Positions (#)
+              <br>
+              <small>Historical Total</small>
+            </th>
+          </tr>
+          </thead>
+
+          <tbody class="font-8 text-light" style="height: auto; overflow: hidden">
+          <tr>
+            <td class="py-0 width-123px">1,000,000,000,000.00</td>
+            <td class="py-0 width-123px">1,000,000,000,000.00</td>
+            <td class="py-0 width-123px">1,000,000,000,000.00</td>
+            <td class="py-0 width-123px">1,000,000,000,000.00</td>
+            <td class="py-0 width-123px">1,000,000,000,000.00</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
     <div class="col-12 col-xl-3">
       <div class="row">
@@ -231,6 +273,473 @@
           </p>
         </div>
       </div>
+      <hr style="border-color: #fff;">
+      <div class="row">
+        <div class="col-12">
+          <p class="text-purple font-weight-bolder font-14 mb-0">User Security Settings</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <table class="table table-borderless mb-0">
+            <thead>
+            <tr class="font-weight-bolder font-10 text-light">
+              <th>
+                2FA <br>
+                <small>Enabled/Disabled</small>
+              </th>
+              <th>
+                IP Address Confirmation <br>
+                <small>Enabled/Disabled</small>
+              </th>
+              <th>
+                Multisig Transactions <br>
+                <small>Enabled/Disabled</small>
+              </th>
+            </tr>
+            </thead>
+
+            <tbody class="font-8 text-light" style="height: auto; overflow: hidden">
+            <tr>
+              <td class="pt-0">
+                Enabled
+              </td>
+              <td class="pt-0">
+                Disabled
+              </td>
+              <td class="pt-0">
+                Enabled
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr style="border-color: #fff;margin-top: 0.7rem!important;">
+  <div class="row mx-0 mb-3">
+    <div class="col-12 col-xl-7">
+      <p class="font-weight-bolder text-purple font-14 mb-0">User Notifications Settings</p>
+      <div class="table-responsive">
+        <table class="table table-borderless mb-0">
+          <thead>
+          <tr class="font-weight-bolder font-10 text-light">
+            <th class="width-101px" style="vertical-align: middle">
+              <div class="row m-0 p-0">
+                <div class="col-12 p-0 m-0">
+                  General Notifications
+                  <br>
+                  <small>Email</small>
+                </div>
+              </div>
+            </th>
+            <th class="width-101px" style="vertical-align: middle">
+              <div class="row m-0 p-0">
+                <div class="col-12 p-0 m-0">
+                  General Notifications
+                  <br>
+                  <small>App</small>
+                </div>
+              </div>
+            </th>
+            <th class="width-101px" style="vertical-align: middle">
+              <div class="row m-0 p-0">
+                <div class="col-12 p-0 m-0">
+                  Wallet Notifications
+                  <br>
+                  <small>Email</small>
+                </div>
+              </div>
+            </th>
+            <th class="width-101px" style="vertical-align: middle">
+              <div class="row m-0 p-0">
+                <div class="col-12 p-0 m-0">
+                  Wallet Notifications
+                  <br>
+                  <small>App</small>
+                </div>
+              </div>
+            </th>
+            <th class="width-101px" style="vertical-align: middle">
+              <div class="row m-0 p-0">
+                <div class="col-12 p-0 m-0">
+                  Algo Notifications
+                  <br>
+                  <small>Email</small>
+                </div>
+              </div>
+            </th>
+            <th class="width-101px" style="vertical-align: middle">
+              <div class="row m-0 p-0">
+                <div class="col-12 p-0 m-0">
+                  Algo Notifications
+                  <br>
+                  <small>App</small>
+                </div>
+              </div>
+            </th>
+          </tr>
+          </thead>
+
+          <tbody class="font-8 text-light" style="height: auto; overflow: hidden">
+          <tr>
+            <td class="py-0 width-101px">
+              <div class="row p-0 m-0">
+                <div class="col p-0 m-0">
+                  Enabled
+                </div>
+              </div>
+            </td>
+            <td class="py-0 width-101px">
+              <div class="row p-0 m-0">
+                <div class="col p-0 m-0">
+                  Enabled
+                </div>
+              </div>
+            </td>
+            <td class="py-0 width-101px">
+              <div class="row p-0 m-0">
+                <div class="col p-0 m-0">
+                  Disabled
+                </div>
+              </div>
+            </td>
+            <td class="py-0 width-101px">
+              <div class="row p-0 m-0">
+                <div class="col p-0 m-0">
+                  Enabled
+                </div>
+              </div>
+            </td>
+            <td class="py-0 width-101px">
+              <div class="row p-0 m-0">
+                <div class="col p-0 m-0">
+                  Enabled
+                </div>
+              </div>
+            </td>
+            <td class="py-0 width-101px">
+              <div class="row p-0 m-0">
+                <div class="col p-0 m-0">
+                  Enabled
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="py-0 width-101px">
+              <div class="row p-0 m-0">
+                <div class="col-4 p-0 m-0">
+                  Sent
+                </div>
+                <div class="col-8 p-0 m-0 text-right">
+                  8,888,888
+                </div>
+              </div>
+            </td>
+            <td class="py-0 width-101px">
+              <div class="row p-0 m-0">
+                <div class="col-4 p-0 m-0">
+                  Sent
+                </div>
+                <div class="col-8 p-0 m-0 text-right">
+                  8,888,888
+                </div>
+              </div>
+            </td>
+            <td class="py-0 width-101px">
+              <div class="row p-0 m-0">
+                <div class="col-4 p-0 m-0">
+                  Sent
+                </div>
+                <div class="col-8 p-0 m-0 text-right">
+                  8,888,888
+                </div>
+              </div>
+            </td>
+            <td class="py-0 width-101px">
+              <div class="row p-0 m-0">
+                <div class="col-4 p-0 m-0">
+                  Sent
+                </div>
+                <div class="col-8 p-0 m-0 text-right">
+                  8,888,888
+                </div>
+              </div>
+            </td>
+            <td class="py-0 width-101px">
+              <div class="row p-0 m-0">
+                <div class="col-4 p-0 m-0">
+                  Sent
+                </div>
+                <div class="col-8 p-0 m-0 text-right">
+                  8,888,888
+                </div>
+              </div>
+            </td>
+            <td class="py-0 width-101px">
+              <div class="row p-0 m-0">
+                <div class="col-4 p-0 m-0">
+                  Sent
+                </div>
+                <div class="col-8 p-0 m-0 text-right">
+                  8,888,888
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="py-0 width-101px">
+              <div class="row p-0 m-0">
+                <div class="col-4 p-0 m-0">
+                  Received
+                </div>
+                <div class="col-8 p-0 m-0 text-right">
+                  8,888,888
+                </div>
+              </div>
+            </td>
+            <td class="py-0 width-101px">
+              <div class="row p-0 m-0">
+                <div class="col-4 p-0 m-0">
+                  Received
+                </div>
+                <div class="col-8 p-0 m-0 text-right">
+                  8,888,888
+                </div>
+              </div>
+            </td>
+            <td class="py-0 width-101px">
+              <div class="row p-0 m-0">
+                <div class="col-4 p-0 m-0">
+                  Received
+                </div>
+                <div class="col-8 p-0 m-0 text-right">
+                  8,888,888
+                </div>
+              </div>
+            </td>
+            <td class="py-0 width-101px">
+              <div class="row p-0 m-0">
+                <div class="col-4 p-0 m-0">
+                  Received
+                </div>
+                <div class="col-8 p-0 m-0 text-right">
+                  8,888,888
+                </div>
+              </div>
+            </td>
+            <td class="py-0 width-101px">
+              <div class="row p-0 m-0">
+                <div class="col-4 p-0 m-0">
+                  Received
+                </div>
+                <div class="col-8 p-0 m-0 text-right">
+                  8,888,888
+                </div>
+              </div>
+            </td>
+            <td class="py-0 width-101px">
+              <div class="row p-0 m-0">
+                <div class="col-4 p-0 m-0">
+                  Received
+                </div>
+                <div class="col-8 p-0 m-0 text-right">
+                  8,888,888
+                </div>
+              </div>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="col-12 col-xl-5">
+      <p class="font-weight-bolder text-purple font-14 mb-0">User Report Settings</p>
+      <table class="table table-borderless mb-0">
+        <thead>
+        <tr class="font-weight-bolder font-10 text-light">
+          <th style="vertical-align: middle">
+            <div class="row m-0 p-0">
+              <div class="col-12 p-0 m-0">
+                Report Frequency
+              </div>
+            </div>
+          </th>
+          <th style="vertical-align: middle">
+            <div class="row m-0 p-0">
+              <div class="col-12 p-0 m-0">
+                Report Type
+                <br>
+                <small>Wallet Balance</small>
+              </div>
+            </div>
+          </th>
+          <th style="vertical-align: middle">
+            <div class="row m-0 p-0">
+              <div class="col-12 p-0 m-0">
+                Report Type
+                <br>
+                <small>Account Value</small>
+              </div>
+            </div>
+          </th>
+          <th style="vertical-align: middle">
+            <div class="row m-0 p-0">
+              <div class="col-12 p-0 m-0">
+                Report Type
+                <br>
+                <small>Account Profit</small>
+              </div>
+            </div>
+          </th>
+          <th style="vertical-align: middle">
+            <div class="row m-0 p-0">
+              <div class="col-12 p-0 m-0">
+                Report Type
+                <br>
+                <small>Open Position</small>
+              </div>
+            </div>
+          </th>
+        </tr>
+        </thead>
+
+        <tbody class="font-8 text-light" style="height: auto; overflow: hidden">
+        <tr>
+          <td class="py-0">
+            <div class="row p-0 m-0">
+              <div class="col p-0 m-0">
+                Daily
+              </div>
+            </div>
+          </td>
+          <td class="py-0">
+            <div class="row p-0 m-0">
+              <div class="col p-0 m-0">
+                Enabled
+              </div>
+            </div>
+          </td>
+          <td class="py-0">
+            <div class="row p-0 m-0">
+              <div class="col p-0 m-0">
+                Disabled
+              </div>
+            </div>
+          </td>
+          <td class="py-0">
+            <div class="row p-0 m-0">
+              <div class="col p-0 m-0">
+                Enabled
+              </div>
+            </div>
+          </td>
+          <td class="py-0">
+            <div class="row p-0 m-0">
+              <div class="col p-0 m-0">
+                Enabled
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="py-0">
+            <div class="row p-0 m-0">
+              <div class="col-12 p-0 m-0"></div>
+            </div>
+          </td>
+          <td class="py-0">
+            <div class="row p-0 m-0">
+              <div class="col-4 p-0 m-0">
+                Sent
+              </div>
+              <div class="col-8 p-0 m-0 text-right">
+                8,888,888
+              </div>
+            </div>
+          </td>
+          <td class="py-0">
+            <div class="row p-0 m-0">
+              <div class="col-4 p-0 m-0">
+                Sent
+              </div>
+              <div class="col-8 p-0 m-0 text-right">
+                8,888,888
+              </div>
+            </div>
+          </td>
+          <td class="py-0">
+            <div class="row p-0 m-0">
+              <div class="col-4 p-0 m-0">
+                Sent
+              </div>
+              <div class="col-8 p-0 m-0 text-right">
+                8,888,888
+              </div>
+            </div>
+          </td>
+          <td class="py-0">
+            <div class="row p-0 m-0">
+              <div class="col-4 p-0 m-0">
+                Sent
+              </div>
+              <div class="col-8 p-0 m-0 text-right">
+                8,888,888
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="py-0">
+            <div class="row p-0 m-0">
+              <div class="col-12 p-0 m-0"></div>
+            </div>
+          </td>
+          <td class="py-0">
+            <div class="row p-0 m-0">
+              <div class="col-4 p-0 m-0">
+                Opened
+              </div>
+              <div class="col-8 p-0 m-0 text-right">
+                8,888,888
+              </div>
+            </div>
+          </td>
+          <td class="py-0">
+            <div class="row p-0 m-0">
+              <div class="col-4 p-0 m-0">
+                Opened
+              </div>
+              <div class="col-8 p-0 m-0 text-right">
+                8,888,888
+              </div>
+            </div>
+          </td>
+          <td class="py-0">
+            <div class="row p-0 m-0">
+              <div class="col-4 p-0 m-0">
+                Opened
+              </div>
+              <div class="col-8 p-0 m-0 text-right">
+                8,888,888
+              </div>
+            </div>
+          </td>
+          <td class="py-0">
+            <div class="row p-0 m-0">
+              <div class="col-4 p-0 m-0">
+                Opened
+              </div>
+              <div class="col-8 p-0 m-0 text-right">
+                8,888,888
+              </div>
+            </div>
+          </td>
+        </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </div>
@@ -320,9 +829,6 @@
     </thead>
 
     <tbody class="font-8 text-light" infiniteScroll [infiniteScrollDistance]=".1" [infiniteScrollThrottle]="50" (scrolled)="onScroll()" [scrollWindow]="false">
-    <div class="right-arrow-mobile-scroll-indicator-div d-sm-none">
-      <img class="right-arrow-mobile-scroll-indicator-img" src="assets/images/right-chevron.png" alt="Scroll right for more">
-    </div>
     <tr *ngFor="let user of userAccounts">
       <td class="width-91px">{{user.signUpDate}}</td>
       <td class="width-91px">{{user.firstName | slice:0:18}}</td>
