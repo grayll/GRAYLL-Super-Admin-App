@@ -6,7 +6,7 @@
     <div class="col-12 col-sm-7 justify-content-center align-items-center" *ngIf="selectedTab">
       <ngb-tabset type="pills" class="custom-pills" (tabChange)="onTabChange($event.nextId)" [activeId]="selectedTab.id">
         <ng-container *ngFor="let tab of userAccountTabs">
-          <ngb-tab [id]="tab.id" *ngIf="(tab.id !== 'uad') || (tab.id === 'uad' && selectedUser)">
+          <ngb-tab [id]="tab.id">
             <ng-template ngbTabTitle>
               {{tab.name}}
             </ng-template>
