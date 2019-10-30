@@ -22,6 +22,7 @@ export class ActivityComponent implements OnInit, OnChanges {
 	@Input() activeTabId: string;
 	@Input() showCompletedOrdersLink: boolean;
 	@Input() userAccount: string;
+	@Input() hideRouterOutlet: boolean;
 	
 	openAlgoPositions: AlgoPositionModel[] = [];
 	

@@ -1,4 +1,4 @@
-<router-outlet name="popup"></router-outlet>
+<router-outlet *ngIf="!hideRouterOutlet" name="popup"></router-outlet>
 <div class="bg-gradient text-light" id="systemActivityTable">
   <div class="row align-items-center justify-content-center p-2">
     <div class="col">
