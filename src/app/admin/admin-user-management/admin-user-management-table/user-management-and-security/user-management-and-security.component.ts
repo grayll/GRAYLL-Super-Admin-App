@@ -9,6 +9,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import {AdminService} from '../../../admin.service';
 import {UserAccessStatusModel} from './models/user-access-status.model';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-user-management-and-security',
@@ -51,7 +52,8 @@ export class UserManagementAndSecurityComponent implements OnInit {
 	faSortByAppSignIn = faCaretDown;
 	
 	constructor(
-	public adminService: AdminService
+	public adminService: AdminService,
+	private router: Router
 	) {
 		this.populateUserAccountsArray();
 		this.setActiveTab();
@@ -160,5 +162,4 @@ export class UserManagementAndSecurityComponent implements OnInit {
 		this.selectedTab = this.userAccountTabs[1];
 		this.selectedUser = user;
 	}
-
 }

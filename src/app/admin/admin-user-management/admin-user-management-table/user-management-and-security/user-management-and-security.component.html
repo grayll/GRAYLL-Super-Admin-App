@@ -1,9 +1,9 @@
-<div class="bg-gradient text-light" id="user-security-settings">
+<div class="bg-gradient text-light" id="user-management-and-security-settings">
   <div class="row align-items-center justify-content-center p-2">
-    <div class="col-12 col-sm-3 align-self-center" style="max-width: 240px;">
+    <div class="col-12 col-md-3 align-self-center" style="max-width: 240px;">
       <h6 class="mb-0 text-center py-2">{{selectedTab.name}}</h6>
     </div>
-    <div class="col-12 col-sm-7 justify-content-center align-items-center" *ngIf="selectedTab">
+    <div class="col-12 col-md-5 justify-content-center align-items-center" *ngIf="selectedTab">
       <ngb-tabset type="pills" class="custom-pills" (tabChange)="onTabChange($event.nextId)" [activeId]="selectedTab.id">
         <ng-container *ngFor="let tab of userAccountTabs">
           <ngb-tab [id]="tab.id">
@@ -14,7 +14,18 @@
         </ng-container>
       </ngb-tabset>
     </div>
-    <div class="col-12 col-sm-2 text-center">
+    <div class="col-6 mt-2 mt-sm-0 col-md-2 search">
+      <div class="input-group">
+        <input class="form-control form-control-no-border bg-transparent py-2 border border-right-0 text-light"
+               type="search" style="border-color: #40278C!important">
+        <span class="input-group-append">
+              <div class="input-group-text bg-transparent">
+                <fa-icon style="color: #40278C" [icon]="faSearch"></fa-icon>
+              </div>
+            </span>
+      </div>
+    </div>
+    <div class="col-6 col-sm-2 text-center">
       <hr class="mt-0 d-sm-none">
       <a class="purple-link font-10" href="javascript:void(0)">
         <fa-icon [icon]="faDownload" [fixedWidth]="true"></fa-icon>
@@ -28,46 +39,9 @@
 
 <div class="bg-gradient text-light" *ngIf="selectedTab.id === 'uad' && selectedUser">
   <div class="row justify-content-center align-items-center mb-1 p-2">
-    <div class="col-12 col-sm-9 text-center py-2">
+    <div class="col-12 text-center py-2">
       <span class="align-middle font-weight-bolder font-14">User Account {{selectedUser.grayllId}}</span>
     </div>
-    <div class="col-6 col-sm-3 text-center mt-2 mt-sm-0">
-      <div class="row">
-        <div class="col search">
-          <div class="input-group">
-            <input class="form-control form-control-no-border bg-transparent py-2 border border-right-0 text-light"
-                   type="search" style="border-color: #40278C!important">
-            <span class="input-group-append">
-              <div class="input-group-text bg-transparent">
-                <fa-icon style="color: #40278C" [icon]="faSearch"></fa-icon>
-              </div>
-            </span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col d-none d-md-block"></div>
-  </div>
-</div>
-
-<div class="bg-gradient text-light" *ngIf="selectedTab.id === 'uad' && !selectedUser">
-  <div class="row justify-content-center align-items-center mb-1 p-2">
-    <div class="col-6 col-sm-3 offset-sm-9 text-center mt-2 mt-sm-0">
-      <div class="row">
-        <div class="col search">
-          <div class="input-group">
-            <input class="form-control form-control-no-border bg-transparent py-2 border border-right-0 text-light"
-                   type="search" style="border-color: #40278C!important">
-            <span class="input-group-append">
-              <div class="input-group-text bg-transparent">
-                <fa-icon style="color: #40278C" [icon]="faSearch"></fa-icon>
-              </div>
-            </span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col d-none d-md-block"></div>
   </div>
 </div>
 
@@ -88,6 +62,7 @@
             <th class="width-101px" style="vertical-align: middle">GRAYLL ID</th>
             <th class="width-131px" style="vertical-align: middle">
               Account Value (USD)
+              <br>
               <small>Current Account Total</small>
             </th>
           </tr>
@@ -203,6 +178,16 @@
               <br>
               <small>Historical Total</small>
             </th>
+            <th class="width-111px" style="vertical-align: middle">
+              GRY 1 Open Positions
+              <br>
+              <small>Current Account Total</small>
+            </th>
+            <th class="width-111px" style="vertical-align: middle">
+              GRY 2 Open Positions
+              <br>
+              <small>Current Account Total</small>
+            </th>
           </tr>
           </thead>
 
@@ -213,6 +198,63 @@
             <td class="py-0 width-123px">1,000,000,000,000.00</td>
             <td class="py-0 width-123px">1,000,000,000,000.00</td>
             <td class="py-0 width-123px">1,000,000,000,000.00</td>
+            <td class="py-0 width-111px">1,000,000,000,000.00</td>
+            <td class="py-0 width-111px">1,000,000,000,000.00</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="table-responsive mb-2">
+        <table class="table table-borderless mb-0">
+          <thead>
+          <tr class="font-weight-bolder font-10 text-light">
+            <th class="width-123px" style="vertical-align: middle">
+              GRY Open Positions (USD)
+              <br>
+              <small>Current Account Total</small>
+            </th>
+            <th class="width-123px" style="vertical-align: middle">
+              GRY 1 Open Positions (USD)
+              <br>
+              <small>Current Account Total</small>
+            </th>
+            <th class="width-123px" style="vertical-align: middle">
+              GRY 2 Open Positions (USD)
+              <br>
+              <small>Current Account Total</small>
+            </th>
+            <th class="width-123px" style="vertical-align: middle">
+              GRY 3 Open Positions (USD)
+              <br>
+              <small>Current Account Total</small>
+            </th>
+            <th class="width-123px" style="vertical-align: middle">
+              GRZ Open Positions (USD)
+              <br>
+              <small>Historical Total</small>
+            </th>
+            <th class="width-111px" style="vertical-align: middle">
+              GRY 3 Open Positions
+              <br>
+              <small>Current Account Total</small>
+            </th>
+            <th class="width-111px" style="vertical-align: middle">
+              GRZ Open Positions
+              <br>
+              <small>Historical Total</small>
+            </th>
+          </tr>
+          </thead>
+
+          <tbody class="font-8 text-light" style="height: auto; overflow: hidden">
+          <tr>
+            <td class="py-0 width-123px">1,000,000,000,000.00</td>
+            <td class="py-0 width-123px">1,000,000,000,000.00</td>
+            <td class="py-0 width-123px">1,000,000,000,000.00</td>
+            <td class="py-0 width-123px">1,000,000,000,000.00</td>
+            <td class="py-0 width-123px">1,000,000,000,000.00</td>
+            <td class="py-0 width-111px">1,000,000,000,000.00</td>
+            <td class="py-0 width-111px">1,000,000,000,000.00</td>
           </tr>
           </tbody>
         </table>
@@ -322,13 +364,13 @@
 
             <tbody class="font-8 text-light" style="height: auto; overflow: hidden">
             <tr>
-              <td class="pt-0">
+              <td class="py-0">
                 Enabled
               </td>
-              <td class="pt-0">
+              <td class="py-0">
                 Disabled
               </td>
-              <td class="pt-0">
+              <td class="py-0">
                 Enabled
               </td>
             </tr>
@@ -351,7 +393,7 @@
                 <div class="col-12 p-0 m-0">
                   General Notifications
                   <br>
-                  <small>Email</small>
+                  <small>Email Enabled/Disabled</small>
                 </div>
               </div>
             </th>
@@ -360,7 +402,7 @@
                 <div class="col-12 p-0 m-0">
                   General Notifications
                   <br>
-                  <small>App</small>
+                  <small>App Enabled/Disabled</small>
                 </div>
               </div>
             </th>
@@ -369,7 +411,7 @@
                 <div class="col-12 p-0 m-0">
                   Wallet Notifications
                   <br>
-                  <small>Email</small>
+                  <small>Email Enabled/Disabled</small>
                 </div>
               </div>
             </th>
@@ -378,7 +420,7 @@
                 <div class="col-12 p-0 m-0">
                   Wallet Notifications
                   <br>
-                  <small>App</small>
+                  <small>App Enabled/Disabled</small>
                 </div>
               </div>
             </th>
@@ -387,7 +429,7 @@
                 <div class="col-12 p-0 m-0">
                   Algo Notifications
                   <br>
-                  <small>Email</small>
+                  <small>Email Enabled/Disabled</small>
                 </div>
               </div>
             </th>
@@ -396,7 +438,7 @@
                 <div class="col-12 p-0 m-0">
                   Algo Notifications
                   <br>
-                  <small>App</small>
+                  <small>App Enabled/Disabled</small>
                 </div>
               </div>
             </th>
@@ -782,21 +824,6 @@
         {{adminService.isUserSignUpPaused ? 'Activate' : 'Pause' }} New User Sign Up
       </button>
     </div>
-    <div class="col-6 col-sm-3 text-center mt-2 mt-sm-0">
-      <div class="row">
-        <div class="col search">
-          <div class="input-group">
-            <input class="form-control form-control-no-border bg-transparent py-2 border border-right-0 text-light"
-                   type="search" style="border-color: #40278C!important">
-            <span class="input-group-append">
-              <div class="input-group-text bg-transparent">
-                <fa-icon style="color: #40278C" [icon]="faSearch"></fa-icon>
-              </div>
-            </span>
-          </div>
-        </div>
-      </div>
-    </div>
     <div class="col d-none d-md-block"></div>
   </div>
 </div>
@@ -871,8 +898,10 @@
       <td class="width-71px">{{user.gry3accessActive ? 'Active' : 'Paused'}}</td>
       <td class="width-71px">{{user.grzaccessActive ? 'Active' : 'Paused'}}</td>
       <td class="width-71px">{{user.appSignInActive ? 'Active' : 'Paused'}}</td>
-      <td class="width-81px purple-link" (click)="goToUserAccountDetails(user)">
-        View User Account Details
+      <td class="width-81px">
+        <a href="javascript:void(0)" (click)="goToUserAccountDetails(user)" class="purple-link">
+          View User Account Details
+        </a>
       </td>
     </tr>
     </tbody>
