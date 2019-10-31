@@ -136,3 +136,15 @@ td {
     }
   }
 }
+
+@media (max-width: 1199px) {
+  .mobile-height-auto {
+    height: auto!important;
+  }
+}
+
+@media (min-width: 1199px) {
+  .mobile-height-auto {
+    height: 230px!important;
+  }
+}
