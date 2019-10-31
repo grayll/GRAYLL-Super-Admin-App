@@ -4,6 +4,7 @@ import {NgModule} from '@angular/core';
 import {UserManagementComponent} from './user-management/user-management.component';
 import {ActivatePauseSystemComponent} from './popups/activate-pause-system/activate-pause-system.component';
 import {ConfirmStatusComponent} from './admin-user-management/admin-user-management-table/user-accounts-and-registration/confirm-status/confirm-status.component';
+import {ConfirmUserAccessStatusComponent} from './admin-user-management/admin-user-management-table/user-management-and-security/popups/confirm-user-access-status/confirm-user-access-status.component';
 
 const popupRoutes: Routes = [
   {
@@ -14,6 +15,11 @@ const popupRoutes: Routes = [
 	{
 		path: 'confirm-status/:value',
 		component: ConfirmStatusComponent,
+		outlet: 'popup'
+	},
+	{
+		path: 'confirm-user-access-status/:value',
+		component: ConfirmUserAccessStatusComponent,
 		outlet: 'popup'
 	}
 ];

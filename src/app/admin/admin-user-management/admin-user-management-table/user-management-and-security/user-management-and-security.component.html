@@ -48,106 +48,108 @@
 <div class="table-responsive bg-gradient text-light pull-top" *ngIf="selectedTab.id === 'uad' && selectedUser">
   <div class="row mx-0">
     <div class="col-12 col-xl-9">
-      <p class="font-weight-bolder text-purple font-14 mb-0">User Account Details</p>
-      <div class="table-responsive">
-        <table class="table table-borderless mb-0">
-          <thead>
-          <tr class="font-weight-bolder font-10 text-light">
-            <th class="width-91px" style="vertical-align: middle">Sign Up Date</th>
-            <th class="width-91px" style="vertical-align: middle">First Name</th>
-            <th class="width-101px" style="vertical-align: middle">Last Name</th>
-            <th class="width-131px" style="vertical-align: middle">Email Address</th>
-            <th class="width-91px" style="vertical-align: middle">Phone Number</th>
-            <th class="width-91px" style="vertical-align: middle">Account</th>
-            <th class="width-101px" style="vertical-align: middle">GRAYLL ID</th>
-            <th class="width-131px" style="vertical-align: middle">
-              Account Value (USD)
-              <br>
-              <small>Current Account Total</small>
-            </th>
-          </tr>
-          </thead>
+      <div style="height: 230px">
+        <p class="font-weight-bolder text-purple font-14 mb-0">User Account Details</p>
+        <div class="table-responsive">
+          <table class="table table-borderless mb-0">
+            <thead>
+            <tr class="font-weight-bolder font-10 text-light">
+              <th class="width-91px" style="vertical-align: middle">Sign Up Date</th>
+              <th class="width-91px" style="vertical-align: middle">First Name</th>
+              <th class="width-101px" style="vertical-align: middle">Last Name</th>
+              <th class="width-131px" style="vertical-align: middle">Email Address</th>
+              <th class="width-91px" style="vertical-align: middle">Phone Number</th>
+              <th class="width-91px" style="vertical-align: middle">Account</th>
+              <th class="width-101px" style="vertical-align: middle">GRAYLL ID</th>
+              <th class="width-131px" style="vertical-align: middle">
+                Account Value (USD)
+                <br>
+                <small>Current Account Total</small>
+              </th>
+            </tr>
+            </thead>
 
-          <tbody class="font-8 text-light" style="height: auto; overflow: hidden">
-          <tr>
-            <td class="width-91px py-0">{{selectedUser.signUpDate}}</td>
-            <td class="width-91px py-0">{{selectedUser.firstName | slice:0:18}}</td>
-            <td class="width-101px py-0">{{selectedUser.lastName | slice:0:32}}</td>
-            <td class="width-131px py-0" style="word-break: break-all">{{selectedUser.emailAddress | slice:0:32}}</td>
-            <td class="width-91px py-0">{{selectedUser.phoneNumber}}</td>
-            <td class="width-91px py-0">
-              <a href="https://stellar.expert/explorer" class="purple-link" target="_blank">
-                {{selectedUser.account}}
-              </a>
-            </td>
-            <td class="width-101px py-0">
-              <a href="javascript:void(0)" class="purple-link">
-                {{selectedUser.grayllId}}
-              </a>
-            </td>
-            <td class="width-131px py-0">{{selectedUser.accountValueUSD}}</td>
-          </tr>
-          </tbody>
-        </table>
+            <tbody class="font-8 text-light" style="height: auto; overflow: hidden">
+            <tr>
+              <td class="width-91px py-0">{{selectedUser.signUpDate}}</td>
+              <td class="width-91px py-0">{{selectedUser.firstName | slice:0:18}}</td>
+              <td class="width-101px py-0">{{selectedUser.lastName | slice:0:32}}</td>
+              <td class="width-131px py-0" style="word-break: break-all">{{selectedUser.emailAddress | slice:0:32}}</td>
+              <td class="width-91px py-0">{{selectedUser.phoneNumber}}</td>
+              <td class="width-91px py-0">
+                <a href="https://stellar.expert/explorer" class="purple-link" target="_blank">
+                  {{selectedUser.account}}
+                </a>
+              </td>
+              <td class="width-101px py-0">
+                <a href="javascript:void(0)" class="purple-link">
+                  {{selectedUser.grayllId}}
+                </a>
+              </td>
+              <td class="width-131px py-0">{{selectedUser.accountValueUSD}}</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+        <hr style="border-color: #fff;">
+        <p class="font-weight-bolder text-purple font-14 mb-0">User Account Financials</p>
+        <div class="table-responsive">
+          <table class="table table-borderless mb-0">
+            <thead>
+            <tr class="font-weight-bolder font-10 text-light">
+              <th class="width-123px" style="vertical-align: middle">
+                Account Balance (XLM)
+                <br>
+                <small>Current Account Total</small>
+              </th>
+              <th class="width-123px" style="vertical-align: middle">
+                Account Balance (GRX)
+                <br>
+                <small>Current Account Total</small>
+              </th>
+              <th class="width-91px" style="vertical-align: middle">
+                Open Orders <br> XLM (USD)
+                <br>
+                <small>Current Account Total</small>
+              </th>
+              <th class="width-91px" style="vertical-align: middle">
+                Open Orders <br> GRX (USD)
+                <br>
+                <small>Current Account Total</small>
+              </th>
+              <th class="width-111px" style="vertical-align: middle">
+                Total Transfers (USD)
+                <br>
+                <small>Historical Account Total</small>
+              </th>
+              <th class="width-111px" style="vertical-align: middle">
+                Total Transfers (XLM)
+                <br>
+                <small>Historical Account Total</small>
+              </th>
+              <th class="width-101px p-0" style="vertical-align: middle">
+                Total Transfers (GRX)
+                <br>
+                <small>Historical Account Total</small>
+              </th>
+            </tr>
+            </thead>
+
+            <tbody class="font-8 text-light" style="height: auto; overflow: hidden">
+            <tr>
+              <td class="width-123px py-0">1,000,000,000,000.00</td>
+              <td class="width-123px py-0">1,000,000,000,000.00</td>
+              <td class="width-91px py-0">1,000,000,000,000.00</td>
+              <td class="width-91px py-0">1,000,000,000,000.00</td>
+              <td class="width-111px py-0">1,000,000,000,000.00</td>
+              <td class="width-111px py-0">1,000,000,000,000.00</td>
+              <td class="width-101px p-0">1,000,000,000,000.00</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
       <hr style="border-color: #fff;">
-      <p class="font-weight-bolder text-purple font-14 mb-0">User Account Financials</p>
-      <div class="table-responsive">
-        <table class="table table-borderless mb-0">
-          <thead>
-          <tr class="font-weight-bolder font-10 text-light">
-            <th class="width-123px" style="vertical-align: middle">
-              Account Balance (XLM)
-              <br>
-              <small>Current Account Total</small>
-            </th>
-            <th class="width-123px" style="vertical-align: middle">
-              Account Balance (GRX)
-              <br>
-              <small>Current Account Total</small>
-            </th>
-            <th class="width-91px" style="vertical-align: middle">
-              Open Orders <br> XLM (USD)
-              <br>
-              <small>Current Account Total</small>
-            </th>
-            <th class="width-91px" style="vertical-align: middle">
-              Open Orders <br> GRX (USD)
-              <br>
-              <small>Current Account Total</small>
-            </th>
-            <th class="width-111px" style="vertical-align: middle">
-              Total Transfers (USD)
-              <br>
-              <small>Historical Account Total</small>
-            </th>
-            <th class="width-111px" style="vertical-align: middle">
-              Total Transfers (XLM)
-              <br>
-              <small>Historical Account Total</small>
-            </th>
-            <th class="width-101px p-0" style="vertical-align: middle">
-              Total Transfers (GRX)
-              <br>
-              <small>Historical Account Total</small>
-            </th>
-          </tr>
-          </thead>
-
-          <tbody class="font-8 text-light" style="height: auto; overflow: hidden">
-          <tr>
-            <td class="width-123px py-0">1,000,000,000,000.00</td>
-            <td class="width-123px py-0">1,000,000,000,000.00</td>
-            <td class="width-91px py-0">1,000,000,000,000.00</td>
-            <td class="width-91px py-0">1,000,000,000,000.00</td>
-            <td class="width-111px py-0">1,000,000,000,000.00</td>
-            <td class="width-111px py-0">1,000,000,000,000.00</td>
-            <td class="width-101px p-0">1,000,000,000,000.00</td>
-          </tr>
-          </tbody>
-        </table>
-      </div>
-      <hr style="border-color: #fff; margin-top: 0.7rem!important;">
       <p class="font-weight-bolder text-purple font-14 mb-0">User Algo System Financials</p>
       <div class="table-responsive">
         <table class="table table-borderless mb-0">
@@ -261,79 +263,86 @@
       </div>
     </div>
     <div class="col-12 col-xl-3">
-      <div class="row">
-        <div class="col-12">
-          <p class="text-purple font-weight-bolder font-14">User Access Management</p>
+      <div style="height: 230px;">
+        <div class="row">
+          <div class="col-12">
+            <p class="text-purple font-weight-bolder font-14">User Access Management</p>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-9">
-          <button class="btn btn-block btn-purple font-12" (click)="adminService.isUserSignInPaused = !adminService.isUserSignInPaused">
-            {{!adminService.isUserSignInPaused ? 'Activate' : 'Pause'}} User App Sign In
-          </button>
+        <div class="row">
+          <div class="col-9">
+            <button class="btn btn-block btn-purple font-12"
+                    [routerLink]="['/admin/overview', {outlets: {popup: ['confirm-status', 'App Sign In']}}]">
+              {{adminService.isUserSignInPaused ? 'Activate' : 'Pause'}} User App Sign In
+            </button>
+          </div>
+          <div class="col-3 align-self-center">
+            <p class="font-12 align-self-center font-italic mb-0"
+               [class.text-purple]="!adminService.isUserSignInPaused"
+               [class.text-light]="adminService.isUserSignInPaused">
+              {{adminService.isUserSignInPaused ? 'Paused' : 'Active'}}
+            </p>
+          </div>
         </div>
-        <div class="col-3 align-self-center">
-          <p class="font-12 align-self-center font-italic mb-0"
-             [class.text-purple]="adminService.isUserSignInPaused"
-             [class.text-light]="!adminService.isUserSignInPaused">
-            {{!adminService.isUserSignInPaused ? 'Paused' : 'Active'}}
-          </p>
+        <div class="row mt-2">
+          <div class="col-9">
+            <button class="btn btn-block btn-purple font-12"
+                    [routerLink]="['/admin/overview', {outlets: {popup: ['confirm-user-access-status', 'GRY | 1']}}]">
+              {{adminService.isGRY1UserAccessActive ? 'Pause' : 'Activate'}} GRY | 1 User Access
+            </button>
+          </div>
+          <div class="col-3 align-self-center">
+            <p class="font-12 align-self-center font-italic mb-0"
+               [class.text-purple]="adminService.isGRY1UserAccessActive"
+               [class.text-light]="!adminService.isGRY1UserAccessActive">
+              {{adminService.isGRY1UserAccessActive ? 'Active' : 'Paused'}}
+            </p>
+          </div>
         </div>
-      </div>
-      <div class="row mt-2">
-        <div class="col-9">
-          <button class="btn btn-block btn-purple font-12" (click)="adminService.isGRY1UserAccessEnabled = !adminService.isGRY1UserAccessEnabled">
-            {{adminService.isGRY1UserAccessEnabled ? 'Pause' : 'Activate'}} GRY | 1 User Access
-          </button>
+        <div class="row mt-2">
+          <div class="col-9">
+            <button class="btn btn-block btn-purple font-12"
+                    [routerLink]="['/admin/overview', {outlets: {popup: ['confirm-user-access-status', 'GRY | 2']}}]">
+              {{adminService.isGRY2UserAccessActive ? 'Pause' : 'Activate'}} GRY | 2 User Access
+            </button>
+          </div>
+          <div class="col-3 align-self-center">
+            <p class="font-12 align-self-center font-italic mb-0"
+               [class.text-purple]="adminService.isGRY2UserAccessActive"
+               [class.text-light]="!adminService.isGRY2UserAccessActive">
+              {{adminService.isGRY2UserAccessActive ? 'Active' : 'Paused'}}
+            </p>
+          </div>
         </div>
-        <div class="col-3 align-self-center">
-          <p class="font-12 align-self-center font-italic mb-0"
-             [class.text-purple]="adminService.isGRY1UserAccessEnabled"
-             [class.text-light]="!adminService.isGRY1UserAccessEnabled">
-            {{adminService.isGRY1UserAccessEnabled ? 'Active' : 'Paused'}}
-          </p>
+        <div class="row mt-2">
+          <div class="col-9">
+            <button class="btn btn-block btn-purple font-12"
+                    [routerLink]="['/admin/overview', {outlets: {popup: ['confirm-user-access-status', 'GRY | 3']}}]">
+              {{adminService.isGRY3UserAccessActive ? 'Pause' : 'Activate'}} GRY | 3 User Access
+            </button>
+          </div>
+          <div class="col-3 align-self-center">
+            <p class="font-12 align-self-center font-italic mb-0"
+               [class.text-purple]="adminService.isGRY3UserAccessActive"
+               [class.text-light]="!adminService.isGRY3UserAccessActive">
+              {{adminService.isGRY3UserAccessActive ? 'Active' : 'Paused'}}
+            </p>
+          </div>
         </div>
-      </div>
-      <div class="row mt-2">
-        <div class="col-9">
-          <button class="btn btn-block btn-purple font-12" (click)="adminService.isGRY2UserAccessEnabled = !adminService.isGRY2UserAccessEnabled">
-            {{adminService.isGRY2UserAccessEnabled ? 'Pause' : 'Activate'}} GRY | 2 User Access
-          </button>
-        </div>
-        <div class="col-3 align-self-center">
-          <p class="font-12 align-self-center font-italic mb-0"
-             [class.text-purple]="adminService.isGRY2UserAccessEnabled"
-             [class.text-light]="!adminService.isGRY2UserAccessEnabled">
-            {{adminService.isGRY2UserAccessEnabled ? 'Active' : 'Paused'}}
-          </p>
-        </div>
-      </div>
-      <div class="row mt-2">
-        <div class="col-9">
-          <button class="btn btn-block btn-purple font-12" (click)="adminService.isGRY3UserAccessEnabled = !adminService.isGRY3UserAccessEnabled">
-            {{adminService.isGRY3UserAccessEnabled ? 'Pause' : 'Activate'}} GRY | 3 User Access
-          </button>
-        </div>
-        <div class="col-3 align-self-center">
-          <p class="font-12 align-self-center font-italic mb-0"
-             [class.text-purple]="adminService.isGRY3UserAccessEnabled"
-             [class.text-light]="!adminService.isGRY3UserAccessEnabled">
-            {{adminService.isGRY3UserAccessEnabled ? 'Active' : 'Paused'}}
-          </p>
-        </div>
-      </div>
-      <div class="row mt-2">
-        <div class="col-9">
-          <button class="btn btn-block btn-purple font-12" (click)="adminService.isGRZUserAccessEnabled = !adminService.isGRZUserAccessEnabled">
-            {{adminService.isGRZUserAccessEnabled ? 'Pause' : 'Activate'}} GRZ User Access
-          </button>
-        </div>
-        <div class="col-3 align-self-center">
-          <p class="font-12 align-self-center font-italic mb-0"
-             [class.text-purple]="adminService.isGRZUserAccessEnabled"
-             [class.text-light]="!adminService.isGRZUserAccessEnabled">
-            {{adminService.isGRZUserAccessEnabled ? 'Active' : 'Paused'}}
-          </p>
+        <div class="row mt-2">
+          <div class="col-9">
+            <button class="btn btn-block btn-purple font-12"
+                    [routerLink]="['/admin/overview', {outlets: {popup: ['confirm-user-access-status', 'GRZ']}}]">
+              {{adminService.isGRZUserAccessActive ? 'Pause' : 'Activate'}} GRZ User Access
+            </button>
+          </div>
+          <div class="col-3 align-self-center">
+            <p class="font-12 align-self-center font-italic mb-0"
+               [class.text-purple]="adminService.isGRZUserAccessActive"
+               [class.text-light]="!adminService.isGRZUserAccessActive">
+              {{adminService.isGRZUserAccessActive ? 'Active' : 'Paused'}}
+            </p>
+          </div>
         </div>
       </div>
       <hr style="border-color: #fff;">
@@ -380,7 +389,7 @@
       </div>
     </div>
   </div>
-  <hr style="border-color: #fff;margin-top: 0.7rem!important;">
+  <hr style="border-color: #fff;">
   <div class="row mx-0 mb-3">
     <div class="col-12 col-xl-7">
       <p class="font-weight-bolder text-purple font-14 mb-0">User Notifications Settings</p>

@@ -4,6 +4,37 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class AdminService {
+	get isNewGRY1UserAccessActive(): boolean {
+		return this._isNewGRY1UserAccessActive;
+	}
+	
+	set isNewGRY1UserAccessActive(value: boolean) {
+		this._isNewGRY1UserAccessActive = value;
+	}
+	
+	get isNewGRY2UserAccessActive(): boolean {
+		return this._isNewGRY2UserAccessActive;
+	}
+	
+	set isNewGRY2UserAccessActive(value: boolean) {
+		this._isNewGRY2UserAccessActive = value;
+	}
+	
+	get isNewGRY3UserAccessActive(): boolean {
+		return this._isNewGRY3UserAccessActive;
+	}
+	
+	set isNewGRY3UserAccessActive(value: boolean) {
+		this._isNewGRY3UserAccessActive = value;
+	}
+	
+	get isNewGRZUserAccessActive(): boolean {
+		return this._isNewGRZUserAccessActive;
+	}
+	
+	set isNewGRZUserAccessActive(value: boolean) {
+		this._isNewGRZUserAccessActive = value;
+	}
 	
   private _gry1FunctionActivated: boolean;
   private _gry2FunctionActivated: boolean;
@@ -22,42 +53,46 @@ export class AdminService {
 	private _didRunFunction4: boolean;
 	private _didRunFunction3: boolean;
 	private _didRunFunction2: boolean;
-	private _isGRY1UserAccessEnabled: boolean;
-	private _isGRY2UserAccessEnabled: boolean;
-	private _isGRY3UserAccessEnabled: boolean;
-	private _isGRZUserAccessEnabled = true;
+	private _isGRY1UserAccessActive: boolean;
+	private _isGRY2UserAccessActive: boolean;
+	private _isGRY3UserAccessActive: boolean;
+	private _isGRZUserAccessActive: boolean;
+	private _isNewGRY1UserAccessActive: boolean;
+	private _isNewGRY2UserAccessActive: boolean;
+	private _isNewGRY3UserAccessActive: boolean;
+	private _isNewGRZUserAccessActive: boolean;
 	
 	
-	get isGRY1UserAccessEnabled(): boolean {
-		return this._isGRY1UserAccessEnabled;
+	get isGRY1UserAccessActive(): boolean {
+		return this._isGRY1UserAccessActive;
 	}
 	
-	set isGRY1UserAccessEnabled(value: boolean) {
-		this._isGRY1UserAccessEnabled = value;
+	set isGRY1UserAccessActive(value: boolean) {
+		this._isGRY1UserAccessActive = value;
 	}
 	
-	get isGRY2UserAccessEnabled(): boolean {
-		return this._isGRY2UserAccessEnabled;
+	get isGRY2UserAccessActive(): boolean {
+		return this._isGRY2UserAccessActive;
 	}
 	
-	set isGRY2UserAccessEnabled(value: boolean) {
-		this._isGRY2UserAccessEnabled = value;
+	set isGRY2UserAccessActive(value: boolean) {
+		this._isGRY2UserAccessActive = value;
 	}
 	
-	get isGRY3UserAccessEnabled(): boolean {
-		return this._isGRY3UserAccessEnabled;
+	get isGRY3UserAccessActive(): boolean {
+		return this._isGRY3UserAccessActive;
 	}
 	
-	set isGRY3UserAccessEnabled(value: boolean) {
-		this._isGRY3UserAccessEnabled = value;
+	set isGRY3UserAccessActive(value: boolean) {
+		this._isGRY3UserAccessActive = value;
 	}
 	
-	get isGRZUserAccessEnabled(): boolean {
-		return this._isGRZUserAccessEnabled;
+	get isGRZUserAccessActive(): boolean {
+		return this._isGRZUserAccessActive;
 	}
 	
-	set isGRZUserAccessEnabled(value: boolean) {
-		this._isGRZUserAccessEnabled = value;
+	set isGRZUserAccessActive(value: boolean) {
+		this._isGRZUserAccessActive = value;
 	}
 	
 	get isNewUserSignUpPaused(): boolean {
