@@ -18,6 +18,11 @@ const popupRoutes: Routes = [
 		outlet: 'popup'
 	},
 	{
+		path: 'confirm-status/:value/:grayllId',
+		component: ConfirmStatusComponent,
+		outlet: 'popup'
+	},
+	{
 		path: 'confirm-user-access-status/:value',
 		component: ConfirmUserAccessStatusComponent,
 		outlet: 'popup'

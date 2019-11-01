@@ -272,7 +272,7 @@
         <div class="row">
           <div class="col-9">
             <button class="btn btn-block btn-purple font-12"
-                    [routerLink]="['/admin/overview', {outlets: {popup: ['confirm-status', 'App Sign In']}}]">
+                    [routerLink]="['/admin/overview', {outlets: {popup: ['confirm-status', 'App Sign In', selectedUser.grayllId]}}]">
               {{adminService.isUserSignInPaused ? 'Activate' : 'Pause'}} User App Sign In
             </button>
           </div>

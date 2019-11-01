@@ -10,7 +10,21 @@
         </div>
       </div>
 
-      <div class="row text-center">
+      <div class="row text-center" *ngIf="userAccountId">
+        <div class="col">
+          <p class="text-purple font-16">
+            Please review and confirm this action to pause
+            <br>
+            <span *ngIf="activity === 'App Sign In'">User App Sign In </span>
+            <span *ngIf="activity === 'Sign Up'">new user sign ups </span>
+            for User Account {{userAccountId}}
+            <br>
+            for review and/or maintenance.
+          </p>
+        </div>
+      </div>
+
+      <div class="row text-center" *ngIf="!userAccountId">
         <div class="col">
           <p class="text-purple font-16">
             Please review and confirm this action to pause all

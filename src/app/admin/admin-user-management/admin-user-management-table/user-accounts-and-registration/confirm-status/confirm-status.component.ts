@@ -18,6 +18,7 @@ export class ConfirmStatusComponent implements OnInit {
 	activated: boolean;
 	newActivated: boolean;
 	didLoadContent: boolean;
+	userAccountId: string;
 	
 	constructor(
 		public popupService: PopupService,
@@ -30,6 +31,7 @@ export class ConfirmStatusComponent implements OnInit {
 	
 	private loadAssetFromRoute() {
 		this.activity = this.route.snapshot.params.value;
+		this.userAccountId = this.route.snapshot.params.grayllId;
 		this.populateStatus();
 	}
 	
