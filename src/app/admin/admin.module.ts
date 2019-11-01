@@ -34,6 +34,7 @@ import {InfiniteScrollModule} from 'ngx-infinite-scroll';
 import { UserSettingsComponent } from './admin-user-management/admin-user-management-table/user-settings/user-settings.component';
 import { UserManagementAndSecurityComponent } from './admin-user-management/admin-user-management-table/user-management-and-security/user-management-and-security.component';
 import { ConfirmUserAccessStatusComponent } from './admin-user-management/admin-user-management-table/user-management-and-security/popups/confirm-user-access-status/confirm-user-access-status.component';
+import {FunctionGrzComponent} from './algo-system-management/function-grz/function-grz.component';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true,
@@ -67,7 +68,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     UserAgoSystemFinancialsComponent,
     UserSettingsComponent,
     UserManagementAndSecurityComponent,
-    ConfirmUserAccessStatusComponent
+    ConfirmUserAccessStatusComponent,
+    FunctionGrzComponent
   ],
   imports: [
     CommonModule,

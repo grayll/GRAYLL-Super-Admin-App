@@ -1,0 +1,82 @@
+.header-fixed {
+    width: 100%
+}
+
+.header-fixed > thead,
+.header-fixed > tbody,
+.header-fixed > thead > tr,
+.header-fixed > tbody > tr,
+.header-fixed > thead > tr > th,
+.header-fixed > tbody > tr > td {
+    display: block;
+}
+
+.header-fixed > tbody > tr:after,
+.header-fixed > thead > tr:after {
+    content: ' ';
+    display: block;
+    visibility: hidden;
+    clear: both;
+}
+
+.header-fixed > tbody {
+    overflow-y: auto;
+    height: 650px
+}
+
+.header-fixed > tbody > tr > td,
+.header-fixed > thead > tr > th {
+    width: 20%;
+    float: left;
+}
+
+:host ::ng-deep #selectUnit .ng-option,
+:host ::ng-deep #selectLog .ng-option {
+    color: white!important;
+    background-image: linear-gradient(to right, #636fa4, #e8cbc0) !important;
+    height: 29px!important;
+    width: 100%!important;
+}
+
+:host ::ng-deep #selectUnit .ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-marked,
+:host ::ng-deep #selectLog .ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-marked {
+    background-color: #e8cbc0!important;
+    color: #40278C!important;
+    height: 29px!important;
+    width: 100%!important;
+}
+
+:host ::ng-deep #selectUnit .ng-select,
+:host ::ng-deep #selectLog .ng-select {
+    color: white!important;
+    height: 29px!important;
+    width: 100%!important;
+}
+
+:host ::ng-deep #selectUnit .ng-select-container,
+:host ::ng-deep #selectLog .ng-select-container {
+    background-image: linear-gradient(to right, #636fa4, #e8cbc0) !important;
+    color: white!important;
+    height: 29px!important;
+    min-height: 29px!important;
+    border-radius: 4px!important;
+    border: 0!important;
+    width: 100%!important;
+}
+
+@media (max-width: 991px) {
+    .input-form {
+        height: auto!important;
+        margin-bottom: 1rem;
+    }
+}
+
+@media (min-width: 992px) {
+    .last-card {
+        margin-bottom: 0!important;
+    }
+
+    .last-card-body {
+        padding-bottom: 0!important;
+    }
+}
