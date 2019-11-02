@@ -10,6 +10,8 @@ import {NotifierConfig} from './shared/configurations/snotify.conf';
 import {SharedModule} from './shared/shared.module';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 declare var Hammer: any;
 
@@ -35,7 +37,8 @@ export class MyHammerConfig extends HammerGestureConfig  {
     SharedModule,
     SnotifyModule,
     NgbModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [
     ErrorService,
