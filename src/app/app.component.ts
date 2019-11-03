@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {SharedService} from './shared/shared.service';
 
 @Component({
@@ -8,5 +8,6 @@ import {SharedService} from './shared/shared.service';
 })
 export class AppComponent {
   title = 'code';
+  
   constructor(public sharedService: SharedService) {}
 }

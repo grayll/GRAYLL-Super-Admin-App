@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {faCheck, faTimes} from '@fortawesome/free-solid-svg-icons';
 import {AdminService} from '../../admin.service';
+import {SnotifyService} from 'ng-snotify';
 
 @Component({
   selector: 'app-function-grz',
@@ -65,27 +66,15 @@ export class FunctionGrzComponent implements OnInit {
 	tableRows = Array(100).fill(this.tableRowMockup);
 	
 	constructor(
-	public adminService: AdminService
+		public adminService: AdminService,
+		private snotifyService: SnotifyService
 	) { }
 	
 	ngOnInit() {
 	}
 	
-	submit(functionNumber: number) {
-		this.adminService.setDidRunAllFunctionsTo(false);
-		switch (functionNumber) {
-			case 1:
-				break;
-			case 2:
-				this.adminService.didRunFunction2 = true;
-				break;
-			case 3:
-				this.adminService.didRunFunction3 = true;
-				break;
-			default:
-				this.adminService.didRunFunction4 = true;
-				break;
-		}
+	submit() {
+		this.snotifyService.simple('Successfully saved.');
 	}
 
 }

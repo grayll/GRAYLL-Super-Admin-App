@@ -1,5 +1,5 @@
 <div class="row mt-3">
-  <div class="col-sm-12 col-md-6 input-form">
+  <div class="col-12 input-form">
     <div class="card font-12">
       <div class="card-header card-header-pink border-bottom-0">
         <div class="row">
@@ -17,10 +17,19 @@
             Base Exchange Rate
           </div>
           <div class="col align-self-center">
-            Real Time Exchange Rate
+            Real Time <br> Exchange Rate
           </div>
           <div class="col align-self-center">
-            Real Time Price Ratio
+            Real Time <br> Price Ratio
+          </div>
+          <div class="col align-self-center">
+            Base Trade Volume %
+          </div>
+          <div class="col align-self-center">
+            Adjusted <br> Trade Volume %
+          </div>
+          <div class="col align-self-center">
+            Real Time Adjusted <br> Price Performance
           </div>
         </div>
         <div class="form-group row">
@@ -34,7 +43,16 @@
             0.823970
           </div>
           <div class="col align-self-center">
-            1
+            1.000000
+          </div>
+          <div class="col align-self-center">
+            <input type="text" class="form-control font-10 transparent-field" id="eurusdbtv" value="15.700000">
+          </div>
+          <div class="col align-self-center">
+            0.000000
+          </div>
+          <div class="col align-self-center">
+            0.000000
           </div>
         </div>
         <div class="form-group row">
@@ -48,7 +66,16 @@
             0.005315
           </div>
           <div class="col align-self-center">
-            1
+            1.000000
+          </div>
+          <div class="col align-self-center">
+            <input type="text" class="form-control font-10 transparent-field" id="jpyusdbtv" value="10.800000">
+          </div>
+          <div class="col align-self-center">
+            0.000000
+          </div>
+          <div class="col align-self-center">
+            0.000000
           </div>
         </div>
         <div class="form-group row">
@@ -62,7 +89,16 @@
             0.190480
           </div>
           <div class="col align-self-center">
-            1
+            1.000000
+          </div>
+          <div class="col align-self-center">
+            <input type="text" class="form-control font-10 transparent-field" id="gbpusdbtv" value="6.400000">
+          </div>
+          <div class="col align-self-center">
+            0.000000
+          </div>
+          <div class="col align-self-center">
+            0.000000
           </div>
         </div>
         <div class="form-group row">
@@ -76,7 +112,16 @@
             0.130000
           </div>
           <div class="col align-self-center">
-            1
+            1.000000
+          </div>
+          <div class="col align-self-center">
+            <input type="text" class="form-control font-10 transparent-field" id="cnyusdbtv" value="2.000000">
+          </div>
+          <div class="col align-self-center">
+            0.000000
+          </div>
+          <div class="col align-self-center">
+            0.000000
           </div>
         </div>
         <div class="form-group row">
@@ -90,7 +135,16 @@
             0.546500
           </div>
           <div class="col align-self-center">
-            1
+            1.000000
+          </div>
+          <div class="col align-self-center">
+            <input type="text" class="form-control font-10 transparent-field" id="chfusdbtv" value="2.400000">
+          </div>
+          <div class="col align-self-center">
+            0.000000
+          </div>
+          <div class="col align-self-center">
+            0.000000
           </div>
         </div>
         <div class="form-group row">
@@ -104,7 +158,16 @@
             0.617000
           </div>
           <div class="col align-self-center">
-            1
+            1.000000
+          </div>
+          <div class="col align-self-center">
+            <input type="text" class="form-control font-10 transparent-field" id="cadusdbtv" value="2.550000">
+          </div>
+          <div class="col align-self-center">
+            0.000000
+          </div>
+          <div class="col align-self-center">
+            0.000000
           </div>
         </div>
         <div class="form-group row">
@@ -118,10 +181,69 @@
             0.477600
           </div>
           <div class="col align-self-center">
-            1
+            1.000000
+          </div>
+          <div class="col align-self-center">
+            <input type="text" class="form-control font-10 transparent-field" id="audusdbtv" value="3.450000">
+          </div>
+          <div class="col align-self-center">
+            0.000000
+          </div>
+          <div class="col align-self-center">
+            0.000000
+          </div>
+        </div>
+        <div class="row form-group">
+          <div class="col"></div>
+          <div class="col">
+            <button (click)="submit()" class="btn btn-purple">Submit & Save</button>
+          </div>
+          <div class="col"></div>
+          <div class="col">
+            7.000000
+          </div>
+          <div class="col">
+            43.300000
+            <br>
+            <br>
+            <button (click)="submit()" class="btn btn-purple">Submit & Save</button>
+          </div>
+          <div class="col">
+            0.000000
+            <br>
+            <br>
+            Trade Volume <br> Adjustment Factor <br> <br>
+            0.2309468822
+          </div>
+          <div class="col">
+            0.000000
+            <br>
+            <br>
+            Performance Adjustment Factor <br> <br>
+            1.000000
+            <br>
+            <br>
+            <button (click)="submit()" class="btn btn-purple">Submit & Save</button>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+<div class="row mt-3">
+  <div class="col-12 input-form">
+    <div class="card font-12">
+      <div class="card-header card-header-pink border-bottom-0">
+        <div class="row">
+          <div class="col">
+            <span class="header-title">Input Function 2</span>
+          </div>
+        </div>
+      </div>
+      <div class="card-body data-box">
+      </div>
+    </div>
+  </div>
+</div>
+

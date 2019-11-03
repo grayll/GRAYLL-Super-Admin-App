@@ -62,7 +62,6 @@ export class AdminService {
 	private _isNewGRY3UserAccessActive: boolean;
 	private _isNewGRZUserAccessActive: boolean;
 	
-	
 	get isGRY1UserAccessActive(): boolean {
 		return this._isGRY1UserAccessActive;
 	}
