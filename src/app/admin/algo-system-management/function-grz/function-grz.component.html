@@ -19,7 +19,7 @@
           <div class="col align-self-center">
             Real Time <br> Exchange Rate
           </div>
-          <div class="col align-self-center">
+          <div class="col align-self-center text-center">
             Real Time <br> Price Ratio
           </div>
           <div class="col align-self-center">
@@ -42,7 +42,7 @@
           <div class="col align-self-center">
             0.823970
           </div>
-          <div class="col align-self-center">
+          <div class="col align-self-center text-center">
             1.000000
           </div>
           <div class="col align-self-center">
@@ -65,7 +65,7 @@
           <div class="col align-self-center">
             0.005315
           </div>
-          <div class="col align-self-center">
+          <div class="col align-self-center text-center">
             1.000000
           </div>
           <div class="col align-self-center">
@@ -88,7 +88,7 @@
           <div class="col align-self-center">
             0.190480
           </div>
-          <div class="col align-self-center">
+          <div class="col align-self-center text-center">
             1.000000
           </div>
           <div class="col align-self-center">
@@ -111,7 +111,7 @@
           <div class="col align-self-center">
             0.130000
           </div>
-          <div class="col align-self-center">
+          <div class="col align-self-center text-center">
             1.000000
           </div>
           <div class="col align-self-center">
@@ -134,7 +134,7 @@
           <div class="col align-self-center">
             0.546500
           </div>
-          <div class="col align-self-center">
+          <div class="col align-self-center text-center">
             1.000000
           </div>
           <div class="col align-self-center">
@@ -157,7 +157,7 @@
           <div class="col align-self-center">
             0.617000
           </div>
-          <div class="col align-self-center">
+          <div class="col align-self-center text-center">
             1.000000
           </div>
           <div class="col align-self-center">
@@ -180,47 +180,47 @@
           <div class="col align-self-center">
             0.477600
           </div>
-          <div class="col align-self-center">
+          <div class="col align-self-center text-center" style="border-bottom: 2px solid #e8cbc0!important; padding-bottom: 10px">
             1.000000
           </div>
-          <div class="col align-self-center">
+          <div class="col align-self-center" style="border-bottom: 2px solid #e8cbc0!important; margin-bottom: 13px; padding-bottom: 10px">
             <input type="text" class="form-control font-10 transparent-field" id="audusdbtv" value="3.450000">
           </div>
-          <div class="col align-self-center">
+          <div class="col align-self-center" style="border-bottom: 2px solid #e8cbc0!important; padding-bottom: 10px">
             0.000000
           </div>
-          <div class="col align-self-center">
+          <div class="col align-self-center" style="border-bottom: 2px solid #e8cbc0!important; padding-bottom: 10px">
             0.000000
           </div>
         </div>
         <div class="row form-group">
           <div class="col"></div>
-          <div class="col">
+          <div class="col text-center ml-2">
             <button (click)="submit()" class="btn btn-purple">Submit & Save</button>
           </div>
           <div class="col"></div>
-          <div class="col">
-            7.000000
+          <div class="col text-center" style="margin-left: 20px">
+            <span class="font-weight-bold">7.000000</span>
           </div>
-          <div class="col">
-            43.300000
+          <div class="col text-center">
+            <span class="font-weight-bold">43.300000</span>
             <br>
             <br>
             <button (click)="submit()" class="btn btn-purple">Submit & Save</button>
           </div>
           <div class="col">
-            0.000000
+            <span class="font-weight-bold">0.000000</span>
             <br>
             <br>
             Trade Volume <br> Adjustment Factor <br> <br>
-            0.2309468822
+            <p class="font-weight-bold">0.2309468822</p>
           </div>
           <div class="col">
-            0.000000
+            <span class="font-weight-bold">0.000000</span>
             <br>
             <br>
             Performance Adjustment Factor <br> <br>
-            1.000000
+            <input type="text" class="form-control font-10 transparent-field" value="1.000000">
             <br>
             <br>
             <button (click)="submit()" class="btn btn-purple">Submit & Save</button>
@@ -242,8 +242,83 @@
         </div>
       </div>
       <div class="card-body data-box">
+        <div class="form-group row">
+          <div class="col align-self-center">
+            Current Real Rate of Inflation per Year
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col align-self-center">
+            CPI %
+          </div>
+          <div class="col align-self-center">
+            REAL CPI
+          </div>
+          <div class="col align-self-center">
+            Unfunded Liabilities <br> <small>Adjustment/Minute</small>
+          </div>
+          <div class="col align-self-center font-weight-bold">
+            BTC/USD <br> 24 Hour Real-Time % Change
+          </div>
+          <div class="col align-self-center">
+            BTC/USD <br> 24 Hour Real-Time <br> % Change Adjusted
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col align-self-center">
+            <input type="text" class="form-control font-10 transparent-field" id="cpi" value="5.400000">
+          </div>
+          <div class="col align-self-center font-weight-bold">
+            (= CPI % + CPI Adjustment Factor)
+          </div>
+          <div class="col align-self-center text-center">
+            <input type="text" class="form-control font-10 transparent-field" id="unfundedliabilities" value="0.000000005">
+          </div>
+          <div class="col align-self-center">
+            4.888999
+          </div>
+          <div class="col align-self-center">
+            (= BTC/USD 24 Hour Real Time % Change)
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col align-self-center">
+          <button (click)="submit()" class="btn btn-purple">Submit & Save</button>
+          </div>
+          <div class="col align-self-center">
+            CPI %Minute <br> <span class="font-weight-bold">(= CPI%/525,600)</span>
+          </div>
+            <div class="col align-self-center">
+            <button (click)="submit()" class="btn btn-purple">Submit & Save</button>
+          </div>
+          <div class="col align-self-center">
+            Adjustment Factor <br> <input type="text" class="form-control font-10 transparent-field" id="adjustmentfactor" value="0.100000">
+          </div>
+          <div class="col align-self-center">
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col align-self-center">
+            CPI Adjustment Factor <br>
+            <input type="text" class="form-control font-10 transparent-field" id="cpiadjustmentfactor" value="2.600000"> <br>
+            <button (click)="submit()" class="btn btn-purple">Submit & Save</button>
+          </div>
+          <div class="col align-self-center">
+            Real CPI %Minute <br>
+            <span class="font-weight-bold">(= Real CPI%525,600)</span>
+          </div>
+          <div class="col align-self-center font-weight-bold">
+            Calculated Output GRZ <br> <small>Real-Time Value Update</small> <br> SD.014392246
+          </div>
+          <div class="col align-self-center">
+            <button (click)="submit()" class="btn btn-purple">Submit & Save</button>
+          </div>
+          <div class="col align-self-center">
+            Final Output GRZ <br>
+            <span class="font-weight-bold">(= Calculated Output GRZ <br> BTC/USD 24 Hour Real-Time % Change Adjusted)</span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
-
