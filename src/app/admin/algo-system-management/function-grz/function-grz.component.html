@@ -212,7 +212,7 @@
             <th class="pb-0 pt-0" scope="col">REAL CPI</th>
             <th class="pb-0 pt-0" scope="col">Unfunded Liabilities <br> <small>Adjustment/Minute</small></th>
             <th class="pb-0 pt-0" scope="col">BTC/USD <br> 24 Hour Real-Time % Change</th>
-            <th class="pb-0 pt-0" scope="col">BTC/USD <br> 24 Hour Real-Time <br>% Change Adjustment</th>
+            <th class="pb-0 pt-0" scope="col">BTC/USD <br> 24 Hour Real-Time <br>% Change Adjusted</th>
             </thead>
             <tbody>
             <tr class="mb-3">
@@ -220,18 +220,18 @@
                 <input type="text" class="form-control font-10 transparent-field" id="cpi" value="5.400000">
               </td>
               <td class="font-weight-bold pt-0">
-                (= CPI % + CPI Adjustment Factor)
+                (= CPI % * CPI Adjustment Factor)
               </td>
               <td class="pt-0">
                 <input type="text" class="form-control font-10 transparent-field" id="unfundedliabilities" value="0.000000005">
               </td>
               <td class="pt-0">4.888999</td>
               <td class="font-weight-bold pt-0">
-                (= BTC/USD 24 Hour Real Time % Change)
+                (= BTC/USD 24 <br> Hour Real Time % Change)
               </td>
             </tr>
             <tr>
-              <td class="text-center">
+              <td>
                 <button (click)="submit()" class="btn btn-purple">Submit & Save</button>
               </td>
               <td>
@@ -257,18 +257,18 @@
                 <span class="font-weight-bold">(= Real CPI%525,600)</span>
               </td>
               <td class="font-weight-bold">
-                Calculated Output GRZ <br> <small>Real-Time Value Update</small> <br> SD.014392246
-              </td>
-              <td class="text-center">
-                <button (click)="submit()" class="btn btn-purple">Submit & Save</button>
+                Calculated Output GRZ <br> <small class="font-weight-bold">Real-Time Value Update</small> <br> $0.01439246
               </td>
               <td>
+                <button (click)="submit()" class="btn btn-purple">Submit & Save</button>
+              </td>
+              <td class="font-weight-bold">
                 Final Output GRZ <br>
-                <span class="font-weight-bold">(= Calculated Output GRZ <br> BTC/USD 24 Hour Real-Time % Change Adjusted)</span>
+                (= Calculated Output GRZ * <br> BTC/USD 24 Hour Real-Time % Change Adjusted)
               </td>
             </tr>
             <tr>
-              <td class="text-center">
+              <td>
                 <button (click)="submit()" class="btn btn-purple">Submit & Save</button>
               </td>
             </tr>
