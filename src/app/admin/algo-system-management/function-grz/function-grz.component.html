@@ -129,7 +129,7 @@
             </tr>
             <tr>
               <td></td>
-              <td>
+              <td class="text-center">
                 <button (click)="submit()" class="btn btn-purple">Submit & Save</button>
               </td>
               <td></td>
@@ -151,7 +151,7 @@
               <td></td>
               <td></td>
               <td></td>
-              <td>
+              <td class="text-center">
                 <button (click)="submit()" class="btn btn-purple">Submit & Save</button>
               </td>
               <td>Trade Volume <br> Adjustment Factor</td>
@@ -164,7 +164,7 @@
               <td></td>
               <td></td>
               <td>
-                <p class="font-weight-bold">0.2309468822</p>
+                <p class="font-weight-bold pt-2">0.2309468822</p>
               </td>
               <td>
                 <input type="text" class="form-control font-10 transparent-field" value="1.000000">
@@ -177,7 +177,7 @@
               <td></td>
               <td></td>
               <td></td>
-              <td>
+              <td class="text-center">
                 <button (click)="submit()" class="btn btn-purple">Submit & Save</button>
               </td>
             </tr>
@@ -200,79 +200,80 @@
         </div>
       </div>
       <div class="card-body data-box">
-        <div class="form-group row mb-0">
+        <div class="form-group row mb-0 pb-0">
           <div class="col align-self-center">
             Current Real Rate of Inflation per Year
           </div>
         </div>
-        <div class="form-group row mb-0 mt-0">
-          <div class="col align-self-center">
-            CPI % <br>
-            <input type="text" class="form-control font-10 transparent-field" id="cpi" value="5.400000">
-          </div>
-          <div class="col align-self-center">
-            REAL CPI <br>
-            <span class="font-weight-bold">(= CPI % + CPI Adjustment Factor)</span>
-          </div>
-          <div class="col align-self-center">
-            Unfunded Liabilities <br> <small>Adjustment/Minute</small> <br>
-            <input type="text" class="form-control font-10 transparent-field" id="unfundedliabilities" value="0.000000005">
-          </div>
-          <div class="col align-self-center">
-            BTC/USD <br> 24 Hour Real-Time % Change <br> <p>4.888999</p>
-          </div>
-          <div class="col align-self-center">
-            BTC/USD <br> 24 Hour Real-Time <br> % Change Adjusted <br> <p class="font-weight-bold">(= BTC/USD 24 Hour Real Time % Change)</p>
-          </div>
-        </div>
-        <div class="form-group row">
-          <div class="col align-self-center">
-            <button (click)="submit()" class="btn btn-purple">Submit & Save</button>
-          </div>
-          <div class="col align-self-center">
-            CPI %/Minute <br> <span class="font-weight-bold">(= CPI%/525,600)</span>
-          </div>
-          <div class="col align-self-center">
-            <button (click)="submit()" class="btn btn-purple">Submit & Save</button>
-          </div>
-          <div class="col align-self-center">
-            Adjustment Factor <br> <input type="text" class="form-control font-10 transparent-field" id="adjustmentfactor" value="0.100000">
-          </div>
-          <div class="col align-self-center">
-          </div>
-        </div>
-        <div class="form-group row mb-0">
-          <div class="col align-self-center">
-            CPI Adjustment Factor <br>
-            <input type="text" class="form-control font-10 transparent-field" id="cpiadjustmentfactor" value="2.600000">
-          </div>
-          <div class="col align-self-center">
-            Real CPI %/Minute <br>
-            <span class="font-weight-bold">(= Real CPI%525,600)</span>
-          </div>
-          <div class="col align-self-center font-weight-bold">
-            Calculated Output GRZ <br> <small>Real-Time Value Update</small> <br> SD.014392246
-          </div>
-          <div class="col align-self-center">
-            <button (click)="submit()" class="btn btn-purple">Submit & Save</button>
-          </div>
-          <div class="col align-self-center">
-            Final Output GRZ <br>
-            <span class="font-weight-bold">(= Calculated Output GRZ <br> BTC/USD 24 Hour Real-Time % Change Adjusted)</span>
-          </div>
-        </div>
-        <div class="form-group row">
-          <div class="col align-self-center">
-            <button (click)="submit()" class="btn btn-purple text-center">Submit & Save</button>
-          </div>
-          <div class="col align-self-center">
-          </div>
-          <div class="col align-self-center">
-          </div>
-          <div class="col align-self-center">
-          </div>
-          <div class="col align-self-center">
-          </div>
+        <div class="table-responsive">
+          <table class="table table-borderless" style="color: inherit">
+            <thead>
+            <th class="pb-0 pt-0" scope="col">CPI %</th>
+            <th class="pb-0 pt-0" scope="col">REAL CPI</th>
+            <th class="pb-0 pt-0" scope="col">Unfunded Liabilities <br> <small>Adjustment/Minute</small></th>
+            <th class="pb-0 pt-0" scope="col">BTC/USD <br> 24 Hour Real-Time % Change</th>
+            <th class="pb-0 pt-0" scope="col">BTC/USD <br> 24 Hour Real-Time <br>% Change Adjustment</th>
+            </thead>
+            <tbody>
+            <tr class="mb-3">
+              <td class="pt-0">
+                <input type="text" class="form-control font-10 transparent-field" id="cpi" value="5.400000">
+              </td>
+              <td class="font-weight-bold pt-0">
+                (= CPI % + CPI Adjustment Factor)
+              </td>
+              <td class="pt-0">
+                <input type="text" class="form-control font-10 transparent-field" id="unfundedliabilities" value="0.000000005">
+              </td>
+              <td class="pt-0">4.888999</td>
+              <td class="font-weight-bold pt-0">
+                (= BTC/USD 24 Hour Real Time % Change)
+              </td>
+            </tr>
+            <tr>
+              <td class="text-center">
+                <button (click)="submit()" class="btn btn-purple">Submit & Save</button>
+              </td>
+              <td>
+                CPI %/Minute <br> <span class="font-weight-bold">(= CPI%/525,600)</span>
+              </td>
+              <td>
+                <button (click)="submit()" class="btn btn-purple">Submit & Save</button>
+              </td>
+              <td>
+                Adjustment Factor <br>
+                <input type="text" class="form-control font-10 transparent-field" id="adjustmentfactor" value="0.100000">
+              </td>
+              <td>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                CPI Adjustment Factor <br>
+                <input type="text" class="form-control font-10 transparent-field" id="cpiadjustmentfactor" value="2.600000">
+              </td>
+              <td>
+                Real CPI %/Minute <br>
+                <span class="font-weight-bold">(= Real CPI%525,600)</span>
+              </td>
+              <td class="font-weight-bold">
+                Calculated Output GRZ <br> <small>Real-Time Value Update</small> <br> SD.014392246
+              </td>
+              <td class="text-center">
+                <button (click)="submit()" class="btn btn-purple">Submit & Save</button>
+              </td>
+              <td>
+                Final Output GRZ <br>
+                <span class="font-weight-bold">(= Calculated Output GRZ <br> BTC/USD 24 Hour Real-Time % Change Adjusted)</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="text-center">
+                <button (click)="submit()" class="btn btn-purple">Submit & Save</button>
+              </td>
+            </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
