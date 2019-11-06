@@ -129,7 +129,7 @@
             </tr>
             <tr>
               <td></td>
-              <td class="text-center">
+              <td>
                 <button (click)="submit()" class="btn btn-purple">Submit & Save</button>
               </td>
               <td></td>
@@ -137,7 +137,7 @@
                 <span class="font-weight-bold">7.000000</span>
               </td>
               <td>
-                <span class="font-weight-bold">43.300000</span>
+                <span class="font-weight-bold" style="padding-left: 13px">43.300000</span>
               </td>
               <td>
                 <span class="font-weight-bold">0.000000</span>
@@ -151,7 +151,7 @@
               <td></td>
               <td></td>
               <td></td>
-              <td class="text-center">
+              <td>
                 <button (click)="submit()" class="btn btn-purple">Submit & Save</button>
               </td>
               <td>Trade Volume <br> Adjustment Factor</td>
@@ -164,7 +164,7 @@
               <td></td>
               <td></td>
               <td>
-                <p class="font-weight-bold pt-2">0.2309468822</p>
+                <p class="font-weight-bold" style="padding-top: 13px">0.2309468822</p>
               </td>
               <td>
                 <input type="text" class="form-control font-10 transparent-field" value="1.000000">
@@ -177,7 +177,7 @@
               <td></td>
               <td></td>
               <td></td>
-              <td class="text-center">
+              <td>
                 <button (click)="submit()" class="btn btn-purple">Submit & Save</button>
               </td>
             </tr>
@@ -209,7 +209,7 @@
           <table class="table table-borderless" style="color: inherit">
             <thead>
             <th class="pb-0 pt-0" scope="col">CPI %</th>
-            <th class="pb-0 pt-0" scope="col">REAL CPI</th>
+            <th class="pb-0 pt-0" scope="col"></th>
             <th class="pb-0 pt-0" scope="col">Unfunded Liabilities <br> <small>Adjustment/Minute</small></th>
             <th class="pb-0 pt-0" scope="col">BTC/USD <br> 24 Hour Real-Time % Change</th>
             <th class="pb-0 pt-0" scope="col">BTC/USD <br> 24 Hour Real-Time <br>% Change Adjusted</th>
@@ -217,10 +217,10 @@
             <tbody>
             <tr class="mb-3">
               <td class="pt-0">
-                <input type="text" class="form-control font-10 transparent-field" id="cpi" value="5.400000">
+                <input type="text" [(ngModel)]="cpi" class="form-control font-10 transparent-field" id="cpi" value="5.400000">
               </td>
               <td class="font-weight-bold pt-0">
-                (= CPI % * CPI Adjustment Factor)
+                REAL CPI <br> {{realCpi}}
               </td>
               <td class="pt-0">
                 <input type="text" class="form-control font-10 transparent-field" id="unfundedliabilities" value="0.000000005">
@@ -232,17 +232,17 @@
             </tr>
             <tr>
               <td>
-                <button (click)="submit()" class="btn btn-purple">Submit & Save</button>
+                <button (click)="calculateCpi()" class="btn btn-purple">Submit & Save</button>
               </td>
-              <td>
-                CPI %/Minute <br> <span class="font-weight-bold">(= CPI%/525,600)</span>
+              <td class="font-weight-bold">
+                CPI %/Minute <br> {{cpiMinute}}
               </td>
               <td>
                 <button (click)="submit()" class="btn btn-purple">Submit & Save</button>
               </td>
               <td>
                 Adjustment Factor <br>
-                <input type="text" class="form-control font-10 transparent-field" id="adjustmentfactor" value="0.100000">
+                <input type="text" class="form-control font-10 transparent-field" style="width: 92%" id="adjustmentfactor" value="0.100000">
               </td>
               <td>
               </td>
@@ -250,11 +250,11 @@
             <tr>
               <td>
                 CPI Adjustment Factor <br>
-                <input type="text" class="form-control font-10 transparent-field" id="cpiadjustmentfactor" value="2.600000">
+                <input type="text" [(ngModel)]="cpiAdjustmentFactor" class="form-control font-10 transparent-field" id="cpiadjustmentfactor" value="2.600000">
               </td>
-              <td>
+              <td class="font-weight-bold">
                 Real CPI %/Minute <br>
-                <span class="font-weight-bold">(= Real CPI%525,600)</span>
+                {{realCpiMinute}}
               </td>
               <td class="font-weight-bold">
                 Calculated Output GRZ <br> <small class="font-weight-bold">Real-Time Value Update</small> <br> $0.01439246
@@ -269,7 +269,7 @@
             </tr>
             <tr>
               <td>
-                <button (click)="submit()" class="btn btn-purple">Submit & Save</button>
+                <button (click)="calculateCpi()" class="btn btn-purple">Submit & Save</button>
               </td>
             </tr>
             </tbody>
