@@ -268,7 +268,9 @@
               </td>
               <td class="font-weight-bold">
                 Final Output GRZ <br>
-                ${{(outputGRZ * (1 + btcusdratio * (btcusdratio * 100 * ajdustmentFactor))) | number: '1.6-6'}}
+                <small class="font-weight-bold">Real-Time Value Update</small>
+                <br>
+                ${{ outputGRZ * (1 + btcusdratio * ajdustmentFactor / 100)| number: '1.9-9'}}
               </td>
             </tr>
             <tr>
