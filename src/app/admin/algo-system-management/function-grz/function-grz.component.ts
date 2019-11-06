@@ -65,6 +65,15 @@ export class FunctionGrzComponent implements OnInit {
 	selectedUnit: {id: number, value: string} = this.selectUnits[2];
 	tableRows = Array(100).fill(this.tableRowMockup);
 	
+	// Input Function 2
+	
+	cpiPercentage = 5.4;
+	cpiAdjustmentFactor = 2.600000000000;
+	unfundedLiabilities = 0.000000005;
+	ajdustmentFactor = 0.1;
+	outputGRZ = 0.01439246;
+	btcusdratio = 4.888999;
+	
 	constructor(
 		public adminService: AdminService,
 		private snotifyService: SnotifyService
