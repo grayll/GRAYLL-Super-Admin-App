@@ -216,33 +216,33 @@
             </thead>
             <tbody>
             <tr class="mb-3">
-              <td class="pt-0">
+              <td class="pt-0 pb-0">
                 <input type="number" class="form-control font-10 transparent-field" id="cpi" [ngModelOptions]="{updateOn: 'blur'}"
                        [ngModel]="cpiPercentage | number:'1.6-6'" (ngModelChange)="cpiPercentage=$event">
               </td>
-              <td class="font-weight-bold pt-0">
+              <td class="font-weight-bold pt-0 pb-0">
                 {{cpiPercentage * cpiAdjustmentFactor | number:'1.6-6'}}
               </td>
-              <td class="pt-0">
+              <td class="pt-0 pb-0">
                 <input type="number" class="form-control font-10 transparent-field" id="unfundedliabilities" [ngModelOptions]="{updateOn: 'blur'}"
                        [ngModel]="unfundedLiabilities | number:'1.9-9'" (ngModelChange)="unfundedLiabilities=$event">
               </td>
-              <td class="pt-0">{{btcusdratio}}</td>
-              <td class="font-weight-bold pt-0">
+              <td class="pt-0 pb-0">{{btcusdratio}}</td>
+              <td class="font-weight-bold pt-0 pb-0">
                 {{btcusdratio * ajdustmentFactor | number: '1.6-6'}}
               </td>
             </tr>
             <tr>
-              <td>
+              <td class="pb-0">
                 <button (click)="submit()" class="btn btn-purple">Submit & Save</button>
               </td>
-              <td class="font-weight-bold">
+              <td class="font-weight-bold pb-0">
                 CPI %/Minute <br> {{cpiPercentage / 525600 | number:'1.6-6'}}
               </td>
-              <td>
+              <td class="pb-0">
                 <button (click)="submit()" class="btn btn-purple">Submit & Save</button>
               </td>
-              <td>
+              <td class="pb-0">
                 Adjustment Factor <br>
                 <input type="number" class="form-control font-10 transparent-field" id="adjustmentfactor" [ngModelOptions]="{updateOn: 'blur'}"
                        [ngModel]="ajdustmentFactor | number:'1.6-6'" (ngModelChange)="ajdustmentFactor=$event">
@@ -251,7 +251,7 @@
               </td>
             </tr>
             <tr>
-              <td>
+              <td class="pb-0">
                 CPI Adjustment Factor <br>
                 <input (ngModelChange)="cpiAdjustmentFactor=$event" [ngModelOptions]="{updateOn: 'blur'}"
                     [ngModel]="cpiAdjustmentFactor | number:'1.6-6'" type="number" class="form-control font-10 transparent-field" id="cpiadjustmentfactor">
