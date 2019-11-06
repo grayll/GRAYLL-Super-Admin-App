@@ -64,15 +64,6 @@ export class FunctionGrzComponent implements OnInit {
 	selectedlog: {id: number, value: string} = this.selectLog[0];
 	selectedUnit: {id: number, value: string} = this.selectUnits[2];
 	tableRows = Array(100).fill(this.tableRowMockup);
-
-	cpi: number = 0;
-	cpiAdjustmentFactor: number = 0;
-	adjustmentFactor: number = 0;
-	unfundedLiabilities: number = 0;
-	realCpi: number = 0;
-	cpiMinute: number = 0;
-	realCpiMinute: number = 0;
-	outputGRZ: number = 0;
 	
 	// Input Function 2
 	
@@ -89,12 +80,6 @@ export class FunctionGrzComponent implements OnInit {
 	) { }
 	
 	ngOnInit() {
-	}
-
-	calculateCpi() {
-		this.realCpi = this.cpi * this.cpiAdjustmentFactor;
-		this.cpiMinute = this.cpi / 525.600;
-		this.realCpiMinute = this.realCpi / 525.600;
 	}
 	
 	submit() {
