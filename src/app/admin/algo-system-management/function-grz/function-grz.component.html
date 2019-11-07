@@ -212,7 +212,7 @@
             <th class="pb-0 pt-0" scope="col" style="font-weight: bold!important;">
               REAL CPI
               <br>
-              {{cpiPercentage * cpiAdjustmentFactor | number:'1.6-6'}}
+              <span style="position:relative;top:7px">{{cpiPercentage * cpiAdjustmentFactor | number:'1.6-6'}}</span>
             </th>
             <th class="pb-0 pt-0" scope="col">Unfunded Liabilities <br> <small>Adjustment/Minute</small></th>
             <th class="pb-0 pt-0" scope="col">BTC/USD <br> 24 Hour Real-Time % Change</th>
@@ -220,14 +220,15 @@
             </thead>
             <tbody>
             <tr class="mb-3">
-              <td class="pt-0" style="position: relative; top: -20px">
+              <td class="pt-0" style="position: relative; top: -27px">
                 <input type="number" class="form-control font-10 transparent-field" id="cpi" [ngModelOptions]="{updateOn: 'blur'}"
                        [ngModel]="cpiPercentage | number:'1.6-6'" (ngModelChange)="cpiPercentage=$event">
               </td>
-              <td class="font-weight-bold pt-0">
-                CPI %/Minute <br> {{cpiPercentage / 525600 | number:'1.6-6'}}
+              <td class="font-weight-bold pt-0" style="position:relative;top:25px">
+                CPI %/Minute <br>
+                <span style="position:relative;top:7px">{{cpiPercentage / 525600 | number:'1.6-6'}}</span>
               </td>
-              <td class="pt-0">
+              <td class="pt-0" style="position: relative; top: -10px">
                 <input type="number" class="form-control font-10 transparent-field" id="unfundedliabilities" [ngModelOptions]="{updateOn: 'blur'}"
                        [ngModel]="unfundedLiabilities | number:'1.9-9'" (ngModelChange)="unfundedLiabilities=$event">
               </td>
@@ -237,40 +238,40 @@
               </td>
             </tr>
             <tr>
-              <td style="position: relative; top: -20px">
+              <td style="position: relative; top: -40px">
                 <button (click)="submit()" class="btn btn-purple">Submit & Save</button>
               </td>
-              <td class="font-weight-bold">
+              <td class="font-weight-bold" style="position: relative; top: 41px">
                 Real CPI %/Minute <br>
-                {{cpiPercentage * cpiAdjustmentFactor / 525600 | number:'1.6-6'}}
+                <span style="position:relative;top:7px">{{cpiPercentage * cpiAdjustmentFactor / 525600 | number:'1.6-6'}}</span>
               </td>
-              <td>
+              <td style="position:relative;top: -27px">
                 <button (click)="submit()" class="btn btn-purple">Submit & Save</button>
               </td>
-              <td style="position: relative; top: -20px">
+              <td style="position: relative; top: -26px">
                 Adjustment Factor <br>
                 <input type="number" class="form-control font-10 transparent-field" id="adjustmentfactor" [ngModelOptions]="{updateOn: 'blur'}"
-                       [ngModel]="ajdustmentFactor | number:'1.6-6'" (ngModelChange)="ajdustmentFactor=$event">
+                       [ngModel]="ajdustmentFactor | number:'1.6-6'" (ngModelChange)="ajdustmentFactor=$event" style="margin-top: 7px">
               </td>
               <td>
               </td>
             </tr>
             <tr>
-              <td style="position: relative; top: -20px">
+              <td style="position: relative; top: -50px">
                 CPI Adjustment Factor <br>
-                <input (ngModelChange)="cpiAdjustmentFactor=$event" [ngModelOptions]="{updateOn: 'blur'}"
+                <input (ngModelChange)="cpiAdjustmentFactor=$event" [ngModelOptions]="{updateOn: 'blur'}" style="margin-top: 7px"
                     [ngModel]="cpiAdjustmentFactor | number:'1.6-6'" type="number" class="form-control font-10 transparent-field" id="cpiadjustmentfactor">
               </td>
               <td class="font-weight-bold">
 
               </td>
-              <td class="font-weight-bold">
+              <td class="font-weight-bold" style="position: relative;top: -35px">
                 Calculated Output GRZ <br> <small class="font-weight-bold">Real-Time Value Update</small> <br> ${{outputGRZ}}
               </td>
-              <td style="position: relative; top: -20px">
+              <td style="position: relative; top: -40px">
                 <button (click)="submit()" class="btn btn-purple">Submit & Save</button>
               </td>
-              <td class="font-weight-bold">
+              <td class="font-weight-bold" style="position:relative;top:-35px">
                 Final Output GRZ <br>
                 <small class="font-weight-bold">Real-Time Value Update</small>
                 <br>
@@ -278,7 +279,7 @@
               </td>
             </tr>
             <tr>
-              <td style="position: relative; top: -20px">
+              <td style="position: relative; top: -60px">
                 <button (click)="submit()" class="btn btn-purple">Submit & Save</button>
               </td>
             </tr>
