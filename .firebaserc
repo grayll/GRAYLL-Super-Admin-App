@@ -1,5 +1,5 @@
 {
   "projects": {
-    "default": "grayll-system-test"
+    "default": "grayll-admin-test"
   }
 }
