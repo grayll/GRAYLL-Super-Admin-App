@@ -49,7 +49,7 @@
           <div class="col-md-12 text-center mt-3">
             <div class="border-navy">
               <p class="font-weight-bolder">
-                Current Value GRY/USD | $0.09042
+              Current Value {{this.selectedTab.token}}/USD | $0.09042
               </p>
               <div class="d-flex align-items-center px-1">
                 <div>
@@ -68,7 +68,7 @@
               <p class="mb-0">
                 Approximately
                 <countdown [config]="countdownConfig"></countdown>
-                Seconds Until <br> GRY/USD Value Update
+                Seconds Until <br> {{this.selectedTab.token}}/USD Value Update
               </p>
             </div>
           </div>

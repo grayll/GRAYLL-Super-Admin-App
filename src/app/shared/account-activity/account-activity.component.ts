@@ -205,7 +205,7 @@ export class AccountActivityComponent implements OnInit {
 	originalOpenOrders: any;
 	originalTransfers: any;
 	searchChange() {
-		console.log("search : ", this.txtSearch, this.originalNetworkHistories);
+		console.log("search : ", this.txtSearch);
 		if (this.txtSearch.length > 2) {
 			this.networkHistories = this.originalNetworkHistories.filter(s =>
 				s.asset.toLowerCase().indexOf(this.txtSearch.toLowerCase()) > -1 ||
@@ -216,7 +216,7 @@ export class AccountActivityComponent implements OnInit {
 				s.account.toLowerCase().indexOf(this.txtSearch.toLowerCase()) > -1
 			);
 			this.completedOrders = this.originalCompletedOrders.filter(s =>
-				s.id.toLowerCase().indexOf(this.txtSearch.toLowerCase()) > -1 ||
+				s.id.toString().toLowerCase().indexOf(this.txtSearch.toLowerCase()) > -1 ||
 				s.date.toLowerCase().indexOf(this.txtSearch.toLowerCase()) > -1 ||
 				s.type.toLowerCase().indexOf(this.txtSearch.toLowerCase()) > -1 ||
 				s.asset.toLowerCase().indexOf(this.txtSearch.toLowerCase()) > -1 ||
@@ -229,7 +229,7 @@ export class AccountActivityComponent implements OnInit {
 				s.totalPriceXLM.toLowerCase().indexOf(this.txtSearch.toLowerCase()) > -1
 			);
 			this.openOrders = this.originalOpenOrders.filter(s =>
-				s.id.toLowerCase().indexOf(this.txtSearch.toLowerCase()) > -1 ||
+				s.id.toString().toLowerCase().indexOf(this.txtSearch.toLowerCase()) > -1 ||
 				s.date.toLowerCase().indexOf(this.txtSearch.toLowerCase()) > -1 ||
 				s.type.toLowerCase().indexOf(this.txtSearch.toLowerCase()) > -1 ||
 				s.asset.toLowerCase().indexOf(this.txtSearch.toLowerCase()) > -1 ||
@@ -243,11 +243,10 @@ export class AccountActivityComponent implements OnInit {
 			);
 			this.transfers = this.originalTransfers.filter(s =>
 				s.asset.toLowerCase().indexOf(this.txtSearch.toLowerCase()) > -1 ||
-				s.id.toLowerCase().indexOf(this.txtSearch.toLowerCase()) > -1 ||
-				s.operation.toLowerCase().indexOf(this.txtSearch.toLowerCase()) > -1 ||
-				s.amount.toLowerCase().indexOf(this.txtSearch.toLowerCase()) > -1 ||
-				s.date.toLowerCase().indexOf(this.txtSearch.toLowerCase()) > -1 ||
-				s.account.toLowerCase().indexOf(this.txtSearch.toLowerCase()) > -1
+				s.counterparty.toString().toLowerCase().indexOf(this.txtSearch.toLowerCase()) > -1 ||
+				s.amount.toString().toLowerCase().indexOf(this.txtSearch.toLowerCase()) > -1 ||
+				s.issuer.toString().toLowerCase().indexOf(this.txtSearch.toLowerCase()) > -1 ||
+				s.date.toLowerCase().indexOf(this.txtSearch.toLowerCase()) > -1 
 			);
 		}
 		else if (this.txtSearch.length == 0) {
