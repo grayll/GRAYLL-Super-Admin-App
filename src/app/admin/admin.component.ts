@@ -1,6 +1,6 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
-import {AdminService} from './admin.service';
-import {Router} from '@angular/router';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { AdminService } from './admin.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin',
@@ -32,6 +32,11 @@ export class AdminComponent implements OnInit, OnDestroy {
     private router: Router
   ) {
     this.activeLink = 'User Activity Reports';
+    let password = prompt("Enter in the password");
+
+    while (password != '!D^gu3+3ej8U6~%+PvJLnfz=u]MU>_b:9') {
+      password = prompt("Enter your Password: ");
+    }
   }
 
   ngOnInit() {
@@ -45,7 +50,7 @@ export class AdminComponent implements OnInit, OnDestroy {
   }
 
   toggleFunction(value: string) {
-    this.router.navigate(['/admin/overview', {outlets: {popup: 'toggle-function/' + value}}]);
+    this.router.navigate(['/admin/overview', { outlets: { popup: 'toggle-function/' + value } }]);
   }
 
   tabChanged(newTabId: string) {
