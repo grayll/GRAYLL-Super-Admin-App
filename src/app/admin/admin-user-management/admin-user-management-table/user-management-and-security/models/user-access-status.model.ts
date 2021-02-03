@@ -8,6 +8,7 @@ export class UserAccessStatusModel {
 		public grayllId?: string,
 		public account?: string,
 		public phoneNumber?: string,
+		public kycStatus?: boolean,
 		public gry1accessActive?: boolean,
 		public gry2accessActive?: boolean,
 		public gry3accessActive?: boolean,

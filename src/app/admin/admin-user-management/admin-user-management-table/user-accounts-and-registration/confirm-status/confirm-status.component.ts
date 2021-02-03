@@ -41,9 +41,13 @@ export class ConfirmStatusComponent implements OnInit {
 				this.activated = !this.adminService.isUserSignUpPaused;
 				this.newActivated = !this.adminService.isNewUserSignUpPaused;
 				break;
-			default:
+			case 'App Sign In':
 				this.activated = !this.adminService.isUserSignInPaused;
 				this.newActivated = !this.adminService.isNewUserSignInPaused;
+				break;
+			default:
+				this.activated = !this.adminService.isUserKYCPaused;
+				this.newActivated = !this.adminService.isNewUserKYCPaused;
 				break;
 		}
 		setTimeout(() => {
@@ -64,9 +68,13 @@ export class ConfirmStatusComponent implements OnInit {
 						this.adminService.isUserSignUpPaused = !this.activated;
 						this.adminService.isNewUserSignUpPaused = this.newActivated;
 						break;
-					default:
+					case 'App Sign In':
 						this.adminService.isUserSignInPaused = !this.activated;
 						this.adminService.isNewUserSignInPaused = this.newActivated;
+						break;
+					default:
+						this.adminService.isUserKYCPaused = !this.activated;
+						this.adminService.isNewUserKYCPaused = this.newActivated;
 						break;
 				}
 				this.snotifyService.simple('Status has been changed.');

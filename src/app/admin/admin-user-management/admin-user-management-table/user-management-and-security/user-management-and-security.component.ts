@@ -127,25 +127,26 @@ export class UserManagementAndSecurityComponent implements OnInit {
 	}
 	
 	private populateUserAccountsArray() {
-		const mockup = new UserAccessStatusModel(
-		1,
-		"18/08/2019 04:14",
-		"Geronimhoxxxyyyzzz",
-		"de Chastaine Montaigne",
-		"swissalpbunny888@protonmail.ch",
-		"111222333444555666",
-		"GAQQ44...H3399",
-		'+999 15678888111',
-		true,
-		false,
-		true,
-		false,
-		true,
-		'1,000,000,000,000.00'
-		);
 		for (let i = 0; i < 10; i++) {
-			this.userAccounts.push(mockup);
+			this.userAccounts.push(new UserAccessStatusModel(
+				i,
+				"18/08/2019 04:14",
+				"Geronimhoxxxyyyzzz",
+				"de Chastaine Montaigne",
+				"swissalpbunny888@protonmail.ch",
+				"111222333444555666",
+				"GAQQ44...H3399",
+				'+999 15678888111',
+				false,
+				true,
+				false,
+				true,
+				false,
+				true,
+				'1,000,000,000,000.00'
+				));
 		}
+		console.log("--->", this.userAccounts);
 	}
 	
 	onTabChange(id: string) {
@@ -161,5 +162,9 @@ export class UserManagementAndSecurityComponent implements OnInit {
 	goToUserAccountDetails(user: UserAccessStatusModel) {
 		this.selectedTab = this.userAccountTabs[1];
 		this.selectedUser = user;
+	}
+	checkKYCStatus(user: UserAccessStatusModel) {
+		this.selectedUser = user;
+		this.selectedUser.kycStatus = !user.kycStatus;
 	}
 }

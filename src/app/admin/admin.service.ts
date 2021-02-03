@@ -48,7 +48,9 @@ export class AdminService {
   private _algoSystemNewUserActivated: boolean;
   private _isUserSignUpPaused: boolean;
   private _isNewUserSignUpPaused: boolean;
-  private _isUserSignInPaused: boolean;
+	private _isUserSignInPaused: boolean;
+	private _isNewUserKYCPaused:boolean;
+	private _isUserKYCPaused: boolean;
 	private _isNewUserSignInPaused: boolean;
 	private _didRunFunction4: boolean;
 	private _didRunFunction3: boolean;
@@ -109,6 +111,14 @@ export class AdminService {
 	set isNewUserSignInPaused(value: boolean) {
 		this._isNewUserSignInPaused = value;
 	}
+
+	get isNewUserKYCPaused(): boolean {
+		return this._isNewUserKYCPaused;
+	}
+	
+	set isNewUserKYCPaused(value: boolean) {
+		this._isNewUserKYCPaused = value;
+	}
 	
 	get didRunFunction4(): boolean {
 		return this._didRunFunction4;
@@ -148,6 +158,14 @@ export class AdminService {
 	
 	set isUserSignInPaused(value: boolean) {
 		this._isUserSignInPaused = value;
+	}
+
+	get isUserKYCPaused(): boolean {
+		return this._isUserKYCPaused;
+	}
+	
+	set isUserKYCPaused(value: boolean) {
+		this._isUserKYCPaused = value;
 	}
 	
 	get gry1FunctionActivated(): boolean {

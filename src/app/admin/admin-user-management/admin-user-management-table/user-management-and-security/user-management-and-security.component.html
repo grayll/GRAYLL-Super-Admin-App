@@ -818,19 +818,25 @@
 
 <div class="bg-gradient text-light" *ngIf="selectedTab.id === 'uas'">
   <div class="row justify-content-center align-items-center mb-1 p-2">
-    <div class="col-12 col-sm-3 text-center py-2">
+    <div class="col-12 col-sm-12 col-lg-3 text-center py-2">
       <span class="align-middle font-weight-bolder font-14">User Accounts (9,000,000)</span>
     </div>
-    <div class="col-6 col-sm-3 text-center">
+    <div class="col-6 col-sm-6 col-lg-2 text-center mb-1">
       <button class="btn btn-purple" style="outline: none!important"
               [routerLink]="['/admin/overview', {outlets: {popup: ['confirm-status', 'App Sign In']}}]">
         {{adminService.isUserSignInPaused ? 'Activate' : 'Pause' }} User App Sign In
       </button>
     </div>
-    <div class="col-6 col-sm-3 text-center">
+    <div class="col-6 col-sm-6 col-lg-2 text-center  mb-1">
       <button class="btn btn-purple" style="outline: none!important"
               [routerLink]="['/admin/overview', {outlets: {popup: ['confirm-status', 'Sign Up']}}]">
         {{adminService.isUserSignUpPaused ? 'Activate' : 'Pause' }} New User Sign Up
+      </button>
+    </div>
+    <div class="col-12 col-sm-12 col-lg-2 text-center mb-1">
+      <button class="btn btn-purple" style="outline: none!important"
+              [routerLink]="['/admin/overview', {outlets: {popup: ['confirm-status', 'KYC']}}]">
+        {{adminService.isUserKYCPaused ? 'Activate' : 'Pause' }} User App for KYC
       </button>
     </div>
     <div class="col d-none d-md-block"></div>
@@ -851,6 +857,7 @@
       <th class="width-91px">Phone Number</th>
       <th class="width-91px">Account</th>
       <th class="width-101px">GRAYLL ID</th>
+      <th class="width-91px">KYC Status</th>
       <th (click)="sortByGRY1()" class="cancel width-71px">
         GRY 1 <br> Access
         <fa-icon [icon]="faSortByGRY1Access" style="color: #40278C;"></fa-icon>
@@ -901,6 +908,9 @@
         <a href="javascript:void(0)" class="purple-link">
           {{user.grayllId}}
         </a>
+      </td>
+      <td class="kyc-state width-71px" [ngClass]="[user.kycStatus ? 'text-purple' : '']" (click)="checkKYCStatus(user)">
+          {{user.kycStatus ? 'Approved': 'Pending'}}
       </td>
       <td class="width-71px">{{user.gry1accessActive ? 'Active' : 'Paused'}}</td>
       <td class="width-71px">{{user.gry2accessActive ? 'Active' : 'Paused'}}</td>

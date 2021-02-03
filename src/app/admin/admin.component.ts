@@ -32,11 +32,11 @@ export class AdminComponent implements OnInit, OnDestroy {
     private router: Router
   ) {
     this.activeLink = 'User Activity Reports';
-    let password = prompt("Enter in the password");
+    //let password = prompt("Enter in the password");
 
-    while (password != '!D^gu3+3ej8U6~%+PvJLnfz=u]MU>_b:9') {
-      password = prompt("Enter your Password: ");
-    }
+    // while (password != '!D^gu3+3ej8U6~%+PvJLnfz=u]MU>_b:9') {
+    //   password = prompt("Enter your Password: ");
+    // }
   }
 
   ngOnInit() {
