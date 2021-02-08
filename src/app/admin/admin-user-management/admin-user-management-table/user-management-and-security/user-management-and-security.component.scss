@@ -7,6 +7,15 @@
   cursor: pointer!important;
 }
 
+.gold-link {
+  color: #CFA256 !important;
+}
+
+.gold-link:hover {
+  color: #AC7F31!important;
+  cursor: pointer!important;
+}
+
 .cancel {
   white-space: nowrap;
 }
@@ -34,7 +43,7 @@ fa-icon:hover {
 }
 
 .search .input-group-text {
-  border-color: #40278C;
+  border-color: #CFA256;
   border-left: 0;
 }
 
@@ -43,7 +52,7 @@ fa-icon:hover {
     border-radius: 0;
     opacity: 0.7;
     font-size: 0.7rem;
-    color: #40278C!important;
+    color: #CFA256!important;
     justify-content: center!important;
     text-align: center;
     border-bottom: 2px solid transparent!important;
@@ -51,7 +60,7 @@ fa-icon:hover {
     &.active {
       opacity: 1;
       background-color: transparent;
-      border-bottom: 2px solid #40278C!important;
+      border-bottom: 2px solid #CFA256!important;
     }
   }
 }
@@ -120,7 +129,7 @@ td {
     &.active {
       opacity: 1;
       color: #fff;
-      background-color: #40278c;
+      background-color: #CFA256;
       border-color: #e8cbc0;
       border-bottom: 0;
     }

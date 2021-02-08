@@ -17,17 +17,17 @@
     <div class="col-6 mt-2 mt-sm-0 col-md-2 search">
       <div class="input-group">
         <input class="form-control form-control-no-border bg-transparent py-2 border border-right-0 text-light"
-               type="search" style="border-color: #40278C!important">
+               type="search" style="border-color: #CFA256 !important">
         <span class="input-group-append">
               <div class="input-group-text bg-transparent">
-                <fa-icon style="color: #40278C" [icon]="faSearch"></fa-icon>
+                <fa-icon style="color: #CFA256 " [icon]="faSearch"></fa-icon>
               </div>
             </span>
       </div>
     </div>
     <div class="col-6 col-sm-2 text-center">
       <hr class="mt-0 d-sm-none">
-      <a class="purple-link font-10" href="javascript:void(0)">
+      <a class="gold-link font-10" href="javascript:void(0)">
         <fa-icon [icon]="faDownload" [fixedWidth]="true"></fa-icon>
         Download {{selectedTab.name}}
       </a>
@@ -77,12 +77,12 @@
               <td class="width-131px py-0" style="word-break: break-all">{{selectedUser.emailAddress | slice:0:32}}</td>
               <td class="width-91px py-0">{{selectedUser.phoneNumber}}</td>
               <td class="width-91px py-0">
-                <a href="https://stellar.expert/explorer" class="purple-link" target="_blank">
+                <a href="https://stellar.expert/explorer" class="gold-link" target="_blank">
                   {{selectedUser.account}}
                 </a>
               </td>
               <td class="width-101px py-0">
-                <a href="javascript:void(0)" class="purple-link">
+                <a href="javascript:void(0)" class="gold-link">
                   {{selectedUser.grayllId}}
                 </a>
               </td>
@@ -271,7 +271,7 @@
         </div>
         <div class="row">
           <div class="col-9">
-            <button class="btn btn-block btn-purple font-12"
+            <button class="btn btn-block btn-gold font-12"
                     [routerLink]="['/admin/overview', {outlets: {popup: ['confirm-status', 'App Sign In', selectedUser.grayllId]}}]">
               {{adminService.isUserSignInPaused ? 'Activate' : 'Pause'}} User App Sign In
             </button>
@@ -286,7 +286,7 @@
         </div>
         <div class="row mt-2">
           <div class="col-9">
-            <button class="btn btn-block btn-purple font-12"
+            <button class="btn btn-block btn-gold font-12"
                     [routerLink]="['/admin/overview', {outlets: {popup: ['confirm-user-access-status', 'GRY | 1']}}]">
               {{adminService.isGRY1UserAccessActive ? 'Pause' : 'Activate'}} GRY | 1 User Access
             </button>
@@ -301,7 +301,7 @@
         </div>
         <div class="row mt-2">
           <div class="col-9">
-            <button class="btn btn-block btn-purple font-12"
+            <button class="btn btn-block btn-gold font-12"
                     [routerLink]="['/admin/overview', {outlets: {popup: ['confirm-user-access-status', 'GRY | 2']}}]">
               {{adminService.isGRY2UserAccessActive ? 'Pause' : 'Activate'}} GRY | 2 User Access
             </button>
@@ -316,7 +316,7 @@
         </div>
         <div class="row mt-2">
           <div class="col-9">
-            <button class="btn btn-block btn-purple font-12"
+            <button class="btn btn-block btn-gold font-12"
                     [routerLink]="['/admin/overview', {outlets: {popup: ['confirm-user-access-status', 'GRY | 3']}}]">
               {{adminService.isGRY3UserAccessActive ? 'Pause' : 'Activate'}} GRY | 3 User Access
             </button>
@@ -331,7 +331,7 @@
         </div>
         <div class="row mt-2">
           <div class="col-9">
-            <button class="btn btn-block btn-purple font-12"
+            <button class="btn btn-block btn-gold font-12"
                     [routerLink]="['/admin/overview', {outlets: {popup: ['confirm-user-access-status', 'GRZ']}}]">
               {{adminService.isGRZUserAccessActive ? 'Pause' : 'Activate'}} GRZ User Access
             </button>
@@ -822,19 +822,19 @@
       <span class="align-middle font-weight-bolder font-14">User Accounts (9,000,000)</span>
     </div>
     <div class="col-6 col-sm-6 col-lg-2 text-center mb-1">
-      <button class="btn btn-purple" style="outline: none!important"
+      <button class="btn btn-gold" style="outline: none!important"
               [routerLink]="['/admin/overview', {outlets: {popup: ['confirm-status', 'App Sign In']}}]">
         {{adminService.isUserSignInPaused ? 'Activate' : 'Pause' }} User App Sign In
       </button>
     </div>
     <div class="col-6 col-sm-6 col-lg-2 text-center  mb-1">
-      <button class="btn btn-purple" style="outline: none!important"
+      <button class="btn btn-gold" style="outline: none!important"
               [routerLink]="['/admin/overview', {outlets: {popup: ['confirm-status', 'Sign Up']}}]">
         {{adminService.isUserSignUpPaused ? 'Activate' : 'Pause' }} New User Sign Up
       </button>
     </div>
     <div class="col-12 col-sm-12 col-lg-2 text-center mb-1">
-      <button class="btn btn-purple" style="outline: none!important"
+      <button class="btn btn-gold" style="outline: none!important"
               [routerLink]="['/admin/overview', {outlets: {popup: ['confirm-status', 'KYC']}}]">
         {{adminService.isUserKYCPaused ? 'Activate' : 'Pause' }} User App for KYC
       </button>
@@ -849,7 +849,7 @@
     <tr class="font-weight-bolder font-10 text-light">
       <th (click)="sortBySignUpDate()" class="cancel width-91px">
         Sign Up Date
-        <fa-icon [icon]="faSortBySignUpDate" style="color: #40278C;"></fa-icon>
+        <fa-icon [icon]="faSortBySignUpDate" style="color: #CFA256 ;"></fa-icon>
       </th>
       <th class="width-91px">First Name</th>
       <th class="width-101px">Last Name</th>
@@ -860,31 +860,31 @@
       <th class="width-91px">KYC Status</th>
       <th (click)="sortByGRY1()" class="cancel width-71px">
         GRY 1 <br> Access
-        <fa-icon [icon]="faSortByGRY1Access" style="color: #40278C;"></fa-icon>
+        <fa-icon [icon]="faSortByGRY1Access" style="color: #CFA256 ;"></fa-icon>
         <br>
         <small>Active/Paused</small>
       </th>
       <th (click)="sortByGRY2()" class="cancel width-71px">
         GRY 2 <br> Access
-        <fa-icon [icon]="faSortByGRY2Access" style="color: #40278C;"></fa-icon>
+        <fa-icon [icon]="faSortByGRY2Access" style="color: #CFA256 ;"></fa-icon>
         <br>
         <small>Active/Paused</small>
       </th>
       <th (click)="sortByGRY3()" class="cancel width-71px">
         GRY 3 <br> Access
-        <fa-icon [icon]="faSortByGRY3Access" style="color: #40278C;"></fa-icon>
+        <fa-icon [icon]="faSortByGRY3Access" style="color: #CFA256 ;"></fa-icon>
         <br>
         <small>Active/Paused</small>
       </th>
       <th (click)="sortByGRZ()" class="cancel width-71px">
         GRZ <br> Access
-        <fa-icon [icon]="faSortByGRZAccess" style="color: #40278C;"></fa-icon>
+        <fa-icon [icon]="faSortByGRZAccess" style="color: #CFA256 ;"></fa-icon>
         <br>
         <small>Active/Paused</small>
       </th>
       <th (click)="sortByAppSignIn()" class="cancel width-71px">
         App <br> Sign In
-        <fa-icon [icon]="faSortByAppSignIn" style="color: #40278C;"></fa-icon>
+        <fa-icon [icon]="faSortByAppSignIn" style="color: #CFA256 ;"></fa-icon>
         <br>
         <small>Active/Paused</small>
       </th>
@@ -900,12 +900,12 @@
       <td class="width-131px" style="word-break: break-all">{{user.emailAddress | slice:0:32}}</td>
       <td class="width-91px">{{user.phoneNumber}}</td>
       <td class="width-91px">
-        <a href="https://stellar.expert/explorer" class="purple-link" target="_blank">
+        <a href="https://stellar.expert/explorer" class="gold-link" target="_blank">
           {{user.account}}
         </a>
       </td>
       <td class="width-101px">
-        <a href="javascript:void(0)" class="purple-link">
+        <a href="javascript:void(0)" class="gold-link">
           {{user.grayllId}}
         </a>
       </td>
@@ -918,7 +918,7 @@
       <td class="width-71px">{{user.grzaccessActive ? 'Active' : 'Paused'}}</td>
       <td class="width-71px">{{user.appSignInActive ? 'Active' : 'Paused'}}</td>
       <td class="width-81px">
-        <a href="javascript:void(0)" (click)="goToUserAccountDetails(user)" class="purple-link">
+        <a href="javascript:void(0)" (click)="goToUserAccountDetails(user)" class="gold-link">
           View User Account Details
         </a>
       </td>

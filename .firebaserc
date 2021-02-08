@@ -1,6 +1,7 @@
 {
   "projects": {
     "default": "grayll-system-test",
-    "admin": "grayll-admin-test"
+    "admin": "grayll-admin-test",
+    "mine": "grayll-admin-76f17"
   }
 }

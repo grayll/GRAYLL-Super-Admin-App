@@ -37,11 +37,11 @@
 .checkbox span:after{-moz-transform:scaleX(-1) rotate(135deg);-ms-transform:scaleX(-1) rotate(135deg);-webkit-transform:scaleX(-1) rotate(135deg);transform:scaleX(-1) rotate(135deg);-moz-transform-origin:left top;-ms-transform-origin:left top;-webkit-transform-origin:left top;transform-origin:left top;border-right:2px solid transparent;border-top:2px solid transparent;content:'';display:block;height:15px;left:2px;position:absolute;top:6px;width:5px}
 .checkbox span:hover:after{border-color:#999}
 .checkbox input{display:none}
-.checkbox input:checked + span:after{-webkit-animation:check .8s;-moz-animation:check .8s;-o-animation:check .8s;animation:check .8s;border-color:#40278C}
-.checkbox input:checked + .default:after{border-color:#40278C}
+.checkbox input:checked + span:after{-webkit-animation:check .8s;-moz-animation:check .8s;-o-animation:check .8s;animation:check .8s;border-color:#CFA256}
+.checkbox input:checked + .default:after{border-color:#CFA256}
 
 ::ng-deep .btn-link {
-  color: #40278C!important;
+  color: #CFA256!important;
 }
 
 select:focus::-ms-value {
@@ -96,7 +96,7 @@ select:focus::-ms-value {
 
 .cont input:checked ~ .radio {
   background-color: white;
-  border: 1px solid #40278C;
+  border: 1px solid #CFA256;
 }
 
 .radio:after {
@@ -115,19 +115,19 @@ select:focus::-ms-value {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #40278C;
+  background: #CFA256;
 }
 
 ::ng-deep #country .ng-option {
   color: white!important;
-  background-image: linear-gradient(to right, #636fa4, #e8cbc0) !important;
+  background-image: linear-gradient(to right,#380808,#685d73) !important;
   height: 36px!important;
   width: 300px!important;
 }
 
 ::ng-deep #country .ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-marked {
   background-color: #e8cbc0!important;
-  color: #40278C!important;
+  color: #CFA256!important;
   height: 36px!important;
   width: 300px!important;
 }
@@ -139,7 +139,7 @@ select:focus::-ms-value {
 }
 
 ::ng-deep #country .ng-select-container {
-  background-image: linear-gradient(to right, #636fa4, #e8cbc0) !important;
+  background-image: linear-gradient(to right,#380808,#685d73) !important;
   color: white!important;
   height: 36px!important;
   width: 300px!important;

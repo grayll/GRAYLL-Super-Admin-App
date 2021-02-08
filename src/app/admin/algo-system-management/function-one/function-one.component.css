@@ -8,7 +8,7 @@
 :host ::ng-deep #selectUnit .ng-option,
 :host ::ng-deep #selectLog .ng-option {
   color: white!important;
-  background-image: linear-gradient(to right, #636fa4, #e8cbc0) !important;
+  background-image: linear-gradient(to right,#380808,#685d73) !important;
   height: 29px!important;
   width: 100%!important;
 }
@@ -16,7 +16,7 @@
 :host ::ng-deep #selectUnit .ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-marked,
 :host ::ng-deep #selectLog .ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-marked {
   background-color: #e8cbc0!important;
-  color: #40278C!important;
+  color: #CFA256 !important;
   height: 29px!important;
   width: 100%!important;
 }
@@ -30,7 +30,7 @@
 
 :host ::ng-deep #selectUnit .ng-select-container,
 :host ::ng-deep #selectLog .ng-select-container {
-  background-image: linear-gradient(to right, #636fa4, #e8cbc0) !important;
+  background-image: linear-gradient(to right,#380808,#685d73) !important;
   color: white!important;
   height: 29px!important;
   min-height: 29px!important;

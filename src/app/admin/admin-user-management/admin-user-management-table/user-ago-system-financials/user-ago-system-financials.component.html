@@ -16,7 +16,7 @@
     </div>
     <div class="col-12 col-sm-2 text-center">
       <hr class="mt-0 d-sm-none">
-      <a class="purple-link font-10" href="javascript:void(0)">
+      <a class="gold-link font-10" href="javascript:void(0)">
         <fa-icon [icon]="faDownload" [fixedWidth]="true"></fa-icon>
         Download {{selectedTab.name}}
       </a>
@@ -32,13 +32,13 @@
       <span class="align-middle font-weight-bolder font-14">User Accounts (9,000,000)</span>
     </div>
     <div class="col-6 col-sm-3 text-center">
-      <button class="btn btn-purple" style="outline: none!important"
+      <button class="btn btn-gold" style="outline: none!important"
               [routerLink]="['/admin/overview', {outlets: {popup: ['confirm-status', 'App Sign In']}}]">
         {{adminService.isUserSignInPaused ? 'Activate' : 'Pause' }} User App Sign In
       </button>
     </div>
     <div class="col-6 col-sm-3 text-center">
-      <button class="btn btn-purple" style="outline: none!important"
+      <button class="btn btn-gold" style="outline: none!important"
               [routerLink]="['/admin/overview', {outlets: {popup: ['confirm-status', 'Sign Up']}}]">
         {{adminService.isUserSignUpPaused ? 'Activate' : 'Pause' }} New User Sign Up
       </button>
@@ -48,10 +48,10 @@
         <div class="col search">
           <div class="input-group">
             <input class="form-control form-control-no-border bg-transparent py-2 border border-right-0 text-light"
-                   type="search" style="border-color: #40278C!important">
+                   type="search" style="border-color: #CFA256 !important">
             <span class="input-group-append">
               <div class="input-group-text bg-transparent">
-                <fa-icon style="color: #40278C" [icon]="faSearch"></fa-icon>
+                <fa-icon style="color: #CFA256 " [icon]="faSearch"></fa-icon>
               </div>
             </span>
           </div>
@@ -68,7 +68,7 @@
     <tr class="font-weight-bolder font-10 text-light">
       <th (click)="sortBySignUpDate()" class="cancel width-91px">
         Sign Up Date
-        <fa-icon [icon]="faSortBySignUpDate" style="color: #40278C;"></fa-icon>
+        <fa-icon [icon]="faSortBySignUpDate" style="color: #CFA256 ;"></fa-icon>
       </th>
       <th class="width-91px">First Name</th>
       <th class="width-101px">Last Name</th>
@@ -78,31 +78,31 @@
       <ng-container *ngIf="selectedTab.id === 'uapg'">
         <th (click)="sortByCurrentAlgoPositionUSD()" class="cancel width-91px">
           Algo Positions <br> (USD)
-          <fa-icon [icon]="faSortByCurrentAlgoPositionsUSD" style="color: #40278C;"></fa-icon>
+          <fa-icon [icon]="faSortByCurrentAlgoPositionsUSD" style="color: #CFA256 ;"></fa-icon>
           <br>
           <small>Current Account Total</small>
         </th>
         <th (click)="sortByHistoricalAlgoPositionUSD()" class="cancel width-91px">
           Algo Positions <br> (USD)
-          <fa-icon [icon]="faSortByHistoricalAlgoPositionsUSD" style="color: #40278C;"></fa-icon>
+          <fa-icon [icon]="faSortByHistoricalAlgoPositionsUSD" style="color: #CFA256 ;"></fa-icon>
           <br>
           <small>Historical Account Total</small>
         </th>
         <th (click)="sortByAlgoCommissionsUSD()" class="cancel width-91px">
           Algo Commissions <br> (USD)
-          <fa-icon [icon]="faSortByAlgoCommissionsUSD" style="color: #40278C;"></fa-icon>
+          <fa-icon [icon]="faSortByAlgoCommissionsUSD" style="color: #CFA256 ;"></fa-icon>
           <br>
           <small>Historical Total</small>
         </th>
         <th (click)="sortByOpenAlgoPositions()" class="cancel width-91px">
           Open Algo <br> Positions (#)
-          <fa-icon [icon]="faSortByOpenAlgoPositions" style="color: #40278C;"></fa-icon>
+          <fa-icon [icon]="faSortByOpenAlgoPositions" style="color: #CFA256 ;"></fa-icon>
           <br>
           <small>Current Account Total</small>
         </th>
         <th (click)="sortByClosedAlgoPositions()" class="cancel width-91px">
           Closed Algo <br> Positions (#)
-          <fa-icon [icon]="faSortByClosedAlgoPositions" style="color: #40278C;"></fa-icon>
+          <fa-icon [icon]="faSortByClosedAlgoPositions" style="color: #CFA256 ;"></fa-icon>
           <br>
           <small>Historical Account Total</small>
         </th>
@@ -110,31 +110,31 @@
       <ng-container *ngIf="selectedTab.id === 'uapd'">
         <th (click)="sortByGRYOpenPositions()" class="cancel width-91px">
           GRY Open <br> Positions (USD)
-          <fa-icon [icon]="faSortByGRYOpenPositions" style="color: #40278C;"></fa-icon>
+          <fa-icon [icon]="faSortByGRYOpenPositions" style="color: #CFA256 ;"></fa-icon>
           <br>
           <small>Current Account Total</small>
         </th>
         <th (click)="sortByGRY1OpenPositions()" class="cancel width-91px">
           GRY 1 Open <br> Positions (USD)
-          <fa-icon [icon]="faSortByGRY1OpenPositions" style="color: #40278C;"></fa-icon>
+          <fa-icon [icon]="faSortByGRY1OpenPositions" style="color: #CFA256 ;"></fa-icon>
           <br>
           <small>Current Account Total</small>
         </th>
         <th (click)="sortByGRY2OpenPositions()" class="cancel width-91px">
           GRY 2 Open <br> Positions (USD)
-          <fa-icon [icon]="faSortByGRY2OpenPositions" style="color: #40278C;"></fa-icon>
+          <fa-icon [icon]="faSortByGRY2OpenPositions" style="color: #CFA256 ;"></fa-icon>
           <br>
           <small>Current Account Total</small>
         </th>
         <th (click)="sortByGRY3OpenPositions()" class="cancel width-91px">
           GRY 3 Open <br> Positions (USD)
-          <fa-icon [icon]="faSortByGRY3OpenPositions" style="color: #40278C;"></fa-icon>
+          <fa-icon [icon]="faSortByGRY3OpenPositions" style="color: #CFA256 ;"></fa-icon>
           <br>
           <small>Current Account Total</small>
         </th>
         <th (click)="sortByGRZOpenPositions()" class="cancel width-91px">
           GRZ Open <br> Positions (USD)
-          <fa-icon [icon]="faSortByGRZOpenPositions" style="color: #40278C;"></fa-icon>
+          <fa-icon [icon]="faSortByGRZOpenPositions" style="color: #CFA256 ;"></fa-icon>
           <br>
           <small>Historical Total</small>
         </th>
@@ -152,12 +152,12 @@
       <td class="width-101px">{{user.lastName | slice:0:32}}</td>
       <td class="width-101px" style="word-break: break-all">{{user.emailAddress | slice:0:32}}</td>
       <td class="width-91px">
-        <a href="https://stellar.expert/explorer" class="purple-link" target="_blank">
+        <a href="https://stellar.expert/explorer" class="gold-link" target="_blank">
           {{user.account}}
         </a>
       </td>
       <td class="width-91px">
-        <a href="javascript:void(0)" class="purple-link">
+        <a href="javascript:void(0)" class="gold-link">
           {{user.grayllId}}
         </a>
       </td>

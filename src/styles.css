@@ -6,7 +6,7 @@ html, body {
 }
 
 body {
-    background: linear-gradient(to right,#636fa4,#e8cbc0);
+    background: linear-gradient(to right,#380808,#685d73);
     font-family: 'Nunito', sans-serif !important;
     font-size: 0.875rem!important;
 }
@@ -67,11 +67,19 @@ h6 {
 }
 
 .bg-gradient {
-    background-image: linear-gradient(to right, #636fa4, #e8cbc0) !important;
+    background-image: linear-gradient(to right,#380808,#685d73) !important;
 }
 
 .bg-gray {
     background-color: #40424f!important;
+}
+
+.bg-brown {
+    background-color: #380808 !important;
+}
+
+.bg-grpur {
+    background-color: #685d73 !important;
 }
 
 .text-pink {
@@ -108,6 +116,15 @@ h6 {
     background-color: #AC7F31!important;
 }
 
+.btn-gold {
+    color: white!important;
+    background-color: #CFA256 !important;
+}
+
+.btn-gold:hover {
+    background-color: #AC7F31!important;
+}
+
 .dark-navy-bg {
     background-color: #414755!important;
 }
@@ -127,7 +144,7 @@ h6 {
     content: ""; /* This is necessary for the pseudo element to work. */
     display: block; /* This will put the pseudo element on its own line. */
     width: 0%; /* Change this to whatever width you want to have before hover. */
-    border-bottom: 2px solid #40278C!important; /* This creates the border. Replace black with whatever color you want. */
+    border-bottom: 2px solid #CFA256!important; /* This creates the border. Replace black with whatever color you want. */
     transition: .5s; /* This establishes the amount of time in seconds the animation should take from start to finish */
 }
 

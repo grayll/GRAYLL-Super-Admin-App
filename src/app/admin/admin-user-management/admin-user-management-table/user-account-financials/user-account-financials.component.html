@@ -17,7 +17,7 @@
     </div>
     <div class="col-12 col-sm-2 text-center">
       <hr class="mt-0 d-sm-none">
-      <a class="purple-link font-10" href="javascript:void(0)">
+      <a class="gold-link font-10" href="javascript:void(0)">
         <fa-icon [icon]="faDownload" [fixedWidth]="true"></fa-icon>
         Download {{selectedTab.name}}
       </a>
@@ -33,13 +33,13 @@
       <span class="align-middle font-weight-bolder font-14">User Accounts (9,000,000)</span>
     </div>
     <div class="col-6 col-sm-3 text-center">
-      <button class="btn btn-purple" style="outline: none!important"
+      <button class="btn btn-gold" style="outline: none!important"
               [routerLink]="['/admin/overview', {outlets: {popup: ['confirm-status', 'App Sign In']}}]">
         {{adminService.isUserSignInPaused ? 'Activate' : 'Pause' }} User App Sign In
       </button>
     </div>
     <div class="col-6 col-sm-3 text-center">
-      <button class="btn btn-purple" style="outline: none!important"
+      <button class="btn btn-gold" style="outline: none!important"
               [routerLink]="['/admin/overview', {outlets: {popup: ['confirm-status', 'Sign Up']}}]">
         {{adminService.isUserSignUpPaused ? 'Activate' : 'Pause' }} New User Sign Up
       </button>
@@ -49,10 +49,10 @@
         <div class="col search">
           <div class="input-group">
             <input class="form-control form-control-no-border bg-transparent py-2 border border-right-0 text-light"
-                   type="search" style="border-color: #40278C!important">
+                   type="search" style="border-color: #CFA256 !important">
             <span class="input-group-append">
               <div class="input-group-text bg-transparent">
-                <fa-icon style="color: #40278C" [icon]="faSearch"></fa-icon>
+                <fa-icon style="color: #CFA256 " [icon]="faSearch"></fa-icon>
               </div>
             </span>
           </div>
@@ -69,7 +69,7 @@
     <tr class="font-weight-bolder font-10 text-light">
       <th (click)="sortBySignUpDate()" class="cancel width-91px">
         Sign Up Date
-        <fa-icon [icon]="faSortBySignUpDate" style="color: #40278C;"></fa-icon>
+        <fa-icon [icon]="faSortBySignUpDate" style="color: #CFA256 ;"></fa-icon>
       </th>
       <th class="cancel width-91px">First Name</th>
       <th class="cancel width-101px">Last Name</th>
@@ -79,31 +79,31 @@
       <ng-container *ngIf="selectedTab.id === 'uab'">
         <th (click)="sortByAccountValue()" class="cancel width-91px">
           Account Value <br> (USD)
-          <fa-icon [icon]="faSortByAccountValue" style="color: #40278C;"></fa-icon>
+          <fa-icon [icon]="faSortByAccountValue" style="color: #CFA256 ;"></fa-icon>
           <br>
           <small>Current Account Total</small>
         </th>
         <th (click)="sortByBalanceXLM()" class="cancel width-91px">
           Account Balance <br> (XLM)
-          <fa-icon [icon]="faSortByBalanceXLM" style="color: #40278C;"></fa-icon>
+          <fa-icon [icon]="faSortByBalanceXLM" style="color: #CFA256 ;"></fa-icon>
           <br>
           <small>Current Account Total</small>
         </th>
         <th (click)="sortByBalanceGRX()" class="cancel width-91px">
           Account Balance <br> (GRX)
-          <fa-icon [icon]="faSortByBalanceGRX" style="color: #40278C;"></fa-icon>
+          <fa-icon [icon]="faSortByBalanceGRX" style="color: #CFA256 ;"></fa-icon>
           <br>
           <small>Current Account Total</small>
         </th>
         <th (click)="sortByOpenOrdersXLM()" class="cancel width-91px">
           Open Orders <br> XLM (USD)
-          <fa-icon [icon]="faSortByOpenOrdersXLM" style="color: #40278C;"></fa-icon>
+          <fa-icon [icon]="faSortByOpenOrdersXLM" style="color: #CFA256 ;"></fa-icon>
           <br>
           <small>Current Account Total</small>
         </th>
         <th (click)="sortByOpenOrdersGRX()" class="cancel width-91px">
           Open Orders <br> GRX (USD)
-          <fa-icon [icon]="faSortByOpenOrdersGRX" style="color: #40278C;"></fa-icon>
+          <fa-icon [icon]="faSortByOpenOrdersGRX" style="color: #CFA256 ;"></fa-icon>
           <br>
           <small>Current Account Total</small>
         </th>
@@ -117,19 +117,19 @@
         <th class="cancel width-91px">Phone number</th>
         <th (click)="sortByTotalTransfersUSD()" class="cancel width-91px">
           Total Transfers <br> (USD)
-          <fa-icon [icon]="faSortByTotalTransfersUSD" style="color: #40278C;"></fa-icon>
+          <fa-icon [icon]="faSortByTotalTransfersUSD" style="color: #CFA256 ;"></fa-icon>
           <br>
           <small>Historical Account Total</small>
         </th>
         <th (click)="sortByTotalTransfersXLM()" class="cancel width-91px">
           Total Transfers <br> (XLM)
-          <fa-icon [icon]="faSortByTotalTransfersXLM" style="color: #40278C;"></fa-icon>
+          <fa-icon [icon]="faSortByTotalTransfersXLM" style="color: #CFA256 ;"></fa-icon>
           <br>
           <small>Historical Account Total</small>
         </th>
         <th (click)="sortByTotalTransfersGRX()" class="cancel width-91px">
           Total Transfers <br> (GRX)
-          <fa-icon [icon]="faSortByTotalTransfersGRX" style="color: #40278C;"></fa-icon>
+          <fa-icon [icon]="faSortByTotalTransfersGRX" style="color: #CFA256 ;"></fa-icon>
           <br>
           <small>Historical Account Total</small>
         </th>
@@ -147,12 +147,12 @@
       <td class="width-101px">{{user.lastName | slice:0:32}}</td>
       <td class="width-101px" style="word-break: break-all">{{user.emailAddress | slice:0:32}}</td>
       <td class="width-91px">
-        <a href="https://stellar.expert/explorer" class="purple-link" target="_blank">
+        <a href="https://stellar.expert/explorer" class="gold-link" target="_blank">
           {{user.account}}
         </a>
       </td>
       <td class="width-101px">
-        <a href="javascript:void(0)" class="purple-link">
+        <a href="javascript:void(0)" class="gold-link">
           {{user.grayllId}}
         </a>
       </td>
@@ -166,7 +166,7 @@
       <ng-container *ngIf="selectedTab.id === 'uat'">
         <td class="width-101px">{{user.federationAddress}}</td>
         <td class="width-91px">
-          <a href="javascript:void(0)" class="purple-link">
+          <a href="javascript:void(0)" class="gold-link">
             {{user.phoneNumber}}
           </a>
         </td>

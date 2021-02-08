@@ -7,9 +7,9 @@
 
     &.active {
       opacity: 1;
-      color: #e8cbc0!important;
+      color: #CFA256!important;
       background-color: transparent;
-      border-bottom: 2px solid #e8cbc0!important;
+      border-bottom: 2px solid #CFA256!important;
     }
   }
 }
@@ -26,10 +26,10 @@
   -webkit-filter: brightness(90%);
 }
 
-.card-header-pink {
+.card-header-grpur {
   padding: 0.3rem 0.7rem;
-  background-color: #e8cbc0;
-  color: #40278C;
+  background-color: #685d73;
+  color: #CFA256 ;
   font-weight: 700;
   text-transform: uppercase;
 }

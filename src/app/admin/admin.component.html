@@ -48,31 +48,31 @@
           <div class="row align-items-center" style="justify-content: flex-end">
             <div class="col-6 col-lg-3 col-xl-2 mb-lg ml-xl">
               <button (click)="toggleFunction('GRY | 1')"
-                type="button" class="btn btn-block btn-purple font-14" [class.disabled]="adminService.gry1FunctionActivated">
+                type="button" class="btn btn-block btn-gold font-14" [class.disabled]="adminService.gry1FunctionActivated">
                 {{adminService.gry1FunctionActivated ? 'Pause' : 'Activate' }} GRY | 1
               </button>
             </div>
             <div class="col-6 col-lg-3 col-xl-2 mb-lg ml-xl">
               <button (click)="toggleFunction('GRY | 2')"
-                type="button" class="btn btn-block btn-purple font-14" [class.disabled]="adminService.gry2FunctionActivated">
+                type="button" class="btn btn-block btn-gold font-14" [class.disabled]="adminService.gry2FunctionActivated">
                 {{adminService.gry2FunctionActivated ? 'Pause' : 'Activate' }} GRY | 2
               </button>
             </div>
             <div class="col-6 col-lg-3 col-xl-2 mb-lg ml-xl">
               <button (click)="toggleFunction('GRY | 3')"
-                type="button" class="btn btn-block btn-purple font-14" [class.disabled]="adminService.gry3FunctionActivated">
+                type="button" class="btn btn-block btn-gold font-14" [class.disabled]="adminService.gry3FunctionActivated">
                 {{adminService.gry3FunctionActivated ? 'Pause' : 'Activate' }} GRY | 3
               </button>
             </div>
             <div class="col-6 col-lg-3 col-xl-2 mb-lg ml-xl">
               <button (click)="toggleFunction('GRZ')"
-                type="button" class="btn btn-block btn-purple font-14" [class.disabled]="adminService.grzFunctionActivated">
+                type="button" class="btn btn-block btn-gold font-14" [class.disabled]="adminService.grzFunctionActivated">
                 {{adminService.grzFunctionActivated ? 'Pause' : 'Activate' }} GRZ
               </button>
             </div>
             <div class="col-12 col-xl-3 mb-lg ml-xl">
               <button (click)="toggleFunction('Algo System')"
-                type="button" class="btn btn-block btn-purple font-14" [class.disabled]="adminService.algoSystemActivated">
+                type="button" class="btn btn-block btn-gold font-14" [class.disabled]="adminService.algoSystemActivated">
                 {{adminService.algoSystemActivated ? 'Pause' : 'Activate' }} Algo System
               </button>
             </div>
@@ -88,7 +88,7 @@
           <app-admin-user-management *ngIf="activeLink === 'User Management'"></app-admin-user-management>
         </div>
 
-        <div class="col-md-2 bg-pink settings-menu text-center d-none d-md-block">
+        <div class="col-md-2 bg-grpur settings-menu text-center d-none d-md-block">
           <ul class="list-group list-group-flush">
             <li class="list-group-item bg-transparent list-group-item-action text-purple"
                 (click)="activeLink = 'User Activity Reports'"

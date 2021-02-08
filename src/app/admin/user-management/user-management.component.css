@@ -18,6 +18,14 @@
   text-transform: uppercase;
 }
 
+.card-header-grpur {
+  padding: 0.3rem 0.7rem;
+  background-color: #685d73;
+  color: #CFA256;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
 .card-header-green {
   padding: 0.3rem 0.7rem;
   background-color: #52e3c2;
