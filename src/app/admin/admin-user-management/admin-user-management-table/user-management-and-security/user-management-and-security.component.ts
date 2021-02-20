@@ -50,13 +50,17 @@ export class UserManagementAndSecurityComponent implements OnInit {
 	faSortByGRY2Access = faCaretDown;
 	faSortByGRY3Access = faCaretDown;
 	faSortByAppSignIn = faCaretDown;
-	
+
+	governmentStatus: boolean;
+	userApplicationStatus: boolean;
+
 	constructor(
 	public adminService: AdminService,
 	private router: Router
 	) {
 		this.populateUserAccountsArray();
 		this.setActiveTab();
+		this.changeUserApplication();
 	}
 	
 	ngOnInit() {
@@ -166,5 +170,8 @@ export class UserManagementAndSecurityComponent implements OnInit {
 	checkKYCStatus(user: UserAccessStatusModel) {
 		this.selectedUser = user;
 		this.selectedUser.kycStatus = !user.kycStatus;
+	}
+	changeUserApplication() {
+		this.userApplicationStatus = ! this.userApplicationStatus;
 	}
 }

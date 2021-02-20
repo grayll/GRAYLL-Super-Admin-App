@@ -35,6 +35,8 @@ import { UserSettingsComponent } from './admin-user-management/admin-user-manage
 import { UserManagementAndSecurityComponent } from './admin-user-management/admin-user-management-table/user-management-and-security/user-management-and-security.component';
 import { ConfirmUserAccessStatusComponent } from './admin-user-management/admin-user-management-table/user-management-and-security/popups/confirm-user-access-status/confirm-user-access-status.component';
 import {FunctionGrzComponent} from './algo-system-management/function-grz/function-grz.component';
+import { ConfirmKycAcceptStatusComponent } from './admin-user-management/admin-user-management-table/user-management-and-security/popups/confirm-kyc-accept-status/confirm-kyc-accept-status.component';
+import { ConfirmKycDeclineStatusComponent } from './admin-user-management/admin-user-management-table/user-management-and-security/popups/confirm-kyc-decline-status/confirm-kyc-decline-status.component';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true,
@@ -69,7 +71,9 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     UserSettingsComponent,
     UserManagementAndSecurityComponent,
     ConfirmUserAccessStatusComponent,
-    FunctionGrzComponent
+    FunctionGrzComponent,
+    ConfirmKycAcceptStatusComponent,
+    ConfirmKycDeclineStatusComponent
   ],
   imports: [
     CommonModule,

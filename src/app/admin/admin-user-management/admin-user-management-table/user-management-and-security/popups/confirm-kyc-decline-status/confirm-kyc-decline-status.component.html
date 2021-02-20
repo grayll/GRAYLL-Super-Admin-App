@@ -1,0 +1,85 @@
+<ng-template #content let-modal>
+    <app-popup-header [popupHeaderTitle]="'User Document Decline'"></app-popup-header>
+    <div class="modal-body">
+  
+      <ng-container>
+  
+        <div class="row text-center" *ngIf="errorMessage">
+          <div class="alert alert-danger w-100" role="alert">
+            <p class="mb-0">{{errorMessage}}</p>
+          </div>
+        </div>
+  
+        <div class="row text-center">
+          <div class="col">
+            <p class="text-purple font-16">
+              Please review and confirm this action to decline the 
+              <br>
+              <span *ngIf="doc === 'Passport'">"Passport"</span>
+              <span *ngIf="doc === 'National ID Card'">"National ID Card"</span>
+              <span *ngIf="doc === 'Drivers License'">"Driver's License"</span>
+              <span *ngIf="doc === 'Income1'">"Last 6 Months Pay Slips"</span>
+              <span *ngIf="doc === 'Income2'">"Last 6 Months Personal Bank Statements"</span>
+              <span *ngIf="doc === 'Income3'">"Last 2 Years Tax Returns"</span>
+              <span *ngIf="doc === 'Address1'">"Utility Bill"</span>
+              <span *ngIf="doc === 'Address2'">"Bank Statement"</span>
+              <span *ngIf="doc === 'Address3'">"Rental/Lease Agreement"</span>
+              <span *ngIf="doc === 'Address4'">"Property Tax Receipt"</span>
+              <span *ngIf="doc === 'Address5'">"Tax Return"</span>
+              <span *ngIf="doc === 'Registration'">"Certificate of Incorporation or Formation"</span>
+              <span *ngIf="doc === 'LiquidAssets1'">"Share/Stock/Bond Account Statements or Certificates"</span>
+              <span *ngIf="doc === 'LiquidAssets2'">"Last 2 Months Retirement Account Statements"</span>
+              <span *ngIf="doc === 'LiquidAssets3'">"Last 2 Months Investment Account Statements"</span>
+              <span *ngIf="doc === 'Financials1'">"Last 2 Years Tax Returns"</span>
+              <span *ngIf="doc === 'Financials2'">"Last 2 Years Financial Statements"</span>
+              <span *ngIf="doc === 'Financials3'">"Last 2 Years Balance Sheets"</span>
+              <span *ngIf="doc === 'Financials4'">"Last 6 Months Bank Statements"</span>
+              <span *ngIf="doc === 'Financials5'">"Last 6 Months Investment Account Statements"</span>
+              <span> submitted by the user.</span>
+            </p>
+          </div>
+        </div>
+  
+        <div class="row text-center">
+          <div class="col">
+            <p class="text-purple font-16">
+              <span>KYC Document Decline</span>
+            </p>
+          </div>
+        </div>
+  
+        <div class="row text-center mb-3" *ngIf="doc !== ''">
+          <div class="col">
+            <div style="height: 32px!important;">
+              <label class="switch mb-0" *ngIf="didLoadContent">
+                <input name="activated" type="checkbox" [(ngModel)]="activated">
+                <span class="slider round"></span>
+                <span class="absolute-no">Undo</span>
+              </label>
+            </div>
+          </div>
+        </div>
+  
+        <div class="row mb-1 text-center">
+          <div class="col-12 text-center">
+            <p class="text-purple font-16">
+              Enter your password:
+            </p>
+            <input type="text" class="form-control mx-auto w-75 text-purple" [(ngModel)]="password"
+                   [placeholder]="'Password'">
+          </div>
+        </div>
+      </ng-container>
+  
+    </div>
+    <div class="modal-footer justify-content-center">
+      <div class="row text-center">
+        <div class="col">
+          <button class="btn btn-purple" (click)="save()">
+            Confirm Decline
+          </button>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+  

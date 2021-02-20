@@ -49,7 +49,7 @@
   <div class="row mx-0">
     <div class="col-12 col-xl-9">
       <div class="mobile-height-auto">
-        <p class="font-weight-bolder text-purple font-14 mb-0">User Account Details</p>
+        <p class="font-weight-bolder text-white font-14 mb-0">User Account Details</p>
         <div class="table-responsive">
           <table class="table table-borderless mb-0">
             <thead>
@@ -92,7 +92,7 @@
           </table>
         </div>
         <hr style="border-color: #fff;">
-        <p class="font-weight-bolder text-purple font-14 mb-0">User Account Financials</p>
+        <p class="font-weight-bolder text-white font-14 mb-0">User Account Financials</p>
         <div class="table-responsive">
           <table class="table table-borderless mb-0">
             <thead>
@@ -150,7 +150,7 @@
         </div>
       </div>
       <hr style="border-color: #fff;">
-      <p class="font-weight-bolder text-purple font-14 mb-0">User Algo System Financials</p>
+      <p class="font-weight-bolder text-white font-14 mb-0">User Algo System Financials</p>
       <div class="table-responsive">
         <table class="table table-borderless mb-0">
           <thead>
@@ -263,13 +263,28 @@
       </div>
     </div>
     <div class="col-12 col-xl-3">
-      <div class="mobile-height-auto">
+      <div>
         <div class="row">
           <div class="col-12">
-            <p class="text-purple font-weight-bolder font-14">User Access Management</p>
+            <p class="text-white font-weight-bolder font-14">User Access Management</p>
           </div>
         </div>
         <div class="row">
+          <div class="col-9">
+            <button class="btn btn-block btn-gold font-12"
+                    [routerLink]="['/admin/overview', {outlets: {popup: ['confirm-status', 'KYC']}}]">
+              {{adminService.isUserKYCPaused ? 'Activate' : 'Pause'}} User App For KYC
+            </button>
+          </div>
+          <div class="col-3 align-self-center">
+            <p class="font-12 align-self-center font-italic mb-0"
+               [class.text-yellow]="!adminService.isUserKYCPaused"
+               [class.text-light]="adminService.isUserKYCPaused">
+              {{adminService.isUserKYCPaused ? 'Paused' : 'Active'}}
+            </p>
+          </div>
+        </div>
+        <div class="row mt-2">
           <div class="col-9">
             <button class="btn btn-block btn-gold font-12"
                     [routerLink]="['/admin/overview', {outlets: {popup: ['confirm-status', 'App Sign In', selectedUser.grayllId]}}]">
@@ -278,7 +293,7 @@
           </div>
           <div class="col-3 align-self-center">
             <p class="font-12 align-self-center font-italic mb-0"
-               [class.text-purple]="!adminService.isUserSignInPaused"
+               [class.text-yellow]="!adminService.isUserSignInPaused"
                [class.text-light]="adminService.isUserSignInPaused">
               {{adminService.isUserSignInPaused ? 'Paused' : 'Active'}}
             </p>
@@ -293,7 +308,7 @@
           </div>
           <div class="col-3 align-self-center">
             <p class="font-12 align-self-center font-italic mb-0"
-               [class.text-purple]="adminService.isGRY1UserAccessActive"
+               [class.text-yellow]="adminService.isGRY1UserAccessActive"
                [class.text-light]="!adminService.isGRY1UserAccessActive">
               {{adminService.isGRY1UserAccessActive ? 'Active' : 'Paused'}}
             </p>
@@ -308,7 +323,7 @@
           </div>
           <div class="col-3 align-self-center">
             <p class="font-12 align-self-center font-italic mb-0"
-               [class.text-purple]="adminService.isGRY2UserAccessActive"
+               [class.text-yellow]="adminService.isGRY2UserAccessActive"
                [class.text-light]="!adminService.isGRY2UserAccessActive">
               {{adminService.isGRY2UserAccessActive ? 'Active' : 'Paused'}}
             </p>
@@ -323,7 +338,7 @@
           </div>
           <div class="col-3 align-self-center">
             <p class="font-12 align-self-center font-italic mb-0"
-               [class.text-purple]="adminService.isGRY3UserAccessActive"
+               [class.text-yellow]="adminService.isGRY3UserAccessActive"
                [class.text-light]="!adminService.isGRY3UserAccessActive">
               {{adminService.isGRY3UserAccessActive ? 'Active' : 'Paused'}}
             </p>
@@ -338,7 +353,7 @@
           </div>
           <div class="col-3 align-self-center">
             <p class="font-12 align-self-center font-italic mb-0"
-               [class.text-purple]="adminService.isGRZUserAccessActive"
+               [class.text-yellow]="adminService.isGRZUserAccessActive"
                [class.text-light]="!adminService.isGRZUserAccessActive">
               {{adminService.isGRZUserAccessActive ? 'Active' : 'Paused'}}
             </p>
@@ -348,7 +363,7 @@
       <hr style="border-color: #fff;">
       <div class="row">
         <div class="col-12">
-          <p class="text-purple font-weight-bolder font-14 mb-0">User Security Settings</p>
+          <p class="text-white font-weight-bolder font-14 mb-0">User Security Settings</p>
         </div>
       </div>
       <div class="row">
@@ -392,7 +407,7 @@
   <hr style="border-color: #fff;">
   <div class="row mx-0 mb-3">
     <div class="col-12 col-xl-7">
-      <p class="font-weight-bolder text-purple font-14 mb-0">User Notifications Settings</p>
+      <p class="font-weight-bolder text-white font-14 mb-0">User Notifications Settings</p>
       <div class="table-responsive">
         <table class="table table-borderless mb-0">
           <thead>
@@ -628,7 +643,7 @@
       </div>
     </div>
     <div class="col-12 col-xl-5">
-      <p class="font-weight-bolder text-purple font-14 mb-0">User Report Settings</p>
+      <p class="font-weight-bolder text-white font-14 mb-0">User Report Settings</p>
       <table class="table table-borderless mb-0">
         <thead>
         <tr class="font-weight-bolder font-10 text-light">
@@ -812,6 +827,539 @@
         </tr>
         </tbody>
       </table>
+    </div>
+  </div>
+  <hr style="border-color: #fff;">
+
+  <div class="row margin-kyc">
+    <div class="col-12 col-md-6 col-xl-3">
+      <div class="row">
+        <div class="col-4">
+          <p class="font-weight-bolder text-white font-14 mb-2">User KYC</p>
+        </div>
+         <div class="col-8 p-0">
+          <p class="text-white font-10 mt-1">User Submitted | {{ userApplicationStatus ? 'Company Application' : 'Personal Application'}} &nbsp;<span class="text-yellow pointer" (click)="changeUserApplication()">Edit</span></p>
+         </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-6 col-xl-3 display-none">
+      <div class="row">
+          <p class="font-weight-bolder text-white font-14 mb-2">&nbsp;</p>
+      </div>
+    </div>
+    <div class="col-12 col-md-6 col-xl-3 display-none">
+      <div class="row">
+          <p class="font-weight-bolder text-white font-14 mb-2">&nbsp;</p>
+      </div>
+    </div>
+    <div class="col-12 col-md-6 col-xl-3">
+      <div class="row ">
+        <p class="text-yellow font-10 mb-2 font-italic ml-2">(Company applications must include all documents below, Investment Account statements are optional to improve application approval requirements)</p>
+      </div>
+    </div>
+  </div>
+  <div class="row margin-kyc">
+    <div class="col-12 col-md-6 col-xl-3 mb-4 ">
+      <div class="row mb-1 mt-1">
+        <div class="col-4">
+          <p class="font-weight-bolder text-white font-12 mb-2">Government Issued ID</p>
+        </div>
+        <div class="col-8 p-0 m-0">
+          <p class="font-weight-bolder text-yellow font-10 mb-0"> {{ adminService.government1Activated || adminService.government2Activated || adminService.government3Activated ? 'Approved' : 'Pending'}}</p>
+        </div>
+      </div>
+      <div class="row d-flex align-items-center">
+        <div class="col-4 mb-0">
+          <p class="text-white font-8 my-1">Passport</p>
+        </div>
+        <div class="col-4 p-0 m-0">
+            <p class="text-yellow font-8 my-1">---</p>
+        </div>
+        <div class="col-2 p-0 m-0">
+          <p class="text-yellow font-8 my-1">Download</p>
+        </div>
+        <div class="col-2 p-0 m-0">
+          <div class="row">
+              <p class="text-green font-8 my-1 pointer" 
+              [routerLink]="['/admin/overview', {outlets: {popup: ['kyc-document-approval', 'Passport']}}]">
+              Accept</p>&nbsp;
+              <p class="text-white font-8 my-1"> | </p>&nbsp;
+              <p class="text-red font-8 my-1 pointer "
+              [routerLink]="['/admin/overview', {outlets: {popup: ['kyc-document-decline', 'Passport']}}]"
+              >Decline</p>
+          </div>
+        </div>
+      </div>
+      <div class="row d-flex align-items-center">
+        <div class="col-4 mb-0">
+          <p class="text-white font-8 my-1 ">National ID Card</p>
+        </div>
+        <div class="col-4 p-0 m-0">
+            <p class="text-yellow font-8 my-1">Submitted dd/mm/yyyy | hh:mm</p>
+        </div>
+        <div class="col-2 p-0 m-0">
+          <p class="text-yellow font-8 my-1 ">Download</p>
+        </div>
+        <div class="col-2 p-0 m-0">
+          <div class="row">
+              <p class="text-green font-8 my-1  pointer" 
+              [routerLink]="['/admin/overview', {outlets: {popup: ['kyc-document-approval', 'National ID Card']}}]"
+              >Accept</p>&nbsp;
+              <p class="text-white font-8 my-1 "> | </p>&nbsp;
+              <p class="text-red font-8 my-1 pointer "
+              [routerLink]="['/admin/overview', {outlets: {popup: ['kyc-document-decline', 'National ID Card']}}]"
+              >Decline</p>
+          </div>
+        </div>
+      </div>
+      <div class="row d-flex align-items-center">
+        <div class="col-4 mb-0">
+          <p class="text-white font-8 my-1">Driver's License</p>
+        </div>
+        <div class="col-4 p-0 m-0">
+            <p class="text-yellow font-8 my-1">---</p>
+        </div>
+        <div class="col-2 p-0 m-0">
+          <p class="text-yellow font-8 my-1">Download</p>
+        </div>
+        <div class="col-2 p-0 m-0">
+          <div class="row">
+              <p class="text-green font-8 my-1 pointer"
+              [routerLink]="['/admin/overview', {outlets: {popup: ['kyc-document-approval', 'Drivers License']}}]"
+              >Accept</p>&nbsp;
+              <p class="text-white font-8 my-1"> | </p>&nbsp;
+              <p class="text-red font-8 my-1 pointer "
+              [routerLink]="['/admin/overview', {outlets: {popup: ['kyc-document-decline', 'Drivers License']}}]"
+              >Decline</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mb-2">
+        <div class="col-4">
+          <p class="font-weight-bolder text-white font-12 mb-0">Proof of Income</p>
+        </div>
+        <div class="col-8 p-0 m-0">
+          <p class="font-weight-bolder text-yellow font-10 mb-0">{{ adminService.income3Activated && (adminService.income1Activated || adminService.income2Activated) ? 'Approved' : 'Pending'}}</p>
+        </div>
+      </div>
+      <div class="row d-flex align-items-center">
+        <div class="col-4 mb-0">
+          <p class="text-white font-8 my-1">Last 6 Months Pay Slips</p>
+        </div>
+        <div class="col-4 p-0 m-0">
+            <p class="text-yellow font-8 my-1">---</p>
+        </div>
+        <div class="col-2 p-0 m-0">
+          <p class="text-yellow font-8 my-1">Download</p>
+        </div>
+        <div class="col-2 p-0 m-0">
+          <div class="row">
+              <p class="text-green font-8 my-1 pointer"
+              [routerLink]="['/admin/overview', {outlets: {popup: ['kyc-document-approval', 'Income1']}}]"
+              >Accept</p>&nbsp;
+              <p class="text-white font-8 my-1"> | </p>&nbsp;
+              <p class="text-red font-8 my-1 pointer "
+              [routerLink]="['/admin/overview', {outlets: {popup: ['kyc-document-decline', 'Income1']}}]"
+              >Decline</p>
+          </div>
+        </div>
+      </div>
+      <div class="row d-flex align-items-center">
+        <div class="col-4 mb-0">
+          <p class="text-white font-8 my-1">Last6 Months Personal Bank Statements</p>
+        </div>
+        <div class="col-4 p-0 m-0">
+            <p class="text-yellow font-8 my-1">Submitted dd/mm/yyyy | hh:mm</p>
+        </div>
+        <div class="col-2 p-0 m-0">
+          <p class="text-yellow font-8 my-1">Download</p>
+        </div>
+        <div class="col-2 p-0 m-0">
+          <div class="row">
+              <p class="text-green font-8 my-1 pointer"
+              [routerLink]="['/admin/overview', {outlets: {popup: ['kyc-document-approval', 'Income2']}}]"
+              >Accept</p>&nbsp;
+              <p class="text-white font-8 my-1"> | </p>&nbsp;
+              <p class="text-red font-8 my-1 pointer "
+              [routerLink]="['/admin/overview', {outlets: {popup: ['kyc-document-decline', 'Income2']}}]"
+              >Decline</p>
+          </div>
+        </div>
+      </div>
+      <div class="row d-flex align-items-center">
+        <div class="col-4 mb-0">
+          <p class="text-white font-8 my-1">Last 2 Years Tax Returns</p>
+        </div>
+        <div class="col-4 p-0 m-0">
+            <p class="text-yellow font-8 my-1">---</p>
+        </div>
+        <div class="col-2 p-0 m-0">
+          <p class="text-yellow font-8 my-1">Download</p>
+        </div>
+        <div class="col-2 p-0 m-0">
+          <div class="row">
+              <p class="text-green font-8 my-1 pointer"
+              [routerLink]="['/admin/overview', {outlets: {popup: ['kyc-document-approval', 'Income3']}}]"
+              >Accept</p>&nbsp;
+              <p class="text-white font-8 my-1"> | </p>&nbsp;
+              <p class="text-red font-8 my-1 pointer "
+              [routerLink]="['/admin/overview', {outlets: {popup: ['kyc-document-decline', 'Income3']}}]"
+              >Decline</p>
+          </div>
+        </div>
+      </div>
+      <p class="font-weight-bolder text-white font-10 mb-0 font-italic">(Application Must Include Tax Returns)</p>
+    </div>
+
+    <div class="col-12 col-md-6 col-xl-3 mb-4 ">
+      <div class="row mb-2 mt-1">
+        <div class="col-4">
+          <p class="font-weight-bolder text-white font-12 mb-0">Proof of Address</p>
+        </div>
+        <div class="col-8 p-0 m-0">
+          <p class="font-weight-bolder text-yellow font-10 mb-0">{{ adminService.address1Activated || adminService.address2Activated || adminService.address3Activated || adminService.address4Activated || adminService.address5Activated ? 'Approved' : 'Pending'}}</p>
+        </div>
+      </div>
+      <div class="row d-flex align-items-center">
+        <div class="col-4 mb-0">
+          <p class="text-white font-8 my-1">Utility Bill</p>
+        </div>
+        <div class="col-4 p-0 m-0">
+            <p class="text-yellow font-8 my-1">---</p>
+        </div>
+        <div class="col-2 p-0 m-0">
+          <p class="text-yellow font-8 my-1">Download</p>
+        </div>
+        <div class="col-2 p-0 m-0">
+          <div class="row">
+              <p class="text-green font-8 my-1 pointer"
+              [routerLink]="['/admin/overview', {outlets: {popup: ['kyc-document-approval', 'Address1']}}]"
+              >Accept</p>&nbsp;
+              <p class="text-white font-8 my-1"> | </p>&nbsp;
+              <p class="text-red font-8 my-1 pointer "
+              [routerLink]="['/admin/overview', {outlets: {popup: ['kyc-document-decline', 'Address1']}}]"
+              >Decline</p>
+          </div>
+        </div>
+      </div>
+      <div class="row d-flex align-items-center">
+        <div class="col-4 my-1">
+          <p class="text-white font-8 my-1">Bank Statement</p>
+        </div>
+        <div class="col-4 p-0 m-0 d-flex align-items-center">
+            <p class="text-yellow font-8 my-1">Submitted dd/mm/yyyy | hh:mm</p>
+        </div>
+        <div class="col-2 p-0 m-0">
+          <p class="text-yellow font-8 my-1">Download</p>
+        </div>
+        <div class="col-2 p-0 m-0">
+          <div class="row">
+              <p class="text-green font-8 my-1 pointer"
+              [routerLink]="['/admin/overview', {outlets: {popup: ['kyc-document-approval', 'Address2']}}]"
+              >Accept</p>&nbsp;
+              <p class="text-white font-8 my-1"> | </p>&nbsp;
+              <p class="text-red font-8 my-1 pointer "
+              [routerLink]="['/admin/overview', {outlets: {popup: ['kyc-document-decline', 'Address2']}}]"
+              >Decline</p>
+          </div>
+        </div>
+      </div>
+      <div class="row d-flex align-items-center">
+        <div class="col-4 my-1">
+          <p class="text-white font-8 mb-0">Rental/Lease Agreement</p>
+        </div>
+        <div class="col-4 p-0 m-0">
+            <p class="text-yellow font-8 my-1">---</p>
+        </div>
+        <div class="col-2 p-0 m-0">
+          <p class="text-yellow font-8 my-1">Download</p>
+        </div>
+        <div class="col-2 p-0 m-0">
+          <div class="row">
+              <p class="text-green font-8 my-1 pointer"
+              [routerLink]="['/admin/overview', {outlets: {popup: ['kyc-document-approval', 'Address3']}}]"
+              >Accept</p>&nbsp;
+              <p class="text-white font-8 my-1"> | </p>&nbsp;
+              <p class="text-red font-8 my-1 pointer "
+              [routerLink]="['/admin/overview', {outlets: {popup: ['kyc-document-decline', 'Address3']}}]"
+              >Decline</p>
+          </div>
+        </div>
+      </div>
+      <div class="row d-flex align-items-center">
+        <div class="col-4 mb-0">
+          <p class="text-white font-8 my-1">Property Tax Receipt</p>
+        </div>
+        <div class="col-4 p-0 m-0">
+            <p class="text-yellow font-8 my-1">Submitted dd/mm/yyyy | hh:mm</p>
+        </div>
+        <div class="col-2 p-0 m-0">
+          <p class="text-yellow font-8 my-1">Download</p>
+        </div>
+        <div class="col-2 p-0 m-0">
+          <div class="row">
+              <p class="text-green font-8 my-1 pointer"
+              [routerLink]="['/admin/overview', {outlets: {popup: ['kyc-document-approval', 'Address4']}}]"
+              >Accept</p>&nbsp;
+              <p class="text-white font-8 my-1"> | </p>&nbsp;
+              <p class="text-red font-8 my-1 pointer "
+              [routerLink]="['/admin/overview', {outlets: {popup: ['kyc-document-decline', 'Address4']}}]"
+              >Decline</p>
+          </div>
+        </div>
+      </div>
+      <div class="row d-flex align-items-center">
+        <div class="col-4 mb-0">
+          <p class="text-white font-8 my-1">Tax Return</p>
+        </div>
+        <div class="col-4 p-0 m-0">
+            <p class="text-yellow font-8 my-1">---</p>
+        </div>
+        <div class="col-2 p-0 m-0">
+          <p class="text-yellow font-8 my-1">Download</p>
+        </div>
+        <div class="col-2 p-0 m-0">
+          <div class="row">
+              <p class="text-green font-8 my-1 pointer"
+              [routerLink]="['/admin/overview', {outlets: {popup: ['kyc-document-approval', 'Address5']}}]"
+              >Accept</p>&nbsp;
+              <p class="text-white font-8 my-1"> | </p>&nbsp;
+              <p class="text-red font-8 my-1 pointer "
+              [routerLink]="['/admin/overview', {outlets: {popup: ['kyc-document-decline', 'Address5']}}]"
+              >Decline</p>
+          </div>
+        </div>
+      </div>
+      <p class="font-weight-bolder text-white font-10 mb-2 font-italic">(Application must include 2 documents)</p>
+      <div class="row mb-1">
+        <div class="col-4">
+          <p class="font-weight-bolder text-white font-12 mb-0">Company Registration</p>
+        </div>
+        <div class="col-8 p-0 m-0">
+          <p class="font-weight-bolder text-yellow font-10 mb-0">{{ adminService.registrationActivated ? 'Approved' : 'Pending'}}</p>
+        </div>
+      </div>
+      <div class="row d-flex align-items-center">
+        <div class="col-4 mb-0">
+          <p class="text-white font-8 my-1">Certificate of Incorporation or Formation</p>
+        </div>
+        <div class="col-4 p-0 m-0">
+            <p class="text-yellow font-8 my-1">Submitted dd/mm/yyyy | hh:mm</p>
+        </div>
+        <div class="col-2 p-0 m-0">
+          <p class="text-yellow font-8 my-1">Download</p>
+        </div>
+        <div class="col-2 p-0 m-0">
+          <div class="row">
+              <p class="text-green font-8 my-1 pointer"
+              [routerLink]="['/admin/overview', {outlets: {popup: ['kyc-document-approval', 'Registration']}}]"
+              >Accept</p>&nbsp;
+              <p class="text-white font-8 my-1"> | </p>&nbsp;
+              <p class="text-red font-8 my-1 pointer "
+              [routerLink]="['/admin/overview', {outlets: {popup: ['kyc-document-decline', 'Registration']}}]"
+              >Decline</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-md-6 col-xl-3 mb-4 ">
+      <div class="row mb-2 mt-1">
+        <div class="col-4">
+          <p class="font-weight-bolder text-white font-12 mb-0">Proof of Personal Liquid Assets</p>
+        </div>
+        <div class="col-8 p-0 m-0">
+          <p class="font-weight-bolder text-yellow font-10 mb-0">{{ adminService.liquidAssets1Activated || adminService.liquidAssets2Activated || adminService.liquidAssets3Activated || adminService.liquidAssets4Activated ? 'Approved' : 'Pending'}}</p>
+        </div>
+      </div>
+      <div class="row mb-2 d-flex align-items-center">
+        <div class="col-4 mb-0">
+          <p class="text-white font-8 my-1">Share/Stock/Bond Account Statements or Certificates</p>
+        </div>
+        <div class="col-4 p-0 m-0">
+            <p class="text-yellow font-8 my-1">Submitted dd/mm/yyyy | hh:mm</p>
+        </div>
+        <div class="col-2 p-0 m-0">
+          <p class="text-yellow font-8 my-1">Download</p>
+        </div>
+        <div class="col-2 p-0 m-0">
+          <div class="row">
+              <p class="text-green font-8 my-1 pointer"
+              [routerLink]="['/admin/overview', {outlets: {popup: ['kyc-document-approval', 'LiquidAssets1']}}]"
+              >Accept</p>&nbsp;
+              <p class="text-white font-8 my-1"> | </p>&nbsp;
+              <p class="text-red font-8 my-1 pointer "
+              [routerLink]="['/admin/overview', {outlets: {popup: ['kyc-document-decline', 'LiquidAssets1']}}]"
+              >Decline</p>
+          </div>
+        </div>
+      </div>
+      <div class="row mb-2 d-flex align-items-center">
+        <div class="col-4 mb-0">
+          <p class="text-white font-8 my-1">Last 2 Months Retirement Account Statements</p>
+        </div>
+        <div class="col-4 p-0 m-0">
+            <p class="text-yellow font-8 my-1">---</p>
+        </div>
+        <div class="col-2 p-0 m-0">
+          <p class="text-yellow font-8 my-1">Download</p>
+        </div>
+        <div class="col-2 p-0 m-0">
+          <div class="row">
+              <p class="text-green font-8 my-1 pointer"
+              [routerLink]="['/admin/overview', {outlets: {popup: ['kyc-document-approval', 'LiquidAssets2']}}]"
+              >Accept</p>&nbsp;
+              <p class="text-white font-8 my-1"> | </p>&nbsp;
+              <p class="text-red font-8 my-1 pointer "
+              [routerLink]="['/admin/overview', {outlets: {popup: ['kyc-document-decline', 'LiquidAssets2']}}]"
+              >Decline</p>
+          </div>
+        </div>
+      </div>
+      <div class="row mb-2 d-flex align-items-center">
+        <div class="col-4 mb-0">
+          <p class="text-white font-8 my-1">Last 2 Months Investment Account Statements</p>
+        </div>
+        <div class="col-4 p-0 m-0">
+            <p class="text-yellow font-8 my-1">Submitted dd/mm/yyyy | hh:mm</p>
+        </div>
+        <div class="col-2 p-0 m-0">
+          <p class="text-yellow font-8 my-1">Download</p>
+        </div>
+        <div class="col-2 p-0 m-0">
+          <div class="row">
+              <p class="text-green font-8 my-1 pointer"
+              [routerLink]="['/admin/overview', {outlets: {popup: ['kyc-document-approval', 'LiquidAssets3']}}]"
+              >Accept</p>&nbsp;
+              <p class="text-white font-8 my-1"> | </p>&nbsp;
+              <p class="text-red font-8 my-1 pointer "
+              [routerLink]="['/admin/overview', {outlets: {popup: ['kyc-document-decline', 'LiquidAssets3']}}]"
+              >Decline</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-md-6 col-xl-3 mb-4">
+      <div class="row mb-2 mt-1">
+        <div class="col-4">
+          <p class="font-weight-bolder text-white font-10 mb-0">Company Financials</p>
+        </div>
+        <div class="col-8 p-0 m-0">
+          <p class="font-weight-bolder text-yellow font-10 mb-0">{{ adminService.financials1Activated || adminService.financials2Activated || adminService.financials3Activated || adminService.financials4Activated || adminService.financials5Activated ? 'Approved' : 'Pending'}}</p>
+        </div>
+      </div>
+      <div class="row mb-2 d-flex align-items-center">
+        <div class="col-4 mb-0">
+          <p class="text-white font-8 my-1">Last 2 Years Tax Returns</p>
+        </div>
+        <div class="col-4 p-0 m-0">
+            <p class="text-yellow font-8 my-1">---</p>
+        </div>
+        <div class="col-2 p-0 m-0">
+          <p class="text-yellow font-8 my-1">Download</p>
+        </div>
+        <div class="col-2 p-0 m-0">
+          <div class="row">
+              <p class="text-green font-8 my-1 pointer"
+              [routerLink]="['/admin/overview', {outlets: {popup: ['kyc-document-approval', 'Financials1']}}]"
+              >Accept</p>&nbsp;
+              <p class="text-white font-8 my-1"> | </p>&nbsp;
+              <p class="text-red font-8 my-1 pointer "
+              [routerLink]="['/admin/overview', {outlets: {popup: ['kyc-document-decline', 'Financials1']}}]"
+              >Decline</p>
+          </div>
+        </div>
+      </div>
+      <div class="row mb-2 d-flex align-items-center">
+        <div class="col-4 mb-0">
+          <p class="text-white font-8 my-1">Last 2 Years Financial Statements</p>
+        </div>
+        <div class="col-4 p-0 m-0">
+            <p class="text-yellow font-8 my-1">Submitted dd/mm/yyyy | hh:mm</p>
+        </div>
+        <div class="col-2 p-0 m-0">
+          <p class="text-yellow font-8 my-1">Download</p>
+        </div>
+        <div class="col-2 p-0 m-0">
+          <div class="row">
+              <p class="text-green font-8 my-1 pointer"
+              [routerLink]="['/admin/overview', {outlets: {popup: ['kyc-document-approval', 'Financials2']}}]"
+              >Accept</p>&nbsp;
+              <p class="text-white font-8 my-1"> | </p>&nbsp;
+              <p class="text-red font-8 my-1 pointer "
+              [routerLink]="['/admin/overview', {outlets: {popup: ['kyc-document-decline', 'Financials2']}}]"
+              >Decline</p>
+          </div>
+        </div>
+      </div>
+      <div class="row mb-2 d-flex align-items-center">
+        <div class="col-4 mb-0">
+          <p class="text-white font-8 my-1">Last 2 Years Balance Sheets</p>
+        </div>
+        <div class="col-4 p-0 m-0">
+            <p class="text-yellow font-8 my-1">---</p>
+        </div>
+        <div class="col-2 p-0 m-0">
+          <p class="text-yellow font-8 my-1">Download</p>
+        </div>
+        <div class="col-2 p-0 m-0">
+          <div class="row">
+              <p class="text-green font-8 my-1 pointer"
+              [routerLink]="['/admin/overview', {outlets: {popup: ['kyc-document-approval', 'Financials3']}}]"
+              >Accept</p>&nbsp;
+              <p class="text-white font-8 my-1"> | </p>&nbsp;
+              <p class="text-red font-8 my-1 pointer "
+              [routerLink]="['/admin/overview', {outlets: {popup: ['kyc-document-decline', 'Financials3']}}]"
+              >Decline</p>
+          </div>
+        </div>
+      </div>
+      <div class="row mb-2 d-flex align-items-center">
+        <div class="col-4 mb-0">
+          <p class="text-white font-8 my-1">Last 2 Months Bank Statements</p>
+        </div>
+        <div class="col-4 p-0 m-0">
+            <p class="text-yellow font-8 my-1">Submitted dd/mm/yyyy | hh:mm</p>
+        </div>
+        <div class="col-2 p-0 m-0">
+          <p class="text-yellow font-8 my-1">Download</p>
+        </div>
+        <div class="col-2 p-0 m-0">
+          <div class="row">
+              <p class="text-green font-8 my-1 pointer"
+              [routerLink]="['/admin/overview', {outlets: {popup: ['kyc-document-approval', 'Financials4']}}]"
+              >Accept</p>&nbsp;
+              <p class="text-white font-8 my-1"> | </p>&nbsp;
+              <p class="text-red font-8 my-1 pointer "
+              [routerLink]="['/admin/overview', {outlets: {popup: ['kyc-document-decline', 'Financials4']}}]"
+              >Decline</p>
+          </div>
+        </div>
+      </div>
+      <div class="row mb-2 d-flex align-items-center">
+        <div class="col-4 mb-0">
+          <p class="text-white font-8 my-1">Last 6 Months Investment Account Statements</p>
+        </div>
+        <div class="col-4 p-0 m-0">
+            <p class="text-yellow font-8 my-1">---</p>
+        </div>
+        <div class="col-2 p-0 m-0">
+          <p class="text-yellow font-8 my-1">Download</p>
+        </div>
+        <div class="col-2 p-0 m-0">
+          <div class="row">
+              <p class="text-green font-8 my-1 pointer"
+              [routerLink]="['/admin/overview', {outlets: {popup: ['kyc-document-approval', 'Financials5']}}]"
+              >Accept</p>&nbsp;
+              <p class="text-white font-8 my-1"> | </p>&nbsp;
+              <p class="text-red font-8 my-1 pointer "
+              [routerLink]="['/admin/overview', {outlets: {popup: ['kyc-document-decline', 'Financials5']}}]"
+              >Decline</p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

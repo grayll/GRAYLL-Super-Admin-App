@@ -142,6 +142,14 @@ td {
   box-shadow: none!important;
 }
 
+.margin-kyc{
+  margin-left: 12px !important;
+  margin-right: 12px !important;
+}
+
+.pointer {
+  cursor: pointer;
+}
 @media (max-width: 480px) {
   ::ng-deep .nav-tabs {
     .nav-link {
@@ -160,5 +168,23 @@ td {
 @media (min-width: 1199px) {
   .mobile-height-auto {
     height: 230px!important;
+  }
+}
+
+@media (min-width: 768px) {
+  .first-border{
+    border-right: white 2px solid;
+  }
+}
+
+@media (min-width: 1200px) {
+  .second-border{
+    border-right: white 2px solid;
+  }
+}
+
+@media (max-width: 1200px) {
+  .display-none{
+    display: none
   }
 }

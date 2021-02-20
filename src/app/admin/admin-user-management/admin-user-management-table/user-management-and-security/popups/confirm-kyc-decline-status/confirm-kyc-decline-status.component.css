@@ -1,0 +1,108 @@
+.ques {
+    color: #40278C;
+  }
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 130px;
+    height: 32px;
+  }
+  
+  .switch input {display:none;}
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #f2f2f2;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    z-index: 2;
+    content: "";
+    height: 32px;
+    width: 32px;
+    left: 2px;
+    bottom: 0;
+    background-color: #40278C;
+    -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.22);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.22);
+    -webkit-transition: .4s;
+    transition: all 0.4s ease-in-out;
+  }
+  .slider:after {
+    position: absolute;
+    left: -8px;
+    z-index: 1;
+    content: "Decline";
+    font-size: 16px;
+    text-align: left !important;
+    line-height: 32px;
+    padding-left: 0;
+    width: 130px;
+    color: #fff;
+    height: 32px;
+    border-radius: 50px;
+    background-color: #40278C;
+    -webkit-transform: translateX(-54px);
+    -ms-transform: translateX(-180px);
+    transform: translateX(-180px);
+    transition: all 0.4s ease-in-out;
+  }
+  
+  input:checked + .slider:after {
+    -webkit-transform: translateX(0px);
+    -ms-transform: translateX(0px);
+    transform: translateX(0px);
+    /*width: 235px;*/
+    padding-left: 25px;
+  }
+  
+  input:checked + .slider:before {
+    background-color: #e8cbc0;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(95px);
+    -ms-transform: translateX(95px);
+    transform: translateX(95px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 50px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+  
+  .absolute-no {
+    position: absolute;
+    right: 10px;
+    color: #40278C;
+    text-align: right !important;
+    font-size: 16px;
+    width: calc(100% - 25px);
+    height: 32px;
+    line-height: 32px;
+    cursor: pointer;
+  }
+  
+  @media (max-width: 480px) {
+    .one-liner {
+      display: inline!important;
+    }
+  
+    .mobile-margin-top {
+      margin-top: 1rem!important;
+    }
+  }
+  

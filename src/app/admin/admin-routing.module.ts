@@ -5,7 +5,8 @@ import {UserManagementComponent} from './user-management/user-management.compone
 import {ActivatePauseSystemComponent} from './popups/activate-pause-system/activate-pause-system.component';
 import {ConfirmStatusComponent} from './admin-user-management/admin-user-management-table/user-accounts-and-registration/confirm-status/confirm-status.component';
 import {ConfirmUserAccessStatusComponent} from './admin-user-management/admin-user-management-table/user-management-and-security/popups/confirm-user-access-status/confirm-user-access-status.component';
-
+import {ConfirmKycAcceptStatusComponent} from './admin-user-management/admin-user-management-table/user-management-and-security/popups/confirm-kyc-accept-status/confirm-kyc-accept-status.component';
+import {ConfirmKycDeclineStatusComponent} from './admin-user-management/admin-user-management-table/user-management-and-security/popups/confirm-kyc-decline-status/confirm-kyc-decline-status.component';
 const popupRoutes: Routes = [
   {
     path: 'toggle-function/:value',
@@ -26,7 +27,17 @@ const popupRoutes: Routes = [
 		path: 'confirm-user-access-status/:value',
 		component: ConfirmUserAccessStatusComponent,
 		outlet: 'popup'
-	}
+  },
+  {
+    path:'kyc-document-approval/:value',
+    component: ConfirmKycAcceptStatusComponent,
+    outlet: 'popup'
+  },
+  {
+    path:'kyc-document-decline/:value',
+    component: ConfirmKycDeclineStatusComponent,
+    outlet: 'popup'
+  }
 ];
 
 const sidebarRoutes: Routes = [

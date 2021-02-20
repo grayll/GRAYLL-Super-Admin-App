@@ -63,7 +63,7 @@ export class AdminService {
 	private _isNewGRY2UserAccessActive: boolean;
 	private _isNewGRY3UserAccessActive: boolean;
 	private _isNewGRZUserAccessActive: boolean;
-	
+
 	get isGRY1UserAccessActive(): boolean {
 		return this._isGRY1UserAccessActive;
 	}
@@ -253,6 +253,188 @@ export class AdminService {
 		this.didRunFunction3 = didRun;
 		this.didRunFunction4 = didRun;
   }
+
+	private _isGovernment1Activated: boolean;
+	private _isGovernment2Activated: boolean;
+	private _isGovernment3Activated: boolean;
+	private _isGovernment1NewActivated: boolean;
+	private _isGovernment2NewActivated: boolean;
+	private _isGovernment3NewActivated: boolean;
+
+	get government1Activated(): boolean {
+    return this._isGovernment1Activated;
+  }
+
+  set government1Activated(value: boolean) {
+    this._isGovernment1Activated = value;
+	}
+	
+	get government2Activated(): boolean {
+    return this._isGovernment2Activated;
+  }
+
+  set government2Activated(value: boolean) {
+    this._isGovernment2Activated = value;
+	}
+	get government3Activated(): boolean {
+    return this._isGovernment3Activated;
+  }
+
+  set government3Activated(value: boolean) {
+    this._isGovernment3Activated = value;
+	}
+	new
+	get government1NewActivated(): boolean {
+    return this._isGovernment1NewActivated;
+  }
+
+  set government1NewActivated(value: boolean) {
+    this._isGovernment1NewActivated = value;
+	}
+	
+	get government2NewActivated(): boolean {
+    return this._isGovernment2NewActivated;
+  }
+
+  set government2NewActivated(value: boolean) {
+    this._isGovernment2NewActivated = value;
+	}
+	get government3NewActivated(): boolean {
+    return this._isGovernment3NewActivated;
+  }
+
+  set government3NewActivated(value: boolean) {
+    this._isGovernment3NewActivated = value;
+	}
+
+	//
+	private _isIncome1Activated: boolean;
+	private _isIncome2Activated: boolean;
+	private _isIncome3Activated: boolean;
+
+	get income1Activated(): boolean {
+    return this._isIncome1Activated;
+  }
+  set income1Activated(value: boolean) {
+    this._isIncome1Activated = value;
+	}
+	get income2Activated(): boolean {
+    return this._isIncome2Activated;
+  }
+  set income2Activated(value: boolean) {
+    this._isIncome2Activated = value;
+	}
+	get income3Activated(): boolean {
+    return this._isIncome3Activated;
+  }
+  set income3Activated(value: boolean) {
+    this._isIncome3Activated = value;
+	}
+//
+  private _isAddress1Activated: boolean;
+	private _isAddress2Activated: boolean;
+	private _isAddress3Activated: boolean;
+	private _isAddress4Activated: boolean;
+	private _isAddress5Activated: boolean;
+
+	get address1Activated(): boolean {
+    return this._isAddress1Activated;
+  }
+  set address1Activated(value: boolean) {
+    this._isAddress1Activated = value;
+	}
+	get address2Activated(): boolean {
+    return this._isAddress2Activated;
+  }
+  set address2Activated(value: boolean) {
+    this._isAddress2Activated = value;
+	}
+	get address3Activated(): boolean {
+    return this._isAddress3Activated;
+  }
+  set address3Activated(value: boolean) {
+    this._isAddress3Activated = value;
+	}
+	get address4Activated(): boolean {
+    return this._isAddress4Activated;
+  }
+  set address4Activated(value: boolean) {
+    this._isAddress4Activated = value;
+	}
+	get address5Activated(): boolean {
+    return this._isAddress5Activated;
+  }
+  set address5Activated(value: boolean) {
+    this._isAddress5Activated = value;
+	}
+
+	private _isRegistrationActivated: boolean;
+
+	get registrationActivated(): boolean {
+    return this._isRegistrationActivated;
+  }
+  set registrationActivated(value: boolean) {
+    this._isRegistrationActivated = value;
+	}
+
+	private _isLiquidAssets1Activated: boolean;
+	private _isLiquidAssets2Activated: boolean;
+	private _isLiquidAssets3Activated: boolean;
+
+	get liquidAssets1Activated(): boolean {
+    return this._isLiquidAssets1Activated;
+  }
+  set liquidAssets1Activated(value: boolean) {
+    this._isLiquidAssets1Activated = value;
+	}
+	get liquidAssets2Activated(): boolean {
+    return this._isLiquidAssets2Activated;
+  }
+  set liquidAssets2Activated(value: boolean) {
+    this._isLiquidAssets2Activated = value;
+	}
+	get liquidAssets3Activated(): boolean {
+    return this._isLiquidAssets3Activated;
+  }
+  set liquidAssets3Activated(value: boolean) {
+    this._isLiquidAssets3Activated = value;
+	}
+
+	private _isFinancials1Activated: boolean;
+	private _isFinancials2Activated: boolean;
+	private _isFinancials3Activated: boolean;
+	private _isFinancials4Activated: boolean;
+	private _isFinancials5Activated: boolean;
+	get financials1Activated(): boolean {
+    return this._isFinancials1Activated;
+  }
+  set financials1Activated(value: boolean) {
+    this._isFinancials1Activated = value;
+	}
+	get financials2Activated(): boolean {
+    return this._isFinancials2Activated;
+  }
+  set financials2Activated(value: boolean) {
+    this._isFinancials2Activated = value;
+	}
+	get financials3Activated(): boolean {
+    return this._isFinancials3Activated;
+  }
+  set financials3Activated(value: boolean) {
+    this._isFinancials3Activated = value;
+	}
+	get financials4Activated(): boolean {
+    return this._isFinancials4Activated;
+  }
+  set financials4Activated(value: boolean) {
+    this._isFinancials4Activated = value;
+	}
+	get financials5Activated(): boolean {
+    return this._isFinancials5Activated;
+  }
+  set financials5Activated(value: boolean) {
+    this._isFinancials5Activated = value;
+	}
 
   constructor() { }
 }

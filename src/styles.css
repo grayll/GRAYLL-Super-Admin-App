@@ -98,6 +98,13 @@ h6 {
     color: #CEDEFE;
 }
 
+.text-green {
+    color:#18b118;
+}
+
+.text-red {
+    color: #dc3545;
+}
 .btn-purple {
     color: white!important;
     background-color: #40278C!important;
